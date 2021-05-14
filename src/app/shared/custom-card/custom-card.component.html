@@ -1,35 +1,35 @@
 <div class="custom-card">
-  <div class="img-section" style="background-image: url('../../../assets/img/event1.jpg');">
+  <div class="img-section" style="background-image: url('{{data.image}}');">
     <div class="icon-bar">
       <div class="row">
         <div class="col-6">
           <p>
             <i class="fas fa-user"></i>
-            Eventbrite
+            {{data.created_by}}
           </p>
         </div>
         <div class="col-6">
-          <p class="amount">$5.00</p>
+          <p class="amount">{{data.price}}</p>
         </div>
       </div>
     </div>
   </div>
   <div class="content-section">
     <div class="title">
-      <p>
+      <p class="text-truncate">
         <i class="fas fa-star"></i>
-        TED Festival
+        {{data.name}}
       </p>
     </div>
     <div class="day-time">
       <div class="row">
         <div class="col-6">
           <span class="icon"><i class="far fa-calendar-alt"></i></span>
-          <span class="text">May 16, 2021</span>
+          <span class="text">{{data.start_date}}</span>
         </div>
         <div class="col-6">
           <span class="icon"><i class="far fa-clock"></i></span>
-          <span class="text">10:00 am</span>
+          <span class="text">{{data.start_time}}</span>
         </div>
       </div>
     </div>

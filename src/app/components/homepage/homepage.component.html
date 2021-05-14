@@ -3,8 +3,8 @@
   <app-search-bar></app-search-bar>
 
   <div class="row pt-5">
-    <div class="col-12 col-md-6 col-lg-4">
-      <app-custom-card></app-custom-card>
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of list">
+      <app-custom-card [data]="item"></app-custom-card>
     </div>
   </div>
 </div>
