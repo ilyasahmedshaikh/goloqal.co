@@ -1,0 +1,25 @@
+<div class="search-bar ">
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-8">
+      <div class="search-input">
+        <input type="text" placeholder="Search any thing you want...">
+      </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+      <div class="custom-dropdown">
+        <p (click)="showOptionsToggle()">
+          <i class="fas fa-map-marker-alt text-pinkgradient"></i>
+          <span class="ml-4">Amsterdem</span>
+          <i class="fas arrow" [ngClass]="{'fa-chevron-up': showOptions, 'fa-chevron-down': !showOptions}"></i>
+        </p>
+        <div class="options mt-2" [ngClass]="{'show': showOptions}">
+          <ul>
+            <li>Atlanta, GA</li>
+            <li>Austin, TX</li>
+            <li>Dallas, TX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
