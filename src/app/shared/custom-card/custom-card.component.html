@@ -1,20 +1,37 @@
 <div class="custom-card">
-  <div class="img-section" style="background-image: url('../../../assets/img/event1.jpg');">
-      <div class="icon-bar">
-        <div class="row">
-          <div class="col-6">
-            <p>
-              <i class="fas fa-user"></i>
-              Eventbrite
-            </p>
-          </div>
-          <div class="col-6">
-            <p class="amount">$5.00</p>
-          </div>
+  <div class="img-section" style="background-image: url('{{data.image}}');">
+    <div class="icon-bar">
+      <div class="row">
+        <div class="col-6">
+          <p>
+            <i class="fas fa-user"></i>
+            {{data.created_by}}
+          </p>
+        </div>
+        <div class="col-6">
+          <p class="amount">{{data.price}}</p>
         </div>
       </div>
+    </div>
   </div>
   <div class="content-section">
-
+    <div class="title">
+      <p class="text-truncate">
+        <i class="fas fa-star"></i>
+        {{data.name}}
+      </p>
+    </div>
+    <div class="day-time">
+      <div class="row">
+        <div class="col-6">
+          <span class="icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="text">{{data.start_date}}</span>
+        </div>
+        <div class="col-6">
+          <span class="icon"><i class="far fa-clock"></i></span>
+          <span class="text">{{data.start_time}}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
