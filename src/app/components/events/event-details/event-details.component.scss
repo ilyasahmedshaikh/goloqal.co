@@ -1,0 +1,98 @@
+@import '/src/styles.scss';
+
+.event{
+  padding: 30px 0;
+}
+
+.event .plain-card{
+
+}
+
+.event .inner{
+
+}
+
+.event .inner .image{
+
+}
+
+.event .inner .image img{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.event .inner .right{
+
+}
+
+.event .right h6{
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.event .right i.fa-star{
+  background: $default;
+  padding: 8px;
+  color: $white;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.event i.share{
+  padding-left: 15px;
+  color: #989898;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.event i.share:hover{
+  color: $orange;
+  transition: 0.5s;
+  opacity: 0.5s;
+}
+
+.event .inner .icon i{
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.event .inner .icon i:hover{
+  color: $orange;
+  transition: 0.5s;
+  opacity: 0.5s;
+}
+
+.event .name{
+  padding-top: 35px;
+}
+
+.event .nam-inner{
+  padding-top: 10px;
+}
+
+.event .name p{
+  text-align: center;
+  font-size: 15px;
+}
+
+.event .name p.day{
+  border: 1px solid #bbbbbb;
+  padding: 1px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: inline;
+}
+
+.event .name h6{
+
+}
+
+.event .name i{
+  padding-right: 5px;
+}
+
+
