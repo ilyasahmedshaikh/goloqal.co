@@ -93,3 +93,10 @@ input[type="color"]:focus,
   color: black;
   border-radius: 25px;
 }
+
+.plain-card {
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+  padding: 25px;
+}

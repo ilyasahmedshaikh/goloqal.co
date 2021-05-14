@@ -1,26 +1,57 @@
 @import '/src/styles.scss';
 
-.header {
-  background: linear-gradient(60deg, #29323c 0%, #485563 100%);
+.header{
+  background: white;
   height: 55px;
   position: fixed;
   width: 100%;
   z-index: 999;
+  box-shadow: 0 5px 15px 0 rgb(0 0 0 / 5%);
+}
+
+.header .logo a{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.header .nav{
+  float: right;
+
+  @include respond(tablet){
+    display: none;
+  }
+}
+
+.header .nav ul{
+  display: flex;
+  list-style: none;
+}
+
+.header .nav li a{
+  color: $lightBlack;
+  font-size: 14px;
+  padding: 0 13px;
+}
+
+.header .nav li a:hover{
+  color: $orange;
+  transition: 0.5s;
+  opacity: 0.5s;
 }
 
 .toggleContainer {
   cursor: pointer;
   position: fixed;
-  top: 8px;
-  left: 20px;
+  top: 10px;
+  right: 30px;
   z-index: 3;
 }
 
 .bar1, .bar2, .bar3 {
   border-radius: 10px;
-  width: 35px;
-  height: 4px;
-  background-color: #ffffff;
+  width: 30px;
+  height: 3px;
+  background: $lightBlack;
   margin: 6px 0;
   transition: 0.5s;
 }
@@ -29,13 +60,15 @@
   .bar1 {
       -webkit-transform: rotate(-45deg) translate(-6px, 6px);
       transform: rotate(-45deg) translate(-6px, 6px);
-      background-color: #ffffff;
+      background: $default;
+
     }
     .bar2 {opacity: 0;}
     .bar3 {
       -webkit-transform: rotate(45deg) translate(-8px, -8px);
-      transform: rotate(45deg) translate(-8px, -8px);
-      background-color: #ffffff;
+      transform: rotate(45deg) translate(-7px, -7px);
+      background: $default;
+
     }
 }
 
@@ -53,16 +86,21 @@
       height: 85vh;
       max-height: 85vh;
       overflow-y: auto;
+      @include respond(tablet) {
+        padding: 10% 0 0 5%;
+      }
+      @include respond(mobile) {
+        padding: 15% 0 0 5%;
+      }
       li {
           padding: 10px 0 10px 0;
           a {
               text-decoration: none;
-              color: #ffffff;
-              font-size: 20px;
-              font-weight: 500;
+              color: black;
+              font-size: 16px;
               transition: 0.3s;
               &:hover {
-                  color: #0000;
+                  color: $orange;
               }
               img {
                   width: 40px;
@@ -75,18 +113,27 @@
       }
   }
   &.side {
-      position: fixed;
-      width: 50%;
-      background: linear-gradient(60deg, #29323c 0%, #485563 100%);
-      color: #ffffff;
-      left: -50%;
-      top: 0;
-      bottom: 0;
-      z-index: 16;
-      transition: 0.8s;
-      &.show{
-          left: 0;
-      }
+    position: fixed;
+    width: 25%;
+    background: white;
+    color: #ffff;
+    right: -50%;
+    top: 0;
+    bottom: 0;
+    z-index: 16;
+    transition: 0.8s;
+    box-shadow: 5px 0px 35px 15px #f2f3f5;
+    &.show{
+      right: 0;
+    }
+    @include respond(mobile) {
+      width: 100%;
+      right: -100%;
+    }
+    @include respond(tablet) {
+      width: 100%;
+      right: -100%;
+    }
   }
   &.flap {
       position: fixed;
@@ -101,10 +148,6 @@
           top: 0;
       }
   }
-  .bottom-thing{
-      position: absolute;
-      bottom: 5%;
-  }
 }
 
 .profile {
@@ -118,13 +161,6 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .sidebar.side {
-      width: 100%;
-      left: -100%;
-  }
-}
-
 .fade-area {
   display: none;
   position: absolute;
@@ -132,7 +168,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  background-color: rgba(255,255,255,.85);
   opacity: 0.5;
   transition: 0.5s;
   z-index: 1;
