@@ -1,5 +1,5 @@
 .rounded-btn {
-    border: 1px solid $blue;
+    border: 1px solid $default;
     padding: 6px;
     background: $default;
     padding: 5px 50px;
@@ -14,14 +14,14 @@
 }
 
 .outline-btn {
-  border: 1px solid $blue;
+  border: 1px solid $default;
   padding: 6px;
   background: $white;
   padding: 5px 50px;
   // width: 170px;
   // height: auto;
   cursor: pointer;
-  color: $blue;
+  color: $default;
   border-radius: 50px;
   display: block;
   margin: auto;
@@ -31,7 +31,7 @@
 .chip-icon-btn {
   color: $white;
   font-size: 15px;
-  border: 1px solid $blue;
+  border: 1px solid $default;
   background: $default;
   border-radius: 20px;
   padding: 5px 15px;
