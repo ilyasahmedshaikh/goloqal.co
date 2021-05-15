@@ -1,9 +1,24 @@
 @import '../../../styles.scss';
 
 .homepage {
-  padding-bottom: 35px;
+  padding:  5% 0 2% 0;
+  .top-heading-bar {
+    h1 {
+      font-weight: 600;
+      font-size: 60px;
+      letter-spacing: .1px;
+      color: $black;
+    }
+    p {
+      font-weight: 400;
+      font-size: 22px;
+      color: $lightBlack;
+      letter-spacing: .1px;
+      padding-top: 20px;
+    }
+  }
   .search-bar {
-    margin-top: 25px;
+    margin-top: 35px;
   }
   .events-section {
     padding-top: 6%;

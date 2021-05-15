@@ -1,0 +1,23 @@
+@import '/src/styles.scss';
+
+.forgot {
+  padding: 5% 0;
+	h5 {
+		text-align: center;
+		font-size: 25px;
+		font-weight: bold;
+		padding-top: 5%;
+    color: $black;
+	}
+	p {
+		text-align: center;
+		font-size: 14px;
+		color: $lightBlack;
+		padding-top: 10px;
+	}
+  .forgot-btn {
+    a {
+      letter-spacing: .1px;
+    }
+  }
+}

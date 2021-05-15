@@ -1,0 +1,25 @@
+@import '/src/styles.scss';
+
+.privacy-policy {
+  padding: 30px 0;
+  .heading {
+    h1 {
+      color: $black;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    p {
+      color: $lightBlack;
+      font-size: 15px;
+      padding-top: 5px;
+    }
+  }
+  .content {
+    padding-top: 12px;
+    p {
+      color: $lightBlack;
+      font-size: 15px;
+      padding-top: 10px;
+    }
+  }
+}
