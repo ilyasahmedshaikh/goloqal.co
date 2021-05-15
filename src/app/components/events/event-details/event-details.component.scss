@@ -114,36 +114,6 @@
   }
 }
 
-.event .right .buttons a.green{
-  margin-right: 15px;
-  background: $greenGradient;
-  padding: 10px 30px;
-  box-shadow: 0 5px 12px 0 rgb(68 202 65 / 35%);
-  color: #fff;
-  border: 0;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: 500;
-  border-radius: 7px;
-}
-
-.event .right .buttons a.pink{
-  margin-right: 15px;
-  background: $default;
-  padding: 10px 30px;
-  box-shadow: 0 5px 12px 0 rgb(245 40 110 / 35%);
-  color: #fff;
-  border: 0;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: 500;
-  border-radius: 7px;
-}
-
-.event .right .buttons i{
-  margin-right: 7px;
-}
-
 .event .cards{
   margin-top: 5%;
 }
