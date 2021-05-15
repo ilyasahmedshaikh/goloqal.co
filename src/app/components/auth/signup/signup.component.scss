@@ -1,0 +1,30 @@
+@import '/src/styles.scss';
+
+.signup {
+	padding: 6% 0px;
+	.conditions {
+		padding-top: 12%;
+		p {
+			font-size: 15px;
+			color:  $black;
+			text-align: center;
+      a {
+        color: $black;
+        text-decoration: none;
+        font-weight: 600;
+      }
+		}
+	}
+  .login-account {
+    padding-top: 12%;
+    span {
+      color: $black;
+      font-size: 15px;
+    }
+    a {
+      font-weight: 600;
+      font-size: 16px;
+      padding-left: 2px;
+    }
+  }
+}

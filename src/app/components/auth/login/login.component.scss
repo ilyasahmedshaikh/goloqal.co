@@ -1,0 +1,35 @@
+@import '/src/styles.scss';
+
+.login {
+	padding: 5% 0;
+  .forgot-checkout {
+    .forgot-btn {
+      a {
+        color: $darkGray;
+        font-size: 17px;
+        float: right;
+      }
+    }
+  }
+  .new-account {
+    padding-top: 15%;
+    text-align: center;
+    span {
+      color: $black;
+      font-size: 15px;
+    }
+    a {
+      font-weight: 600;
+      font-size: 16px;
+      padding-left: 2px;
+    }
+  }
+}
+
+.form-group {
+  label {
+    &.form-check-label {
+      color: $darkGray;
+    }
+  }
+}
