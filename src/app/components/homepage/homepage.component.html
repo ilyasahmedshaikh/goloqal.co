@@ -21,7 +21,7 @@
             <p>Top experiences around Atlanta</p>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of events">
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of events" routerLink="/events/event-details">
           <app-custom-card [data]="item"></app-custom-card>
         </div>
       </div>
@@ -35,7 +35,7 @@
             <p>Nearest shop location</p>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of shops">
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of shops" routerLink="/shops/shop-details">
           <app-custom-card [data]="item"></app-custom-card>
         </div>
       </div>
