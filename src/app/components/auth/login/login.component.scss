@@ -5,10 +5,15 @@
   .forgot-checkout {
     .forgot-btn {
       a {
-        color: $darkGray;
-        font-size: 17px;
+        font-weight: 600;
+        font-size: 16px;
         float: right;
       }
+    }
+  }
+  .login-btn {
+    a {
+      letter-spacing: .1px;
     }
   }
   .new-account {

@@ -2,14 +2,18 @@
 
 .signup {
 	padding: 6% 0px;
+  .signup-btn {
+    a {
+      letter-spacing: .1px;
+    }
+  }
 	.conditions {
 		padding-top: 12%;
 		p {
 			font-size: 15px;
-			color:  $black;
+			color:  $lightBlack;
 			text-align: center;
       a {
-        color: $black;
         text-decoration: none;
         font-weight: 600;
       }
@@ -18,7 +22,7 @@
   .login-account {
     padding-top: 12%;
     span {
-      color: $black;
+      color: $lightBlack;
       font-size: 15px;
     }
     a {
