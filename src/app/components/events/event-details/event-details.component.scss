@@ -4,14 +4,6 @@
   padding: 30px 0;
 }
 
-.event .plain-card{
-
-}
-
-.event .inner{
-
-}
-
 .event .inner .image{
   position: relative;
 }
@@ -44,10 +36,6 @@
   @include respond(mobile) {
     padding: 25px 0;
   }
-}
-
-.event .inner .right-inner{
-
 }
 
 .event .right-inner h6{
@@ -171,19 +159,3 @@
 .event .cards p{
   font-weight: 500;
 }
-
-.event .cards .dot{
-  margin-top: 10px;
-}
-
-.event .cards .dot a{
-  color: $gray;
-  border: 1px solid $gray;
-  padding: 7px 8px 5px 8px;
-  border-radius: 30px;
-  font-size: 20px;
-}
-
-
-
-
