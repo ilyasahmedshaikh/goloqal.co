@@ -1,1 +1,45 @@
-<p>edit-profile works!</p>
+<div class="edit-profile">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-4">
+        <form>
+          <div class="add-img">
+            <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
+            <a (click)="file.click()">
+                <img *ngIf="!imageUploaded" src={{preview}}>
+                <!-- <img *ngIf="imageUploaded" src={{loading}}> -->
+            </a>
+          </div>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" placeholder="Full Name">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="email" class="form-control" placeholder="Password">
+          </div>
+          <div class="extras">
+            <!-- <p><span>2</span>Followings</p>
+            <p routerLink="/shops/shop-listing"><span>2</span>Shops</p>
+            <p routerLink="/events/event-listing"><span>2</span>Events</p>
+            <p><span>10</span>Favourites</p> -->
+
+            <div class="list-group list-group-flush">
+              <a class="list-group-item list-group-item-action"><span>2</span>Followings</a>
+              <a class="list-group-item list-group-item-action" routerLink="/shops/shop-listing"><span>2</span>Shops</a>
+              <a class="list-group-item list-group-item-action" routerLink="/events/event-listing"><span>2</span>Events</a>
+              <a class="list-group-item list-group-item-action"><span>10</span>Favourites</a>
+            </div>
+          </div>
+          <div class="update-btn">
+            <a class="c-btn pink d-block mt-4">Update</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

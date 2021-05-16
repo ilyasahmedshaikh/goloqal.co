@@ -8,6 +8,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'terms-conditions',
         component: TermsConditionsComponent
+      },
+      {
+        path: 'edit-profile',
+        component: EditProfileComponent
       }
     ]
   }

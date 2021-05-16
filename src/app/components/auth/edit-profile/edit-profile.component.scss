@@ -1,0 +1,43 @@
+@import '/src/styles.scss';
+
+.edit-profile {
+	padding: 4% 0;
+  .add-img {
+    text-align: center;
+    padding-bottom: 10%;
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 0 10px #e7e7e7;
+      border-radius: 25px;
+    }
+  }
+  .extras {
+    padding-top: 8px;
+    p {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.7;
+      color: $lightBlack;
+      span {
+        padding-right: 10px;
+      }
+    }
+    a {
+      color: $lightBlack;
+      &.list-group-item {
+        span {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  .update-btn {
+    a {
+      letter-spacing: .1px;
+    }
+  }
+}
