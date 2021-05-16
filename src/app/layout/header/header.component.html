@@ -7,21 +7,26 @@
       </div>
 
       <div class="row">
-        <div class="col-4">
+        <div class="col-2">
           <div class="logo">
             <a class="text-pinkgradient" href="#">GOLOQAL</a>
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10">
           <div class="nav">
             <ul>
               <li><a class="text-uppercase" routerLink="/events/event-listing">My Events</a></li>
               <li><a class="text-uppercase" routerLink="/shops/shop-listing">My Shops</a></li>
-              <li><a class="text-uppercase">Nearby Events</a></li>
-              <li><a class="text-uppercase">Nearby Shops</a></li>
+              <li><a class="text-uppercase" routerLink="/events/nearby-events">Nearby Events</a></li>
+              <li><a class="text-uppercase" routerLink="/shops/nearby-shops">Nearby Shops</a></li>
               <li><a class="text-uppercase" routerLink="/auth/login">SIGN IN</a></li>
               <li><a class="text-uppercase" routerLink="/auth/signup">JOIN</a></li>
+              <li>
+                <div class="user-img" routerLink="/auth/edit-profile">
+                  <img src="../../../assets/img/shop4.jpg">
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -42,13 +47,18 @@
       </a>
     </li>
     <li>
-      <a (click)="toggleMenu()">
+      <a (click)="toggleMenu()" routerLink="/events/nearby-events">
         Nearby Events
       </a>
     </li>
     <li>
-      <a (click)="toggleMenu()">
+      <a (click)="toggleMenu()" routerLink="/shops/nearby-shops">
         Nearby Shops
+      </a>
+    </li>
+    <li>
+      <a (click)="toggleMenu()" routerLink="/auth/edit-profile">
+        Profile
       </a>
     </li>
     <li>
