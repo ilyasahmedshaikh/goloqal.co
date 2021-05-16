@@ -35,6 +35,17 @@
   cursor: pointer;
 }
 
+.header .nav ul li .user-img img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  bottom: 4px;
+}
+
 .header .nav li a:hover{
   color: $orange;
   transition: 0.5s;
