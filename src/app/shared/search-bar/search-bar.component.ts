@@ -8,14 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class SearchBarComponent implements OnInit {
 
   showOptions: boolean = false;
+  selectedOption: any = 'Austin, TX';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  showOptionsToggle() {
+  showOptionsToggle(event?) {
     this.showOptions = !this.showOptions;
+
+    if(event) {
+      let selected = event.target.outerText;
+      this.selectedOption = selected;
+    }
   }
 
 }
