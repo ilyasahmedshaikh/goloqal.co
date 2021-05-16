@@ -16,4 +16,9 @@
       color: $lightBlack;
     }
   }
+  .custom-dropdown{
+    @include respond(mobile){
+      margin-top: 10px;
+    }
+  }
 }
