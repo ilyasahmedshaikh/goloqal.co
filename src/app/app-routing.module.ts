@@ -22,6 +22,18 @@ const routes: Routes = [
   {
     path: 'shops',
     loadChildren: () => import('./components/shops/shops.module').then(m => m.ShopsModule)
+  },
+  {
+    path: 'blogs',
+    loadChildren: () => import('./components/blog/blog.module').then(m => m.BlogModule)
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./components/categories/categories.module').then(m => m.CategoriesModule)
+  },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./components/favorites/favorites.module').then(m => m.FavoritesModule)
   }
 ];
 
