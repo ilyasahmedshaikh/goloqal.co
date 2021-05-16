@@ -5,6 +5,7 @@ import { ShopsComponent } from './shops.component';
 import { ShopListingComponent } from './shop-listing/shop-listing.component';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { CreateShopComponent } from './create-shop/create-shop.component';
+import { NearByShopsComponent } from './near-by-shops/near-by-shops.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'create-shop',
         component: CreateShopComponent
+      },
+      {
+        path: 'nearby-shops',
+        component: NearByShopsComponent
       }
     ]
   }
