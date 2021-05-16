@@ -10,10 +10,11 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, SignupComponent, ForgotComponent, ResetPasswordComponent, PrivacyPolicyComponent, TermsConditionsComponent],
+  declarations: [AuthComponent, LoginComponent, SignupComponent, ForgotComponent, ResetPasswordComponent, PrivacyPolicyComponent, TermsConditionsComponent, EditProfileComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

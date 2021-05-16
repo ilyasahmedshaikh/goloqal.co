@@ -16,10 +16,12 @@
         <div class="col-8">
           <div class="nav">
             <ul>
+              <li><a class="text-uppercase" routerLink="/events/event-listing">My Events</a></li>
+              <li><a class="text-uppercase" routerLink="/shops/shop-listing">My Shops</a></li>
               <li><a class="text-uppercase">Nearby Events</a></li>
               <li><a class="text-uppercase">Nearby Shops</a></li>
-              <li><a class="text-uppercase">SIGN IN</a></li>
-              <li><a class="text-uppercase">JOIN</a></li>
+              <li><a class="text-uppercase" routerLink="/auth/login">SIGN IN</a></li>
+              <li><a class="text-uppercase" routerLink="/auth/signup">JOIN</a></li>
             </ul>
           </div>
         </div>
@@ -29,11 +31,36 @@
 
 <div class="sidebar side" [ngClass]="{'show': sidebar}">
   <ul>
-      <li>
-          <a (click)="toggleMenu()" routerLink="/auth/login">
-              Login
-          </a>
-      </li>
+    <li>
+      <a (click)="toggleMenu()" routerLink="/events/event-listing">
+        My Events
+      </a>
+    </li>
+    <li>
+      <a (click)="toggleMenu()" routerLink="/shops/shop-listing">
+        My Shops
+      </a>
+    </li>
+    <li>
+      <a (click)="toggleMenu()">
+        Nearby Events
+      </a>
+    </li>
+    <li>
+      <a (click)="toggleMenu()">
+        Nearby Shops
+      </a>
+    </li>
+    <li>
+      <a (click)="toggleMenu()" routerLink="/auth/login">
+        Sign In
+      </a>
+    </li>
+    <li>
+      <a (click)="toggleMenu()" routerLink="/auth/signup">
+          Join
+      </a>
+    </li>
   </ul>
 </div>
 
