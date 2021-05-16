@@ -8,6 +8,9 @@
       font-size: 60px;
       letter-spacing: .1px;
       color: $black;
+      @include respond(mobile){
+        font-size: 40px;
+      }
     }
     p {
       font-weight: 400;
