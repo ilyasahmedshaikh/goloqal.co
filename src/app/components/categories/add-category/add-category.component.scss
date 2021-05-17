@@ -2,6 +2,14 @@
 
 .add-category {
   padding: 5% 0;
+  .heading {
+    padding-bottom: 3%;
+    h1 {
+      color: $black;
+      font-weight: 500;
+      font-size: 25px;
+    }
+  }
   .add-btn {
     text-align: center;
     padding-top: 22px;

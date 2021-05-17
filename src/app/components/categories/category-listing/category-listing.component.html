@@ -2,6 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <div class="heading">
+          <h1>Category Listing</h1>
+        </div>
+      </div>
+      <div class="col-12">
         <table class="table">
           <thead>
             <tr>
@@ -10,32 +15,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Category 1</td>
+            <tr *ngFor="let item of data">
+              <td>{{item.categoryName}}</td>
               <td>
-                <i class="far fa-edit mr-4"></i>
-                <i class="fas fa-trash-alt"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Category 2</td>
-              <td>
-                <i class="far fa-edit mr-4"></i>
-                <i class="fas fa-trash-alt"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Category 3</td>
-              <td>
-                <i class="far fa-edit mr-4"></i>
-                <i class="fas fa-trash-alt"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Category 4</td>
-              <td>
-                <i class="far fa-edit mr-4"></i>
-                <i class="fas fa-trash-alt"></i>
+                <a routerLink="/categories/add-category" class="far fa-edit mr-4"></a>
+                <a class="fas fa-trash-alt"></a>
               </td>
             </tr>
           </tbody>
