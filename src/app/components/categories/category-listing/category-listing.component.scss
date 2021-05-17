@@ -1,0 +1,23 @@
+@import '/src/styles.scss';
+
+.category-listing {
+	padding: 4% 0;
+  table {
+    &.table {
+      tbody {
+        td {
+          i {
+            cursor: pointer;
+            font-size: 16px;
+            &.fa-edit  {
+              color: green;
+            }
+            &.fa-trash-alt {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
