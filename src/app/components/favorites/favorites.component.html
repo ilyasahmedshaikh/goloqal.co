@@ -1,1 +1,33 @@
-<p>favorites works!</p>
+<div class="favorites">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6 col-lg-6">
+        <h1>Favorites</h1>
+      </div>
+      <div class="col-12 col-md-4 col-lg-4">
+        <form>
+          <div class="form-group">
+            <!-- <label>Shops</label> -->
+            <select class="form-control c-dropdown">
+              <option selected>Shops</option>
+              <option>Events</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="shops-section">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>Shops</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of shops" routerLink="/shops/shop-details">
+          <app-custom-card [data]="item"></app-custom-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
