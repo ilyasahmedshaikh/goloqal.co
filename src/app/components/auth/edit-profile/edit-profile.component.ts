@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-profile',
@@ -10,10 +11,22 @@ export class EditProfileComponent implements OnInit {
   preview: any = "../../../../assets/img/img-upload-icon.png";
   // loading: any = "../../../../assets/img/loading.gif";
   imageUploaded: boolean = false;
+  programForm: any = FormGroup;
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.formInit();
+  }
+
+  formInit() {
+    this.programForm = this.fb.group({
+      fullName: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 
   readURL(event: any): void {

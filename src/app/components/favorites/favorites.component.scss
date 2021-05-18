@@ -1,0 +1,44 @@
+@import '/src/styles.scss';
+
+.favorites {
+  align-items: center;
+  padding: 30px 0;
+  h1 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: .1px;
+    color: $black;
+  }
+  .form-group {
+    margin-bottom: 0 !important;
+    .form-control {
+      &.c-dropdown {
+        box-shadow: 0 5px 15px 0 rgb(144 147 151 / 20%);
+        border-radius: 7px;
+        background-color: $white;
+        border: 0;
+        letter-spacing: 0.1px;
+        color: $lightBlack;
+      }
+    }
+  }
+
+  .shops-section {
+    padding-top: 6%;
+    .heading {
+      h1 {
+        font-weight: 500;
+        font-size: 28px;
+        letter-spacing: .1px;
+        color: $black;
+      }
+      p {
+        font-weight: 400;
+        font-size: 22px;
+        color: $lightBlack;
+        letter-spacing: .1px;
+        padding-top: 10px;
+      }
+    }
+  }
+}

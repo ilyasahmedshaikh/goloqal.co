@@ -1,0 +1,29 @@
+@import '/src/styles.scss';
+
+.footer {
+  padding-bottom: 32px;
+  padding-top: 30px;
+  border-top: 1px solid #ccc;
+  @include respond(mobile){
+    padding-top: 10px;
+   }
+  .footer-sections {
+    h6 {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: .1px;
+      padding-bottom: 10px;
+      @include respond(mobile){
+       padding-top: 20px;
+      }
+    }
+    a {
+      cursor: pointer;
+      display: block;
+      color: $lightBlack;
+      font-size: 15px;
+      letter-spacing: .1px;
+      padding-top: 5px;
+    }
+  }
+}

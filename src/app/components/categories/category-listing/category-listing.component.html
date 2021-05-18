@@ -1,1 +1,30 @@
-<p>category-listing works!</p>
+<div class="category-listing">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">
+          <h1>Category Listing</h1>
+        </div>
+      </div>
+      <div class="col-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Category Name</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data">
+              <td>{{item.categoryName}}</td>
+              <td>
+                <a routerLink="/categories/add-category" class="far fa-edit mr-4"></a>
+                <a class="fas fa-trash-alt"></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
