@@ -1,0 +1,94 @@
+@import '/src/styles.scss';
+
+.blog-listing{
+  padding: 30px 0;
+}
+
+.blog-listing h1{
+  font-weight: bold;
+}
+
+.blog-listing .cards{
+  margin-top: 15px;
+}
+
+.blog-listing .cards-inner{
+  box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%);
+  border-radius: 25px;
+  margin-top: 25px;
+  width: 100%;
+  height: 750px;
+}
+
+.blog-listing .cards-inner .wrapper{
+  padding: 30px;
+}
+
+.blog-listing .cards-inner img{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.blog-listing .wrapper h6{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.blog-listing .wrapper .c-btn{
+  font-size: 11px;
+  padding: 7px 15px;
+}
+
+.blog-listing .wrapper p{
+  font-size: 14px;
+  padding-top: 25px;
+  color: $gray;
+}
+
+.blog-listing .wrapper  .read{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.blog-listing .wrapper .read a{
+  color: $orange;
+    font-size: 12px;
+}
+
+.blog-listing .wrapper .read p{
+  font-size: 12px;
+  color: $gray;
+  padding-top: 0;
+}
+
+.blog-listing .wrapper .bottoms{
+  margin-top: 5%;
+}
+
+.blog-listing .wrapper .bottoms img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-listing .wrapper .bottoms h6{
+  font-size: 13px;
+}
+
+.blog-listing .wrapper .bottoms p{
+  font-size: 13px;
+  padding-top: 4px;
+  color: $tripleC;
+}
+
+.blog-listing .wrapper .bottoms p:hover{
+  color: orange;
+  transition: 0.5s;
+  opacity: 0.5s;
+}
