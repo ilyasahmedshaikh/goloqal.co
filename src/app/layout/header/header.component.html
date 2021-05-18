@@ -16,10 +16,8 @@
         <div class="col-10">
           <div class="nav">
             <ul>
-              <li><a class="text-uppercase" routerLink="/events/event-listing">My Events</a></li>
-              <li><a class="text-uppercase" routerLink="/shops/shop-listing">My Shops</a></li>
-              <li><a class="text-uppercase" routerLink="/events/nearby-events">Nearby Events</a></li>
-              <li><a class="text-uppercase" routerLink="/shops/nearby-shops">Nearby Shops</a></li>
+              <li><a class="text-uppercase" routerLink="">My Page</a></li>
+              <li><a class="text-uppercase" routerLink="">Nearby Shops/ Products</a></li>
               <li><a class="text-uppercase" routerLink="/auth/login">SIGN IN</a></li>
               <li><a class="text-uppercase" routerLink="/auth/signup">JOIN</a></li>
               <li>
@@ -37,33 +35,13 @@
 <div class="sidebar side" [ngClass]="{'show': sidebar}">
   <ul>
     <li>
-      <a (click)="toggleMenu()" routerLink="/events/create-event">
-        Create Event
+      <a (click)="toggleMenu()" routerLink="/page/create-page">
+        Create Page
       </a>
     </li>
     <li>
-      <a (click)="toggleMenu()" routerLink="/shops/create-shop">
-        Create Shop
-      </a>
-    </li>
-    <li>
-      <a (click)="toggleMenu()" routerLink="/events/event-listing">
-        My Events
-      </a>
-    </li>
-    <li>
-      <a (click)="toggleMenu()" routerLink="/shops/shop-listing">
-        My Shops
-      </a>
-    </li>
-    <li>
-      <a (click)="toggleMenu()" routerLink="/events/nearby-events">
-        Nearby Events
-      </a>
-    </li>
-    <li>
-      <a (click)="toggleMenu()" routerLink="/shops/nearby-shops">
-        Nearby Shops
+      <a (click)="toggleMenu()" routerLink="/blogs/create-blog">
+        Write Blog
       </a>
     </li>
     <li>

@@ -9,7 +9,7 @@
       letter-spacing: .1px;
       color: $black;
       @include respond(mobile){
-        font-size: 40px;
+        font-size: 35px;
       }
     }
     p {
