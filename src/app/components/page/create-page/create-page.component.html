@@ -1,1 +1,262 @@
-<p>create-page works!</p>
+<div class="create-shop">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-lg-10">
+        <div class="row">
+          <div class="col-12">
+            <div class="btns float-right">
+              <a class="c-btn pink">Cancel</a>
+              <a class="c-btn green mx-3">Create</a>
+              <a class="c-btn green">Preview</a>
+            </div>
+          </div>
+        </div>
+
+        <form>
+          <div class="plain-card">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Select Topic</label>
+                  <select class="form-control c-dropdown">
+                    <option selected>Select Topic</option>
+                    <option>Topic 1</option>
+                    <option>Topic 2</option>
+                    <option>Topic 3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Select Category</label>
+                  <select class="form-control c-dropdown">
+                    <option selected>Select Category</option>
+                    <option>Category 1</option>
+                    <option>Category 2</option>
+                    <option>Category 3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plain-card">
+            <div class="add-img">
+              <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
+              <a (click)="file.click()">
+                  <img *ngIf="!imageUploaded" src={{preview}}>
+                  <!-- <img *ngIf="imageUploaded" src={{loading}}> -->
+              </a>
+            </div>
+          </div>
+
+          <div class="plain-card">
+            <h2>Details</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" placeholder="Title">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Start Date Time</label>
+                  <input type="datetime-local" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>End Date Time</label>
+                  <input type="datetime-local" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plain-card">
+            <h2>Add Buttons</h2>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 1 Website</label>
+                  <input type="text" class="form-control" placeholder="Button 1 Website">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 1 Website URL</label>
+                  <input type="text" class="form-control" placeholder="Button 1 Website URL">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 2 Call</label>
+                  <input type="text" class="form-control" placeholder="Button 2 Call">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 2 Telephone Number</label>
+                  <input type="text" class="form-control" placeholder="Button 2 Telephone Number">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 3 Facebook/Instagram</label>
+                  <input type="text" class="form-control" placeholder="Button 3 Facebook/Instagram">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 3 Facebook/Instagram URL</label>
+                  <input type="text" class="form-control" placeholder="Button 3 Facebook/Instagram URL">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 4 Add Friends at LINE</label>
+                  <input type="text" class="form-control" placeholder="Button 4 Add Friends at LINE">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 4 LINE URL</label>
+                  <input type="text" class="form-control" placeholder="Button 4 LINE URL">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 5 Chat with us</label>
+                  <input type="text" class="form-control" placeholder="Button 5 Chat with us">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 5 Chat URL</label>
+                  <input type="text" class="form-control" placeholder="Button 5 Chat URL">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 5 Chat with us</label>
+                  <input type="text" class="form-control" placeholder="Button 5 Chat with us">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 5 Chat URL</label>
+                  <input type="text" class="form-control" placeholder="Button 5 Chat URL">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 6 Get ticket</label>
+                  <input type="text" class="form-control" placeholder="Button 6 Get ticket">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 6 Get ticket</label>
+                  <input type="text" class="form-control" placeholder="Button 6 Get ticket">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plain-card">
+            <h2>Description & Location</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea type="text" class="form-control" placeholder="Description" rows="3"></textarea>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group">
+                  <!-- <label>Description URL</label> -->
+                  <input type="link" class="form-control" placeholder="Description URL">
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group">
+                  <label>Location</label>
+                  <input type="text" class="form-control" placeholder="Address 1">
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Address 2">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plain-card">
+            <div class="add-product">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                  <div class="add-img">
+                    <input class="d-none" type="file" accept="image/*" #file1 (change)="productReadURL($event)">
+                    <a (click)="file1.click()">
+                        <img *ngIf="!productImageUploaded" src={{productPreview}}>
+                        <!-- <img *ngIf="productImageUploaded" src={{loading}}> -->
+                    </a>
+                  </div>
+                  <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" placeholder="Product Name">
+                  </div>
+                  <div class="form-group">
+                    <label>Product Price</label>
+                    <input type="text" class="form-control" placeholder="Product Price">
+                  </div>
+                  <div class="btns">
+                    <a class="c-btn pink mr-3">Add</a>
+                    <a class="c-btn green">Update</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                  <div class="list-group list-group-flush">
+                    <div class="list-group-item item list-group-item-action align-items-center">
+                      <img src="../../../../assets/img/shop1.jpg">
+                      <p>Pepsi</p>
+                      <p>$5.00</p>
+                      <i class="fas fa-trash"></i>
+                    </div>
+                    <div class="list-group-item item list-group-item-action align-items-center">
+                      <img src="../../../../assets/img/shop1.jpg">
+                      <p>Pepsi</p>
+                      <p>$5.00</p>
+                      <i class="fas fa-trash"></i>
+                    </div>
+                    <div class="list-group-item item list-group-item-action align-items-center">
+                      <img src="../../../../assets/img/shop1.jpg">
+                      <p>Pepsi</p>
+                      <p>$5.00</p>
+                      <i class="fas fa-trash"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
