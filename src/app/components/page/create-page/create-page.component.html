@@ -1,7 +1,6 @@
 <div class="create-shop">
   <div class="container">
     <div class="row justify-content-center">
-
       <div class="col-lg-10">
         <div class="row">
           <div class="col-12">
@@ -12,8 +11,34 @@
             </div>
           </div>
         </div>
-
         <form>
+          <div class="plain-card">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Select Topic</label>
+                  <select class="form-control c-dropdown">
+                    <option selected>Select Topic</option>
+                    <option>Topic 1</option>
+                    <option>Topic 2</option>
+                    <option>Topic 3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Select Category</label>
+                  <select class="form-control c-dropdown">
+                    <option selected>Select Category</option>
+                    <option>Category 1</option>
+                    <option>Category 2</option>
+                    <option>Category 3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="plain-card">
             <div class="add-img">
               <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
@@ -25,12 +50,12 @@
           </div>
 
           <div class="plain-card">
-            <h2>Shop Details</h2>
+            <h2>Details</h2>
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                  <label>Shop Title</label>
-                  <input type="text" class="form-control" placeholder="Event Title">
+                  <label>Title</label>
+                  <input type="text" class="form-control" placeholder="Title">
                 </div>
               </div>
 
@@ -50,40 +75,90 @@
             </div>
           </div>
 
-          <div class="plain-card mt-4">
-            <h2>Custom Buttons</h2>
+          <div class="plain-card">
+            <h2>Add Buttons</h2>
             <div class="row">
               <div class="col-6">
                 <div class="form-group">
-                  <label>Button 1 Name</label>
-                  <input type="text" class="form-control" placeholder="Button 1 Name">
+                  <label>Button 1 Website</label>
+                  <input type="text" class="form-control" placeholder="Button 1 Website">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 1 Website URL</label>
+                  <input type="text" class="form-control" placeholder="Button 1 Website URL">
                 </div>
               </div>
 
               <div class="col-6">
                 <div class="form-group">
-                  <label>Button 1 Link</label>
-                  <input type="text" class="form-control" placeholder="Button 1 Link">
+                  <label>Button 2 Call</label>
+                  <input type="text" class="form-control" placeholder="Button 2 Call">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 2 Telephone Number</label>
+                  <input type="text" class="form-control" placeholder="Button 2 Telephone Number">
                 </div>
               </div>
 
               <div class="col-6">
                 <div class="form-group">
-                  <label>Button 2 Name</label>
-                  <input type="text" class="form-control" placeholder="Button 2 Name">
+                  <label>Button 3 Facebook/Instagram</label>
+                  <input type="text" class="form-control" placeholder="Button 3 Facebook/Instagram">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 3 Facebook/Instagram URL</label>
+                  <input type="text" class="form-control" placeholder="Button 3 Facebook/Instagram URL">
                 </div>
               </div>
 
               <div class="col-6">
                 <div class="form-group">
-                  <label>Button 2 Link</label>
-                  <input type="text" class="form-control" placeholder="Button 2 Link">
+                  <label>Button 4 Add Friends at LINE</label>
+                  <input type="text" class="form-control" placeholder="Button 4 Add Friends at LINE">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 4 LINE URL</label>
+                  <input type="text" class="form-control" placeholder="Button 4 LINE URL">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 5 Chat with us</label>
+                  <input type="text" class="form-control" placeholder="Button 5 Chat with us">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 5 Chat URL</label>
+                  <input type="text" class="form-control" placeholder="Button 5 Chat URL">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 6 Get Ticket</label>
+                  <input type="text" class="form-control" placeholder="Button 6 Get Ticket">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Button 6 Get Ticket URL</label>
+                  <input type="text" class="form-control" placeholder="Button 6 Get Ticket URL">
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="plain-card mt-4">
+          <div class="plain-card">
             <h2>Description & Location</h2>
             <div class="row">
               <div class="col-12">
@@ -166,7 +241,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

@@ -1,0 +1,189 @@
+@import '/src/styles.scss';
+
+.shop{
+  padding: 30px 0;
+}
+
+.shop .inner .image{
+  position: relative;
+}
+
+.shop .inner .image img{
+  width: 100%;
+  border-radius: 10px;
+  height: 335px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.shop .inner .icon a{
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+}
+
+.shop .inner .icon a:hover{
+  color: $orange;
+  transition: 0.5s;
+  opacity: 0.5s;
+}
+
+.shop .inner .right{
+  padding: 0 30px;
+  @include respond(mobile) {
+    padding: 25px 0;
+  }
+}
+
+.shop .right-inner h6{
+  height: 100px;
+  max-height: 100px;
+  overflow-y: hidden;
+  @include respond(tablet) {
+    padding: 10px;
+  }
+}
+
+.shop .right-inner h6 span{
+  font-size: 40px;
+  @include respond(mobile) {
+    font-size: 23px;
+  }
+}
+
+.shop .right-inner i{
+  background: $default;
+  padding: 8px;
+  color: $white;
+  border-radius: 5px;
+  margin-right: 10px;
+  position: relative;
+  top: -5px;
+}
+
+.shop .name{
+  padding-top: 35px;
+  @include respond(mobile) {
+    padding-top: 5px;
+  }
+}
+
+.shop .name .plain-card{
+  margin-top: 20px;
+}
+
+.shop .name p{
+  text-align: center;
+  font-size: 15px;
+}
+
+.shop .name span.day{
+  border: 1px solid #bbbbbb;
+  padding: 1px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: inline;
+}
+
+.shop .name i{
+  padding-right: 5px;
+}
+
+.shop .right .buttons{
+  margin-top: 8%;
+  text-align: center;
+  @include respond(mobile) {
+    margin-top: 13%;
+  }
+}
+
+.shop .cards{
+  margin-top: 5%;
+}
+
+.shop .plain-card{
+  margin-top: 15px;
+}
+
+.shop .cards a.left{
+  color: $gray;
+  font-weight: 500;
+}
+
+.shop .cards .left i{
+  padding-right: 6px;
+  color: $gray;
+}
+
+.shop .cards a.right{
+  float: right;
+  color: $orange;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.shop .cards .right i {
+  padding-left: 6px;
+}
+
+.shop .cards h6{
+  padding-top: 15px;
+}
+
+.shop .cards h4{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.shop .cards img{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  border-radius: 50px;
+}
+
+.shop .cards p.mini{
+  font-size: 12px;
+  padding-top: 12px;
+}
+
+.shop .cards p{
+  font-weight: 500;
+}
+
+.shop .cards .products{
+  text-align: center;
+  padding-top: 15px;
+}
+
+.shop .cards .products .item{
+  cursor: pointer;
+  @include respond(tablet) {
+    padding-top: 25px;
+  }
+}
+
+.shop .cards .products .item img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.shop .cards .products .item p{
+  font-size: 15px;
+}
+
+.shop .cards .products .item p.price{
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
