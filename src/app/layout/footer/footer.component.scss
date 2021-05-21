@@ -1,13 +1,16 @@
 @import '/src/styles.scss';
 
 .footer {
-  padding-bottom: 32px;
-  padding-top: 30px;
-  border-top: 1px solid #ccc;
   @include respond(mobile){
     padding-top: 10px;
    }
-  .footer-sections {
+  .footer-top-section {
+    padding-bottom: 28px;
+    padding-top: 30px;
+    border-top: 1px solid #ccc;
+    @include respond(mobile){
+      padding-top: 10px;
+     }
     h6 {
       font-size: 16px;
       font-weight: 500;
@@ -29,6 +32,17 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+    }
+  }
+  .footer-bottom-section {
+    padding-bottom: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    p {
+      color: $darkGray;
+      font-size: 15px;
+      font-weight: 500;
     }
   }
 }
