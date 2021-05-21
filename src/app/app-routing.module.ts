@@ -13,15 +13,6 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./components/auth/auth.module').then(m => m.AuthModule)
-  }
-  ,
-  {
-    path: 'events',
-    loadChildren: () => import('./components/events/events.module').then(m => m.EventsModule)
-  },
-  {
-    path: 'shops',
-    loadChildren: () => import('./components/shops/shops.module').then(m => m.ShopsModule)
   },
   {
     path: 'blogs',

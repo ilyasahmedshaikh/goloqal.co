@@ -24,6 +24,11 @@
       font-size: 15px;
       letter-spacing: .1px;
       padding-top: 5px;
+      &:hover {
+        background: $default;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 }
