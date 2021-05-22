@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { LoaderService } from '../../services/loader/loader.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ export class ApiService {
 
   constructor(
     private config: ConfigService,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private loader: LoaderService
   ) { }
 
   post(collection, data) {

@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { CustomCardComponent } from './custom-card/custom-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     CustomCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     CustomCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule { }
