@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "goloqal-dc7bf": {
+      "hosting": {
+        "goloqal-app": [
+          "goloqal-dc7bf"
+        ]
+      }
+    }
+  }
+}
