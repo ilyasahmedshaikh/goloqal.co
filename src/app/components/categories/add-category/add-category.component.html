@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-8">
         <div class="heading">
-          <h1>Add Category</h1>
+          <h1>{{ isEdit ? "Edit" : "Add" }} Category</h1>
         </div>
       </div>
       <div class="col-12 col-md-8 col-lg-8">
@@ -12,13 +12,17 @@
             <label>Category Name</label>
             <input type="text" class="form-control" placeholder="Category Name" formControlName="categoryName">
           </div>
+
           <div class="add-btn">
-            <button class="c-btn pink mr-3" (click)="createCategory()"
+            <button class="c-btn pink mr-3" *ngIf="!isEdit" (click)="createCategory()"
               [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
               Add Category
             </button>
 
-            <button class="c-btn green">Update Category</button>
+            <button class="c-btn green" *ngIf="isEdit" (click)="updateCategory()"
+              [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
+              Update Category
+            </button>
           </div>
         </form>
       </div>

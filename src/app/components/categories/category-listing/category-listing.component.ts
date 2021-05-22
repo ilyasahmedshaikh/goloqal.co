@@ -25,8 +25,8 @@ export class CategoryListingComponent implements OnInit {
     this.data = this.api.getAll(this.config.collections.categories_table);
   }
 
-  edit() {
-    this.router.navigateByUrl('/categories/add-category');
+  edit(item) {
+    this.router.navigate(['/categories/add-category'], { state: item })
   }
 
   deleteCategory(id) {

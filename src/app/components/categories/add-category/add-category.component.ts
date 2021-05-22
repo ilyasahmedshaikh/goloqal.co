@@ -12,16 +12,28 @@ import { ApiService } from '../../../core/http/api/api.service';
 export class AddCategoryComponent implements OnInit {
 
   programForm: any = FormGroup;
+  editObj: any = {};
+  isEdit: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private config: ConfigService,
     private api: ApiService,
-  ) { }
+  ) {
+    this.editObj = this.router.getCurrentNavigation().extras.state;
+  }
 
   ngOnInit(): void {
     this.formInit();
+
+    if(this.editObj) {
+      this.programForm.patchValue({
+        categoryName: this.editObj.name
+      });
+
+      this.isEdit = true;
+    }
   }
 
   formInit() {
@@ -36,6 +48,22 @@ export class AddCategoryComponent implements OnInit {
     }
 
     let request = this.api.post(this.config.collections.categories_table, data);
+
+    request.then(() => {
+      this.programForm.reset();
+      this.router.navigateByUrl("/categories/category-listing");
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
+  updateCategory(id) {
+    let data = {
+      name: this.programForm.value.categoryName
+    }
+
+    let request = this.api.put(this.config.collections.categories_table, this.editObj.id, data);
 
     request.then(() => {
       this.programForm.reset();

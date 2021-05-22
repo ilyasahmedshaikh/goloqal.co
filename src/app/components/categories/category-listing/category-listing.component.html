@@ -18,7 +18,7 @@
             <tr *ngFor="let item of data">
               <td>{{item.name}}</td>
               <td>
-                <a class="far fa-edit mr-4" (click)="edit()"></a>
+                <a class="far fa-edit mr-4" (click)="edit(item)"></a>
                 <a class="fas fa-trash-alt" (click)="deleteCategory(item.id)"></a>
               </td>
             </tr>
