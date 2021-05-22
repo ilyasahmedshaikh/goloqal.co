@@ -160,3 +160,11 @@ input[type="color"]:focus,
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+button {
+  &:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: 0 none;
+  }
+}
