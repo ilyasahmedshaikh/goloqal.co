@@ -81,7 +81,8 @@ input[type="color"]:focus,
 }
 
 .disable-opacity {
-    opacity: 0.5;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .back-btn {

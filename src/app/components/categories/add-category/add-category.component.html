@@ -13,8 +13,12 @@
             <input type="text" class="form-control" placeholder="Category Name" formControlName="categoryName">
           </div>
           <div class="add-btn">
-            <a class="c-btn pink mr-3">Add Category</a>
-            <a class="c-btn green" routerLink="/categories/category-listing">Update Category</a>
+            <button class="c-btn pink mr-3" (click)="createCategory()"
+              [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
+              Add Category
+            </button>
+
+            <button class="c-btn green">Update Category</button>
           </div>
         </form>
       </div>

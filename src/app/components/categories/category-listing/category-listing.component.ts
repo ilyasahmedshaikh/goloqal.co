@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { ConfigService } from '../../../core/http/config/config.service'
+import { ApiService } from '../../../core/http/api/api.service';
 @Component({
   selector: 'app-category-listing',
   templateUrl: './category-listing.component.html',
@@ -9,36 +11,34 @@ export class CategoryListingComponent implements OnInit {
 
   data: any = [];
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private config: ConfigService,
+    private api: ApiService,
+  ) { }
 
   ngOnInit(): void {
-    this.data = [
-      {
-        id: 1,
-        categoryName: 'Category 1'
-      },
-      {
-        id: 2,
-        categoryName: 'Category 2'
-      }
-      ,
-      {
-        id: 3,
-        categoryName: 'Category 3'
-      },
-      {
-        id: 4,
-        categoryName: 'Category 4'
-      },
-      {
-        id: 5,
-        categoryName: 'Category 5'
-      },
-      {
-        id: 6,
-        categoryName: 'Category 6'
-      }
-    ]
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.data = this.api.getAll(this.config.collections.categories_table);
+  }
+
+  edit() {
+    this.router.navigateByUrl('/categories/add-category');
+  }
+
+  deleteCategory(id) {
+    let request = this.api.delete(this.config.collections.categories_table, id);
+
+    request.then(() => {
+      console.log('deleted successfully');
+      this.getCategories();
+    })
+    .catch((error) => {
+      alert(error);
+    });
   }
 
 }
