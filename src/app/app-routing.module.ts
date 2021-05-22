@@ -29,6 +29,26 @@ const routes: Routes = [
   {
     path: 'page',
     loadChildren: () => import('./components/page/page.module').then(m => m.PageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./components/about-us/about-us.module').then(m => m.AboutUsModule)
+  },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./components/contact-us/contact-us.module').then(m => m.ContactUsModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./components/faq/faq.module').then(m => m.FaqModule)
+  },
+  {
+    path: 'partner-with-us',
+    loadChildren: () => import('./components/partner-with-us/partner-with-us.module').then(m => m.PartnerWithUsModule)
+  },
+  {
+    path: 'subscribe-news',
+    loadChildren: () => import('./components/subscribe-for-news/subscribe-for-news.module').then(m => m.SubscribeForNewsModule)
   }
 ];
 
