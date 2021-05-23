@@ -1,1 +1,44 @@
-<p>page-listing works!</p>
+<div class="page-listing">
+  <div class="container">
+    <div class="heading-bar">
+      <div class="row">
+        <div class="col-12 col-md-8 col-lg-8">
+          <div class="heading">
+            <h1>My Page</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4">
+          <div class="dropdown">
+            <form>
+              <div class="form-group">
+                <select class="form-control c-dropdown">
+                  <option selected>Select Category</option>
+                  <option>Popular Shops / Product</option>
+                  <option>Popular Events</option>
+                  <option>Popular Services</option>
+                  <option>Popular Things to do / Activities</option>
+                  <option>Popular Places / Communities</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-section">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">
+          <h1>Popular Places / Communities</h1>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of placesCommunities" routerLink="/page/page-details">
+          <app-custom-card [data]="item"></app-custom-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
