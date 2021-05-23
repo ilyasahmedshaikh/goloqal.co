@@ -1,0 +1,23 @@
+@import '../../../../styles.scss';
+
+.near-by-page {
+  padding:  5% 0 5% 0;
+  .shops-section {
+    padding-top: 6%;
+    .heading {
+      h1 {
+        font-weight: 600;
+        font-size: 42px;
+        letter-spacing: .1px;
+        color: $black;
+      }
+      p {
+        font-weight: 400;
+        font-size: 22px;
+        color: $lightBlack;
+        letter-spacing: .1px;
+        padding-top: 10px;
+      }
+    }
+  }
+}
