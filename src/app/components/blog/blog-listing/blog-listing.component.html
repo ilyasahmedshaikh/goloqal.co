@@ -9,7 +9,7 @@
       <div class="col-12">
         <div class="cards">
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-6" *ngFor="let item of data">
+            <div class="col-12 col-md-6 col-lg-6" *ngFor="let item of data" routerLink="/blogs/blog-details">
               <div class="cards-inner">
                 <img src={{item.image}}>
                 <div class="wrapper">

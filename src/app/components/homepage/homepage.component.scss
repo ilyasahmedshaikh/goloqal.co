@@ -24,11 +24,11 @@
     margin-top: 35px;
   }
   .events-section {
-    padding-top: 6%;
+    padding-top: 5%;
     .heading {
       h1 {
         font-weight: 600;
-        font-size: 42px;
+        font-size: 40px;
         letter-spacing: .1px;
         color: $black;
       }
@@ -42,11 +42,11 @@
     }
   }
   .shops-section {
-    padding-top: 6%;
+    padding-top: 5%;
     .heading {
       h1 {
         font-weight: 600;
-        font-size: 42px;
+        font-size: 38px;
         letter-spacing: .1px;
         color: $black;
       }
@@ -56,6 +56,39 @@
         color: $lightBlack;
         letter-spacing: .1px;
         padding-top: 10px;
+      }
+    }
+  }
+  .popular-services-section {
+    padding-top: 5%;
+    .heading {
+      h1 {
+        font-weight: 600;
+        font-size: 40px;
+        letter-spacing: .1px;
+        color: $black;
+      }
+    }
+  }
+  .things-activities-section {
+    padding-top: 5%;
+    .heading {
+      h1 {
+        font-weight: 600;
+        font-size: 38px;
+        letter-spacing: .1px;
+        color: $black;
+      }
+    }
+  }
+  .places-communities-section {
+    padding-top: 5%;
+    .heading {
+      h1 {
+        font-weight: 600;
+        font-size: 38px;
+        letter-spacing: .1px;
+        color: $black;
       }
     }
   }

@@ -31,11 +31,50 @@
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
           <div class="heading">
-            <h1>Top Shops / Products</h1>
+            <h1>Top Shops/Products</h1>
             <p>Nearest shop location</p>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of shops" routerLink="/page/page-details">
+          <app-custom-card [data]="item"></app-custom-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="popular-services-section">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>Popular Services</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of popularServices" routerLink="/page/page-details">
+          <app-custom-card [data]="item"></app-custom-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="things-activities-section">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>Popular Things To Do/Activities</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of thingsActivities" routerLink="/page/page-details">
+          <app-custom-card [data]="item"></app-custom-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="places-communities-section">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>Popular Places/Communities</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of placesCommunities" routerLink="/page/page-details">
           <app-custom-card [data]="item"></app-custom-card>
         </div>
       </div>
