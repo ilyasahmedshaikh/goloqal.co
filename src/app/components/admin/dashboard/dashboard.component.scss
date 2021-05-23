@@ -1,0 +1,30 @@
+@import '../../../../styles.scss';
+
+.dashboard {
+  .admin-card {
+    height: 158px;
+    h6 {
+      font-size: 17px;
+      font-weight: 500;
+      color: $lightBlack;
+    }
+    p {
+      padding-top: 8px;
+      font-size: 30px;
+      font-weight: 600;
+      color: $black;
+    }
+    i {
+      font-size: 40px;
+      float: right;
+      color: $darkGray;
+    }
+    &:hover {
+      i {
+        font-size: 55px;
+        transition: 1s;
+        -webkit-transition: 1s;
+      }
+    }
+  }
+}

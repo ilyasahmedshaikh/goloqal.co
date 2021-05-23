@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocalServicesComponent } from './local-services.component';
+import { ForYouComponent } from './for-you.component';
 
-describe('LocalServicesComponent', () => {
-  let component: LocalServicesComponent;
-  let fixture: ComponentFixture<LocalServicesComponent>;
+describe('ForYouComponent', () => {
+  let component: ForYouComponent;
+  let fixture: ComponentFixture<ForYouComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocalServicesComponent ]
+      declarations: [ ForYouComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocalServicesComponent);
+    fixture = TestBed.createComponent(ForYouComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
