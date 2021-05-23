@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'for-you',
+    loadChildren: () => import('./components/for-you/for-you.module').then(m => m.ForYouModule)
   }
 ];
 
