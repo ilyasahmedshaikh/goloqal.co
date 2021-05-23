@@ -49,6 +49,10 @@ const routes: Routes = [
   {
     path: 'subscribe-news',
     loadChildren: () => import('./components/subscribe-for-news/subscribe-for-news.module').then(m => m.SubscribeForNewsModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
   }
 ];
 
