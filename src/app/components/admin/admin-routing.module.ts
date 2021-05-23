@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactListingComponent } from './contact-listing/contact-listing.component';
+import { SocialLinksComponent } from './social-links/social-links.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'contact-listing',
         component: ContactListingComponent
+      },
+      {
+        path: 'social-links',
+        component: SocialLinksComponent
       }
     ]
   }
