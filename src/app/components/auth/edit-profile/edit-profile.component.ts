@@ -8,8 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditProfileComponent implements OnInit {
 
-  preview: any = "../../../../assets/img/img-upload-icon.png";
-  // loading: any = "../../../../assets/img/loading.gif";
+  preview: any = "assets/img/img-upload-icon.png";
+  // loading: any = "assets/img/loading.gif";
   imageUploaded: boolean = false;
   programForm: any = FormGroup;
 

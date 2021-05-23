@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePageComponent implements OnInit {
 
-    // loading: any = "../../../../assets/img/loading.gif";
-    preview: any = "../../../../assets/img/img-upload-icon.png";
-    productPreview: any = "../../../../assets/img/img-upload-icon.png";
+    // loading: any = "assets/img/loading.gif";
+    preview: any = "assets/img/img-upload-icon.png";
+    productPreview: any = "assets/img/img-upload-icon.png";
     imageUploaded: boolean = false;
     productImageUploaded: boolean = false;
 
