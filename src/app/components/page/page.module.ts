@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SharedModule } from '../../shared/shared.module';
+
 import { PageRoutingModule } from './page-routing.module';
 import { PageComponent } from './page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
@@ -13,7 +15,8 @@ import { PageListingComponent } from './page-listing/page-listing.component';
   declarations: [PageComponent, CreatePageComponent, NearByPageComponent, PageDetailsComponent, PageListingComponent],
   imports: [
     CommonModule,
-    PageRoutingModule
+    PageRoutingModule,
+    SharedModule
   ]
 })
 export class PageModule { }

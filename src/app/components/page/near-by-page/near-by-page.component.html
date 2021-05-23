@@ -1,1 +1,16 @@
-<p>near-by-page works!</p>
+<div class="near-by-page">
+  <div class="container">
+    <div class="shops-section">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>Near By Shops / Products</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of shops" routerLink="/page/page-details">
+          <app-custom-card [data]="item"></app-custom-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
