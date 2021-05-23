@@ -65,6 +65,93 @@ export class HomepageComponent implements OnInit {
       price: '$25.00'
     }
   ]
+  popularServices: any = [
+    {
+      id: 1,
+      image: 'https://un-prod-s3-bucket.s3.amazonaws.com/event_uvite_own_themes/image_thumbs/9836/5822/original/thumbnail.jpg',
+      name: 'Virtual Memorial Day Celebration',
+      start_date: 'May 15, 2021',
+      start_time: '7:00pm',
+      created_by: 'Expertiso',
+      price: '$45.00'
+    },
+    {
+      id: 2,
+      image: 'https://prod-cdn.unation.com/orbweaver-prod/event-themes/2522446/theme-1617741916.jpeg',
+      name: 'The Airborne Toxic Event Tickets',
+      start_date: 'May 15, 2021',
+      start_time: '7:00pm',
+      created_by: 'StubHub',
+      price: '$55.00'
+    },
+    {
+      id: 3,
+      image: 'https://un-prod-s3-bucket.s3.amazonaws.com/event_uvite_own_themes/image_thumbs/8019/8190/original/thumbnail.jpg',
+      name: 'Atlanta Braves New York Mets',
+      start_date: 'May 17, 2021',
+      start_time: '7:10pm',
+      created_by: 'Expertiso',
+      price: '$7.00'
+    }
+  ]
+  thingsActivities: any = [
+    {
+      id: 1,
+      image: 'https://un-prod-s3-bucket.s3.amazonaws.com/event_uvite_own_themes/image_thumbs/9501/6027/original/thumbnail.jpg',
+      name: 'Chicago Cubs at Pittsburgh Pirates',
+      start_date: 'May 15, 2021',
+      start_time: '7:00pm',
+      created_by: 'SutHub',
+      price: '$22.00'
+    },
+    {
+      id: 2,
+      image: 'https://un-prod-s3-bucket.s3.amazonaws.com/event_uvite_own_themes/image_thumbs/1296/2011/original/thumbnail.jpg',
+      name: 'Gallery Crawl in the Cultural District Virtual Edition',
+      start_date: 'May 15, 2021',
+      start_time: '7:00pm',
+      created_by: 'Pittsburgh',
+      price: ''
+    },
+    {
+      id: 3,
+      image: 'https://prod-cdn.unation.com/orbweaver-prod/event-themes/2327682/theme-1608706055.jpeg',
+      name: 'Allegheny Commons Public Art',
+      start_date: 'May 17, 2021',
+      start_time: '7:10pm',
+      created_by: 'Pittsburgh',
+      price: '$68.00'
+    }
+  ]
+  placesCommunities: any = [
+    {
+      id: 1,
+      image: 'https://un-prod-s3-bucket.s3.amazonaws.com/event_uvite_own_themes/image_thumbs/1517/9680/original/thumbnail.jpg',
+      name: 'Memphis 2021 Exhibition | Dixon',
+      start_date: 'May 15, 2021',
+      start_time: '7:00pm',
+      created_by: 'Memphis',
+      price: ''
+    },
+    {
+      id: 2,
+      image: 'https://un-prod-s3-bucket.s3.amazonaws.com/event_uvite_own_themes/image_thumbs/5038/0249/original/thumbnail.jpg',
+      name: 'Great American River Run 2021',
+      start_date: 'May 15, 2021',
+      start_time: '7:00pm',
+      created_by: 'Memphis',
+      price: '$40.46'
+    },
+    {
+      id: 3,
+      image: 'https://un-prod-s3-bucket.s3.amazonaws.com/event_uvite_own_themes/image_thumbs/8348/6743/original/thumbnail.jpg',
+      name: 'Food Truck Garden Party',
+      start_date: 'May 17, 2021',
+      start_time: '7:10pm',
+      created_by: 'Memphis',
+      price: '$5.00'
+    }
+  ]
 
   constructor() { }
 
