@@ -1,1 +1,59 @@
-<p>topics-listing works!</p>
+<div class="topics-listing">
+  <div class="container">
+    <div class="heading-bar">
+      <div class="row d-flex align-items-center">
+        <div class="col-12 col-md-8 col-lg-8">
+          <div class="heading">
+            <h1>Topics</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4">
+          <div class="dropdown">
+            <form>
+              <div class="form-group">
+                <select class="form-control c-dropdown">
+                  <option selected>Select Category</option>
+                  <option>Popular Shops / Product</option>
+                  <option>Popular Events</option>
+                  <option>Popular Services</option>
+                  <option>Popular Things to do / Activities</option>
+                  <option>Popular Places / Communities</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="topic-bar">
+          <h5>Popular Shops / Product</h5>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Created By</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.createdBy}}</td>
+              <td>
+                <a class="far fa-edit mr-4"></a>
+                <a class="fas fa-trash-alt"></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
