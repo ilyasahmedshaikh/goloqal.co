@@ -1,0 +1,44 @@
+@import '../../../../styles.scss';
+
+.page-listing {
+  padding:  5% 0 5% 0;
+  .heading-bar {
+    h1 {
+      font-weight: 600;
+      font-size: 40px;
+      letter-spacing: .1px;
+      color: $black;
+    }
+  }
+  .page-section {
+    padding-top: 4%;
+    .heading {
+      h1 {
+        font-weight: 600;
+        font-size: 40px;
+        letter-spacing: .1px;
+        color: $black;
+      }
+      p {
+        font-weight: 400;
+        font-size: 22px;
+        color: $lightBlack;
+        letter-spacing: .1px;
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+.form-group {
+  .form-control {
+    &.c-dropdown {
+      box-shadow: 0 5px 15px 0 rgb(144 147 151 / 20%);
+      border-radius: 7px;
+      background-color: $white;
+      border: 0;
+      letter-spacing: 0.1px;
+      color: $lightBlack;
+    }
+  }
+}

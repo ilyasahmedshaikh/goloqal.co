@@ -1,10 +1,10 @@
-<div class="page-listing">
+<div class="topics-listing">
   <div class="container">
     <div class="heading-bar">
-      <div class="row">
+      <div class="row d-flex align-items-center">
         <div class="col-12 col-md-8 col-lg-8">
           <div class="heading">
-            <h1>My Page</h1>
+            <h1>Topics</h1>
           </div>
         </div>
         <div class="col-12 col-md-4 col-lg-4">
@@ -25,19 +25,34 @@
         </div>
       </div>
     </div>
-
-    <div class="page-section">
     <div class="row">
       <div class="col-12">
-        <div class="heading">
-          <h1>Popular Places / Communities</h1>
+        <div class="topic-bar">
+          <h5>Popular Shops / Product</h5>
         </div>
-      </div>
-    </div>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of placesCommunities" routerLink="/page/page-details">
-          <app-custom-card [data]="item"></app-custom-card>
-        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Created By</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.createdBy}}</td>
+              <td>
+                <a class="far fa-edit mr-4"></a>
+                <a class="fas fa-trash-alt"></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

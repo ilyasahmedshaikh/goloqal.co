@@ -2,8 +2,16 @@
 
 .for-you {
   padding:  5% 0 5% 0;
+  .heading {
+    h1 {
+      font-weight: 600;
+      font-size: 40px;
+      letter-spacing: .1px;
+      color: $black;
+    }
+  }
   .page-section {
-    padding-top: 5%;
+    padding-top: 4%;
     .heading {
       h1 {
         font-weight: 600;

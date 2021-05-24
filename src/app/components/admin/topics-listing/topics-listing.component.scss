@@ -1,0 +1,56 @@
+@import '/src/styles.scss';
+
+.topics-listing {
+	padding: 3% 0;
+  .heading-bar {
+    padding-bottom: 3%;
+    .heading {
+      h1 {
+        color: $black;
+        font-weight: 600;
+        font-size: 40px;
+        letter-spacing: .1px;
+      }
+    }
+  }
+  .topic-bar {
+    h5 {
+      color: $black;
+      font-weight: 500;
+      font-size: 25px;
+      padding-bottom: 25px;
+      letter-spacing: .1px;
+    }
+  }
+  table {
+    &.table {
+      tbody {
+        td {
+          a {
+            cursor: pointer;
+            font-size: 16px;
+            &.fa-edit  {
+              color: green;
+            }
+            &.fa-trash-alt {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-group {
+  .form-control {
+    &.c-dropdown {
+      box-shadow: 0 5px 15px 0 rgb(144 147 151 / 20%);
+      border-radius: 7px;
+      background-color: $white;
+      border: 0;
+      letter-spacing: 0.1px;
+      color: $lightBlack;
+    }
+  }
+}
