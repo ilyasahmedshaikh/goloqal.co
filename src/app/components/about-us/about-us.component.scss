@@ -17,6 +17,9 @@
       font-size: 30px;
       font-weight: 600;
       color: $black;
+      @include respond(mobile) {
+        font-size: 25px;
+      }
     }
     p {
       color: $gray;
