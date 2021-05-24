@@ -8,15 +8,23 @@
       color: $black;
       font-size: 30px;
       font-weight: 600;
+      @include respond(mobile){
+        font-size: 23px;
+      }
     }
   }
-  .card{
-    margin-top: 8px;
-    .card-header {
-      h5 {
-        color: $lightBlack;
-        font-size: 17px;
-        cursor: pointer;
+  .faq-accordians {
+    @include respond(mobile){
+      padding-top: 30px;
+    }
+    .card{
+      margin-top: 8px;
+      .card-header {
+        h5 {
+          color: $lightBlack;
+          font-size: 17px;
+          cursor: pointer;
+        }
       }
     }
   }

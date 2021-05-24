@@ -1,8 +1,14 @@
 # goloqal.co
 goloqal.co web app
 
-# Setup FIrebase in angular app
+# Serve ng App on port
+ng serve --host 0.0.0.0
 
+# check app port
+ipconfig
+<!-- 192.168.0.109:4200 -->
+
+# Setup FIrebase in angular app
 1. npm install firebase
 2. ng add @angular/fire
 3. add config in environment file
