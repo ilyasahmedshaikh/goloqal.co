@@ -2,106 +2,92 @@
 
 .blog-detail{
   padding: 30px 0;
-}
-
-.blog-detail h6{
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.blog-detail .seprator{
-  background-color: $tripleC;
-  width: 11%;
-  height: 2px;
-  margin-top: 4px;
-  @include respond(tablet) {
-    width: 19%;
+  h6{
+    font-size: 15px;
+    cursor: pointer;
   }
-  @include respond(mobile) {
-    width: 33%;
+  .seprator{
+    background-color: $tripleC;
+    width: 11%;
+    height: 2px;
+    margin-top: 4px;
+    @include respond(tablet) {
+      width: 19%;
+    }
+    @include respond(mobile) {
+      width: 33%;
+    }
   }
-}
-
-.blog-detail h3{
-  padding-top: 25px;
-  font-weight: bold;
-  font-size: 35px;
-}
-
-.blog-detail .user-line{
-  margin-top: 10px;
-  @include respond(tablet) {
-    margin-top: 15px;
+  h3{
+    padding-top: 25px;
+    font-weight: bold;
+    font-size: 35px;
   }
-  @include respond(mobile) {
-    margin-top: 20px;
+  .user-line{
+    margin-top: 10px;
+    @include respond(tablet) {
+      margin-top: 15px;
+    }
+    @include respond(mobile) {
+      margin-top: 20px;
+    }
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      object-fit: cover;
+      object-position: center;
+      @include respond(mobile) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    h6{
+      font-size: 13px;
+    }
+    p{
+      font-size: 11px;
+      color: $tripleC;
+    }
+    a{
+      font-size: 14px;
+      cursor: pointer;
+      float: right;
+      @include respond(mobile) {
+        font-size: 13px;
+      }
+    }
   }
-}
-
-.blog-detail .user-line img{
-  width: 40px;
-  height: 40px;
-  border-radius: 30px;
-  object-fit: cover;
-  object-position: center;
-  @include respond(mobile) {
-    width: 30px;
-    height: 30px;
+  p{
+    font-size: 15px;
   }
-}
-
-.blog-detail .user-line h6{
-  font-size: 13px;
-}
-
-.blog-detail .user-line p{
-  font-size: 11px;
-  color: $tripleC;
-}
-
-.blog-detail .user-line a{
-  font-size: 14px;
-  cursor: pointer;
-  float: right;
-  @include respond(mobile) {
-    font-size: 13px;
+  img{
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 35%);
+    @include respond(tablet) {
+      width: 70%;
+    }
+    @include respond(mobile) {
+      width: 100%;
+    }
   }
-}
-
-.blog-detail p{
-  font-size: 15px;
-}
-
-.blog-detail img{
-  width: 50%;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
-  object-position: center;
-  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 35%);
-  @include respond(tablet) {
-    width: 70%;
+  h5{
+    font-weight: 500;
+    font-size: 27px;
+    padding-top: 15px;
   }
-  @include respond(mobile) {
-    width: 100%;
+  .c-btn{
+    padding: 7px 13px;
+    font-size: 12px;
   }
-}
-
-.blog-detail h5{
-  font-weight: 500;
-  font-size: 27px;
-  padding-top: 15px;
-}
-
-.blog-detail .c-btn{
-  padding: 7px 13px;
-  font-size: 12px;
-}
-
-.blog-detail .comment{
-  padding-top: 10%;
-}
-
-.blog-detail .comment .c-btn{
-  font-size: 15px;
+  .comment{
+    padding-top: 10%;
+    .c-btn{
+      font-size: 15px;
+    }
+  }
 }

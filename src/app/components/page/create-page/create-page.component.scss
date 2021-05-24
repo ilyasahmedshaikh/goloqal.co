@@ -34,8 +34,10 @@
         }
       }
       .btns {
-        padding-top: 20px;
-        text-align: center;
+        margin-top: 7%;
+        @include respond(mobile) {
+          margin-top: 10%;
+        }
       }
       .item {
         display: flex;
@@ -57,7 +59,15 @@
           font-size: 18px;
         }
       }
+      .wrapper{
+        @include respond(mobile) {
+          margin-top: 10%;
+        }
+      }
     }
+  }
+  .press {
+    margin-top: 7%;
   }
 }
 
