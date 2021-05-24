@@ -8,84 +8,139 @@
   width: 100%;
   z-index: 999;
   box-shadow: 0 5px 15px 0 rgb(0 0 0 / 5%);
-}
+  .logo{
+    a{
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+  .nav{
+    float: right;
+    @include respond(tablet){
+      display: none;
+    }
+    ul{
+      display: flex;
+      list-style: none;
+      li{
+        a{
+          color: $lightBlack;
+          font-size: 14px;
+          padding: 0 13px;
+          cursor: pointer;
+        }
+        .user-img{
+          img{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            bottom: 4px;
+          }
+        }
+        &:hover{
+          color: $orange;
+          transition: 0.5s;
+          opacity: 0.5s;
+        }
+      }
+    }
+  }
+  .toggleContainer {
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    z-index: 3;
+  }
+  .bar1, .bar2, .bar3 {
+    border-radius: 10px;
+    width: 30px;
+    height: 3px;
+    background: $lightBlack;
+    margin: 6px 0;
+    transition: 0.5s;
+  }
+  .change {
+    .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+        transform: rotate(-45deg) translate(-6px, 6px);
+        background: $default;
 
-.header .logo a{
-  font-weight: bold;
-  font-size: 20px;
-}
+      }
+      .bar2 {opacity: 0;}
+      .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-7px, -7px);
+        background: $default;
 
-.header .nav{
-  float: right;
-
-  @include respond(tablet){
+      }
+  }
+  .profile {
+    position: relative;
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+  }
+  .fade-area {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.85);
+    opacity: 0.5;
+    transition: 0.5s;
+    z-index: 1;
+    &.show{
+        display: block;
+    }
+  }
+  .back-btn a {
+    color: #ffffff;
+    position: absolute;
+    left: 5%;
+  }
+  .right-btn a {
+    color: #ffffff;
+    position: absolute;
+    right: 5%;
   }
 }
 
-.header .nav ul{
-  display: flex;
-  list-style: none;
-}
-
-.header .nav li a{
-  color: $lightBlack;
-  font-size: 14px;
-  padding: 0 13px;
-  cursor: pointer;
-}
-
-.header .nav ul li .user-img img {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
-  object-fit: cover;
-  object-position: center;
-  position: absolute;
-  bottom: 4px;
-}
-
-.header .nav li a:hover{
-  color: $orange;
-  transition: 0.5s;
-  opacity: 0.5s;
-}
-
-.toggleContainer {
-  cursor: pointer;
-  position: fixed;
-  top: 10px;
-  right: 30px;
-  z-index: 3;
-}
-
-.bar1, .bar2, .bar3 {
-  border-radius: 10px;
-  width: 30px;
-  height: 3px;
-  background: $lightBlack;
-  margin: 6px 0;
-  transition: 0.5s;
-}
-
-.change {
-  .bar1 {
-      -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-      transform: rotate(-45deg) translate(-6px, 6px);
-      background: $default;
-
-    }
-    .bar2 {opacity: 0;}
-    .bar3 {
-      -webkit-transform: rotate(45deg) translate(-8px, -8px);
-      transform: rotate(45deg) translate(-7px, -7px);
-      background: $default;
-
-    }
-}
-
 .sidebar{
+  .bar{
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-top: 16%;
+    text-align: center;
+    @include respond(tablet){
+      margin-top: 8%;
+    }
+    @include respond(mobile){
+      margin-top: 14%;
+    }
+    a{
+      display: inline-block;
+      color: black;
+      font-size: 14px;
+      padding: 13px;
+      cursor: pointer;
+      &:hover{
+        color: $orange;
+        transition: 0.5s;
+        opacity: 0.5s;
+      }
+    }
+  }
   a {
       text-decoration: none;
       color: #ffffff;
@@ -95,15 +150,15 @@
       list-style: none;
       margin-bottom: 0;
       padding-left: 0;
-      padding: 20% 0 0 5%;
+      padding: 4% 0 0 5%;
       height: 85vh;
       max-height: 85vh;
       overflow-y: auto;
       @include respond(tablet) {
-        padding: 10% 0 0 5%;
+        padding: 3% 0 0 5%;
       }
       @include respond(mobile) {
-        padding: 15% 0 0 5%;
+        padding: 5% 0 0 5%;
       }
       li {
           padding: 10px 0 10px 0;
@@ -161,43 +216,4 @@
           top: 0;
       }
   }
-}
-
-.profile {
-  position: relative;
-  img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center;
-  }
-}
-
-.fade-area {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255,255,255,.85);
-  opacity: 0.5;
-  transition: 0.5s;
-  z-index: 1;
-  &.show{
-      display: block;
-  }
-}
-
-.back-btn a {
-  color: #ffffff;
-  position: absolute;
-  left: 5%;
-}
-
-.right-btn a {
-  color: #ffffff;
-  position: absolute;
-  right: 5%;
 }
