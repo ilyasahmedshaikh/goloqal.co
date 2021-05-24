@@ -7,6 +7,9 @@
       color: $black;
       font-size: 30px;
       font-weight: 600;
+      @include respond(mobile){
+        font-size: 25px;
+      }
     }
     p {
       color: $lightBlack;
