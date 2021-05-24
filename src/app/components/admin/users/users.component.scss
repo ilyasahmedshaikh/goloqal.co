@@ -1,0 +1,31 @@
+@import '/src/styles.scss';
+
+.users {
+	padding: 3% 0;
+  .heading {
+    padding-bottom: 3%;
+    h1 {
+      color: $black;
+      font-weight: 500;
+      font-size: 30px;
+    }
+  }
+  table {
+    &.table {
+      tbody {
+        td {
+          a {
+            cursor: pointer;
+            font-size: 16px;
+            &.fa-edit  {
+              color: green;
+            }
+            &.fa-trash-alt {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
