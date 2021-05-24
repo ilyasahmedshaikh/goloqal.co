@@ -1,7 +1,17 @@
 @import '../../../../styles.scss';
 
 .dashboard {
+  padding:  3% 0;
+  .heading-bar {
+    h1 {
+      font-weight: 600;
+      font-size: 35px;
+      letter-spacing: .1px;
+      color: $black;
+    }
+  }
   .admin-card {
+    margin-top: 30px;
     height: 158px;
     h6 {
       font-size: 17px;

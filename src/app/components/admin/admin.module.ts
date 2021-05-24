@@ -8,10 +8,12 @@ import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactListingComponent } from './contact-listing/contact-listing.component';
 import { SocialLinksComponent } from './social-links/social-links.component';
+import { UsersComponent } from './users/users.component';
+import { TopicsListingComponent } from './topics-listing/topics-listing.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, ContactListingComponent, SocialLinksComponent],
+  declarations: [AdminComponent, DashboardComponent, ContactListingComponent, SocialLinksComponent, UsersComponent, TopicsListingComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
