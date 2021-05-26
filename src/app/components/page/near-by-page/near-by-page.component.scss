@@ -1,7 +1,10 @@
 @import '../../../../styles.scss';
 
 .near-by-page {
-  padding:  5% 0;
+  padding:  4% 0;
+  @include respond(mobile){
+    padding:  6% 0;
+  }
   .shops-section {
     .heading {
       h1 {
@@ -9,6 +12,9 @@
         font-size: 30px;
         letter-spacing: .1px;
         color: $black;
+        @include respond(mobile){
+          font-size: 26px;
+        }
       }
       p {
         font-weight: 400;
