@@ -7,6 +7,7 @@ import { ContactListingComponent } from './contact-listing/contact-listing.compo
 import { SocialLinksComponent } from './social-links/social-links.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsListingComponent } from './topics-listing/topics-listing.component';
+import { AddEditSliderComponent } from './add-edit-slider/add-edit-slider.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'topics-listing',
         component: TopicsListingComponent
+      },
+      {
+        path: 'add-edit-slider',
+        component: AddEditSliderComponent
       }
     ]
   }

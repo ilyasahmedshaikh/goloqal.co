@@ -2,14 +2,28 @@
 
 .topics-listing {
 	padding: 3% 0;
+  @include respond(mobile){
+    padding: 30px 0 18px 0;
+  }
   .heading-bar {
     padding-bottom: 3%;
+    @include respond(mobile){
+      padding-bottom: 30px;
+    }
     .heading {
       h1 {
         color: $black;
         font-weight: 600;
         font-size: 40px;
         letter-spacing: .1px;
+        @include respond(mobile){
+          font-size: 28px;
+        }
+      }
+    }
+    .dropdown {
+      @include respond(mobile){
+        padding-top: 20px;
       }
     }
   }
@@ -20,6 +34,9 @@
       font-size: 25px;
       padding-bottom: 25px;
       letter-spacing: .1px;
+      @include respond(mobile){
+        font-size: 22px;
+      }
     }
   }
   table {

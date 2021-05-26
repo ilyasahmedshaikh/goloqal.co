@@ -10,10 +10,11 @@ import { ContactListingComponent } from './contact-listing/contact-listing.compo
 import { SocialLinksComponent } from './social-links/social-links.component';
 import { UsersComponent } from './users/users.component';
 import { TopicsListingComponent } from './topics-listing/topics-listing.component';
+import { AddEditSliderComponent } from './add-edit-slider/add-edit-slider.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, ContactListingComponent, SocialLinksComponent, UsersComponent, TopicsListingComponent],
+  declarations: [AdminComponent, DashboardComponent, ContactListingComponent, SocialLinksComponent, UsersComponent, TopicsListingComponent, AddEditSliderComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
