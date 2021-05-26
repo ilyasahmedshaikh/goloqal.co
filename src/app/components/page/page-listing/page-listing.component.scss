@@ -8,16 +8,30 @@
       font-size: 40px;
       letter-spacing: .1px;
       color: $black;
+      @include respond(mobile){
+        font-size: 27px;
+      }
+    }
+    .dropdown {
+      @include respond(mobile){
+        padding-top: 18px;
+      }
     }
   }
   .page-section {
     padding-top: 4%;
+    @include respond(mobile) {
+      padding-top: 8%;
+    }
     .heading {
       h1 {
         font-weight: 600;
         font-size: 40px;
         letter-spacing: .1px;
         color: $black;
+        @include respond(mobile) {
+          font-size: 25px;
+        }
       }
       p {
         font-weight: 400;

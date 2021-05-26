@@ -5,6 +5,7 @@
     // background-image: url(../../../assets/img/about2.jpg);
     width: 100%;
     height: 50vh;
+    border-radius: 8px;
     object-fit: cover;
     object-position: center;
     @include respond(tablet) {
@@ -18,12 +19,13 @@
       font-weight: 600;
       color: $black;
       @include respond(mobile) {
-        font-size: 25px;
+        font-size: 24px;
       }
     }
     p {
-      color: $gray;
-      padding-top: 10px;
+      color: $lightBlack;
+      font-size: 15px;
+      padding-top: 12px;
     }
   }
 }
