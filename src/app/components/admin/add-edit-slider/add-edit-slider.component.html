@@ -1,1 +1,61 @@
-<p>add-edit-slider works!</p>
+<div class="add-edit-slider">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-10">
+        <div class="heading">
+          <h1>Slider</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-10">
+        <form>
+          <div class="plain-card">
+            <div class="add-product">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                  <div class="add-img">
+                    <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
+                    <a (click)="file.click()">
+                        <img *ngIf="!imageUploaded" src={{preview}}>
+                        <img *ngIf="imageUploaded" src={{loading}}>
+                    </a>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Name">
+                  </div>
+                  <div class="btns">
+                    <a class="c-btn pink mr-3">Add</a>
+                    <a class="c-btn green">Update</a>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                  <div class="list-group list-group-flush wrapper">
+                    <div class="list-group-item item list-group-item-action align-items-center">
+                      <img src="assets/img/shop1.jpg">
+                      <p>Pepsi</p>
+                      <i class="fas fa-trash"></i>
+                    </div>
+                    <div class="list-group-item item list-group-item-action align-items-center">
+                      <img src="assets/img/shop1.jpg">
+                      <p>Pepsi</p>
+                      <i class="fas fa-trash"></i>
+                    </div>
+                    <div class="list-group-item item list-group-item-action align-items-center">
+                      <img src="assets/img/shop1.jpg">
+                      <p>Pepsi</p>
+                      <i class="fas fa-trash"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
