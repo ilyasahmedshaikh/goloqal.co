@@ -1,15 +1,19 @@
 @import '/src/styles.scss';
 
 .create-shop {
-  padding: 30px 0;
+  padding: 32px 0;
   .heading {
     padding-bottom: 12px;
+    @include respond(mobile){
+      padding-bottom: 0px;
+    }
     h1{
-      font-size: 28px;
+      font-size: 35px;
+      letter-spacing: .1px;
       font-weight: 600;
       color: $black;
       @include respond(mobile){
-        font-size: 23px;
+        font-size: 24px;
       }
     }
   }
@@ -70,7 +74,7 @@
       }
       .wrapper{
         @include respond(mobile) {
-          margin-top: 10%;
+          margin-top: 12%;
         }
       }
     }
