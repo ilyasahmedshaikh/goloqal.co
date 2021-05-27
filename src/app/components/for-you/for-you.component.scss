@@ -8,16 +8,22 @@
       font-size: 40px;
       letter-spacing: .1px;
       color: $black;
+      @include respond(mobile){
+        font-size: 32px;
+      }
     }
   }
   .page-section {
-    padding-top: 4%;
+    padding-top: 5%;
     .heading {
       h1 {
         font-weight: 600;
         font-size: 40px;
         letter-spacing: .1px;
         color: $black;
+        @include respond(mobile){
+          font-size: 30px;
+        }
       }
       p {
         font-weight: 400;
@@ -25,6 +31,9 @@
         color: $lightBlack;
         letter-spacing: .1px;
         padding-top: 10px;
+        @include respond(mobile){
+          font-size: 17px;
+        }
       }
     }
   }
