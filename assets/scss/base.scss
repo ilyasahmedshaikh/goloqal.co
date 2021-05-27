@@ -102,6 +102,14 @@ input[type="color"]:focus,
   padding: 25px;
 }
 
+.admin-card {
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+  padding: 15px;
+}
+
+
 .custom-dropdown {
   position: relative;
   width: 100%;
