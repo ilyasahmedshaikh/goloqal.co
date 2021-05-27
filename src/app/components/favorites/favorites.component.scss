@@ -2,15 +2,21 @@
 
 .favorites {
   align-items: center;
-  padding: 30px 0;
+  padding: 35px 0;
   h1 {
-    font-size: 28px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 40px;
     letter-spacing: .1px;
     color: $black;
+    @include respond(mobile){
+      font-size: 27px;
+    }
   }
   .form-group {
     margin-bottom: 0 !important;
+    @include respond(mobile){
+      margin-top: 6%;
+    }
     .form-control {
       &.c-dropdown {
         box-shadow: 0 5px 15px 0 rgb(144 147 151 / 20%);
@@ -27,10 +33,13 @@
     padding-top: 6%;
     .heading {
       h1 {
-        font-weight: 500;
-        font-size: 28px;
+        font-weight: 600;
+        font-size: 40px;
         letter-spacing: .1px;
         color: $black;
+        @include respond(mobile) {
+          font-size: 25px;
+        }
       }
       p {
         font-weight: 400;

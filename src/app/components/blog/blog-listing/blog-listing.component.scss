@@ -13,19 +13,19 @@
     border-radius: 25px;
     margin-top: 25px;
     width: 100%;
-    height: 750px;
+    height: 700px;
     cursor: pointer;
     @include respond(tablet) {
-      height: 850px;
-    }
-    @include respond(mobile) {
       height: 800px;
     }
     .wrapper{
       padding: 30px;
       h6{
         font-weight: bold;
-        font-size: 30px;
+        font-size: 28px;
+        @include respond(tablet) {
+          font-size: 27px;
+        }
       }
       .c-btn{
         font-size: 11px;
