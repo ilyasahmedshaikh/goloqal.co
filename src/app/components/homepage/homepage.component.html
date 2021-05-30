@@ -1,3 +1,33 @@
+<div class="banner">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block" src="../../../assets/img/banner1.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block" src="../../../assets/img/banner2.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block" src="../../../assets/img/banner3.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block" src="../../../assets/img/banner4.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block" src="../../../assets/img/banner5.jpg">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
 <div class="homepage">
   <div class="container">
     <div class="row">
@@ -11,6 +41,36 @@
 
     <div class="search-bar">
       <app-search-bar></app-search-bar>
+    </div>
+
+    <div class="explore">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>Explore nearby</h1>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="top">
+            <div class="row">
+              <div class="col-6 col-md-4 col-lg-3" *ngFor="let item of data">
+                <div class="inner">
+                  <div class="row">
+                    <div class="col-4">
+                      <img src={{item.image}}>
+                    </div>
+                    <div class="col-8">
+                      <h6>{{item.name}}</h6>
+                      <p>{{item.time}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="page-section">

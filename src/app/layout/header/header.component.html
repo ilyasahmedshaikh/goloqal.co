@@ -17,12 +17,8 @@
           <div class="nav">
             <ul>
               <li><a class="text-uppercase" routerLink="/page/page-listing">My Page</a></li>
-              <li>
-                <a class="text-uppercase" routerLink="/page/nearby-page">Nearby Shops / Products</a>
-              </li>
-              <li>
-                <a class="text-uppercase" routerLink="/for-you">For You</a>
-              </li>
+              <li><a class="text-uppercase" routerLink="/page/nearby-page">Nearby Shops / Products</a></li>
+              <li><a class="text-uppercase" routerLink="/for-you">For You</a></li>
               <li><a class="text-uppercase" routerLink="/auth/login">SIGN IN</a></li>
               <li><a class="text-uppercase" routerLink="/auth/signup">JOIN</a></li>
               <li>
@@ -38,13 +34,13 @@
 </div>
 
 <div class="sidebar side" [ngClass]="{'show': sidebar}">
-  <div class="bar">
+  <!-- <div class="bar">
     <a>Things To Do/Activites</a>
     <a>My Event</a>
     <a>My Place/Community</a>
     <a>Local Services</a>
     <a>My Shop/Product</a>
-  </div>
+  </div> -->
 
   <ul>
     <li>
@@ -83,6 +79,11 @@
       </a>
     </li>
   </ul>
+
+  <div class="press text-center mt-5">
+    <a class="c-btn pink mr-2">Sign In</a>
+    <a class="c-btn green">Register</a>
+  </div>
 </div>
 
 <div class="fade-area" [ngClass]="{'show': fadeSection}" (click)="toggleMenu()"></div>
