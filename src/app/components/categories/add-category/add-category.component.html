@@ -1,31 +1,54 @@
 <div class="add-category">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-8">
-        <div class="heading">
-          <h1>{{ isEdit ? "Edit" : "Add" }} Category</h1>
+
+      <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>{{ isEdit ? "Edit" : "Add" }} Category</h1>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-12">
+          <form [formGroup]="programForm">
+            <div class="form-group pt-2">
+              <input type="text" class="form-control" placeholder="Category Name" formControlName="categoryName">
+            </div>
+
+            <div class="add-btn">
+              <button class="c-btn pink mr-3" *ngIf="!isEdit" (click)="createCategory()"
+                [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
+                Add Category
+              </button>
+
+              <button class="c-btn green" *ngIf="isEdit" (click)="updateCategory()"
+                [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
+                Update Category
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="col-12 col-md-8 col-lg-8">
-        <form [formGroup]="programForm">
-          <div class="form-group">
-            <label>Category Name</label>
-            <input type="text" class="form-control" placeholder="Category Name" formControlName="categoryName">
-          </div>
 
-          <div class="add-btn">
-            <button class="c-btn pink mr-3" *ngIf="!isEdit" (click)="createCategory()"
-              [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
-              Add Category
-            </button>
-
-            <button class="c-btn green" *ngIf="isEdit" (click)="updateCategory()"
-              [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
-              Update Category
-            </button>
+      <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="head">
+            <h1>Add A Topic</h1>
           </div>
-        </form>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-12">
+          <form>
+            <div class="form-group pt-2">
+              <input type="text" class="form-control" placeholder="Topic Name">
+            </div>
+
+            <div class="add-btn">
+              <button class="c-btn pink">Add Topic</button>
+            </div>
+          </form>
+        </div>
       </div>
+
     </div>
   </div>
 </div>

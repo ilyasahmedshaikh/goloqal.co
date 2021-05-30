@@ -1,8 +1,28 @@
 @import '../../../styles.scss';
 
+.banner{
+  img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5);
+    @include respond(tablet){
+      height: 35vh;
+    }
+    @include respond(mobile){
+      height: 25vh;
+    }
+  }
+}
+
 .homepage {
-  padding:  5% 0 5% 0;
+  padding:  3% 0 5% 0;
+  @include respond(mobile){
+   padding-top: 7%;
+  }
   .top-heading-bar {
+    // padding-top: 5%;
     h1 {
       font-weight: 600;
       font-size: 60px;
@@ -24,6 +44,7 @@
       }
     }
   }
+
   .search-bar {
     margin-top: 35px;
   }
@@ -51,6 +72,57 @@
         @include respond(mobile) {
           font-size: 18px;
           padding-top: 6px;
+        }
+      }
+    }
+  }
+
+  .explore{
+    padding-top: 6%;
+    @include respond(mobile) {
+      padding-top: 13%;
+    }
+    .heading {
+      h1 {
+        font-weight: 600;
+        font-size: 40px;
+        letter-spacing: .1px;
+        color: $black;
+        @include respond(mobile) {
+          font-size: 26px;
+        }
+      }
+    }
+    .top{
+      padding-top: 15px;
+      @include respond(tablet) {
+        padding-top: 5px;
+      }
+      .inner{
+        padding-top: 25px;
+        cursor: pointer;
+        img{
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 5px;
+          @include respond(mobile) {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        h6{
+          font-weight: 600;
+          font-size: 15px;
+          padding-top: 10px;
+          @include respond(mobile) {
+            font-size: 13px;
+          }
+        }
+        p{
+          font-size: 13px;
+          font-weight: 500;
         }
       }
     }

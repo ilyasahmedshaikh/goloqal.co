@@ -1,6 +1,9 @@
 @import '../../../styles.scss';
 
 .search-bar {
+  @include respond(tablet){
+    position: relative;
+  }
   .search-input {
     input {
       width: 100%;
@@ -14,11 +17,43 @@
       font-size: 20px;
       letter-spacing: 0.1px;
       color: $lightBlack;
+      @include respond(mobile){
+        font-size: 14px;
+      }
     }
   }
   .custom-dropdown{
+    @include respond(tablet){
+      margin-top: 15px;
+    }
+  }
+  .search-icon{
+    margin-top: 24px;
+    a{
+      cursor: pointer;
+      box-shadow: 0 5px 15px 0 rgb(144 147 151 / 20%);
+      font-size: 21px;
+      padding: 26px 35px 26px 35px;;
+      border-radius: 7px;
+      background-color: #f5f5f5;
+      border: 0;
+      color: $gray;
+      @include respond(tablet){
+        box-shadow: 0 1px 5px 0 rgb(144 147 151 / 20%);
+        font-size: 18px;
+        padding: 30px 30px 29px 30px;
+      }
+    }
+  }
+  .change{
+    @include respond(tablet){
+      position: absolute;
+      top: 3px;
+      right: 42px;
+    }
     @include respond(mobile){
-      margin-top: 10px;
+      position: absolute;
+      right: 44px;
     }
   }
 }
