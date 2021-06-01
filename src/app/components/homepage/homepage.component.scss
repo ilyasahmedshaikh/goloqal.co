@@ -3,7 +3,7 @@
 .banner{
   img{
     width: 100%;
-    height: 50vh;
+    height: 45vh;
     object-fit: cover;
     object-position: center;
     @include respond(tablet){
@@ -36,7 +36,7 @@
       font-size: 22px;
       color: $lightBlack;
       letter-spacing: .1px;
-      padding-top: 20px;
+      padding-top: 5px;
       @include respond(mobile){
         font-size: 20px;
         padding-top: 11px;
