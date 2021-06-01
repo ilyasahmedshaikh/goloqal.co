@@ -162,49 +162,49 @@ export class HomepageComponent implements OnInit {
     this.data =[
       {
         id: 1,
-        image: '../../../assets/img/explore1.jpg',
+        image: 'assets/img/explore1.jpg',
         name: 'Hua Hin',
         time: '2.5 hour drive'
       },
       {
         id: 2,
-        image: '../../../assets/img/explore2.jpg',
+        image: 'assets/img/explore2.jpg',
         name: 'Bankok',
         time: '2 hour drive'
       },
       {
         id: 3,
-        image: '../../../assets/img/explore3.jpg',
+        image: 'assets/img/explore3.jpg',
         name: 'Cha-am',
         time: '1.5 hour drive'
       },
       {
         id: 4,
-        image: '../../../assets/img/explore4.jpg',
+        image: 'assets/img/explore4.jpg',
         name: 'Pak Chong',
         time: '3.5 hour drive'
       },
       {
         id: 5,
-        image: '../../../assets/img/explore5.jpg',
+        image: 'assets/img/explore5.jpg',
         name: 'Klaeng',
         time: '2 hour drive'
       },
       {
         id: 6,
-        image: '../../../assets/img/explore6.jpg',
+        image: 'assets/img/explore6.jpg',
         name: 'Pran Buri',
         time: '4 hour drive'
       },
       {
         id: 7,
-        image: '../../../assets/img/explore7.jpg',
+        image: 'assets/img/explore7.jpg',
         name: 'Sattahip',
         time: '3.5 hour drive'
       },
       {
         id: 8,
-        image: '../../../assets/img/explore9.jpg',
+        image: 'assets/img/explore9.jpg',
         name: 'Kanchanaburi',
         time: '1.5 hour drive'
       }
