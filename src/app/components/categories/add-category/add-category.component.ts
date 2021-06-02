@@ -11,6 +11,11 @@ import { ApiService } from '../../../core/http/api/api.service';
 })
 export class AddCategoryComponent implements OnInit {
 
+  categoryPreview: any = "assets/img/img-upload-icon.png";
+  categoryImageUploaded: boolean = false;
+  topicPreview: any = "assets/img/img-upload-icon.png";
+  topicImageUploaded: boolean = false;
+  // loading: any = "assets/img/loading.gif";
   programForm: any = FormGroup;
   editObj: any = {};
   isEdit: boolean = false;
@@ -72,6 +77,28 @@ export class AddCategoryComponent implements OnInit {
     .catch((error) => {
       alert(error);
     });
+  }
+
+  categoryReadURL(event: any): void {
+    if (event.target['files'] && event.target['files'][0]) {
+      const file = event.target['files'][0];
+
+      const reader = new FileReader();
+      reader.onload = e => this.categoryPreview = reader.result;
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  topicReadURL(event: any): void {
+    if (event.target['files'] && event.target['files'][0]) {
+      const file = event.target['files'][0];
+
+      const reader = new FileReader();
+      reader.onload = e => this.topicPreview = reader.result;
+
+      reader.readAsDataURL(file);
+    }
   }
 
 }
