@@ -13,12 +13,19 @@ export class AddCategoryComponent implements OnInit {
 
   categoryPreview: any = "assets/img/img-upload-icon.png";
   categoryImageUploaded: boolean = false;
+
   topicPreview: any = "assets/img/img-upload-icon.png";
   topicImageUploaded: boolean = false;
   // loading: any = "assets/img/loading.gif";
+
   programForm: any = FormGroup;
+  topicForm: any = FormGroup;
+
   editObj: any = {};
   isEdit: boolean = false;
+
+  editTopicObj: any = {};
+  isEditTopic: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -26,24 +33,41 @@ export class AddCategoryComponent implements OnInit {
     private config: ConfigService,
     private api: ApiService,
   ) {
-    this.editObj = this.router.getCurrentNavigation().extras.state;
+    this.editObj = this.router.getCurrentNavigation().extras.state.category;
+    this.editTopicObj = this.router.getCurrentNavigation().extras.state.topic;
   }
 
   ngOnInit(): void {
     this.formInit();
 
     if(this.editObj) {
+      console.log('editObj');
+
       this.programForm.patchValue({
         categoryName: this.editObj.name
       });
 
       this.isEdit = true;
     }
+
+    if(this.editTopicObj) {
+      console.log('editTopicObj');
+
+      this.topicForm.patchValue({
+        name: this.editTopicObj.name
+      });
+
+      this.isEditTopic = true;
+    }
   }
 
   formInit() {
     this.programForm = this.fb.group({
       categoryName: ['', Validators.required],
+    });
+
+    this.topicForm = this.fb.group({
+      name: ['', Validators.required],
     });
   }
 
@@ -56,6 +80,20 @@ export class AddCategoryComponent implements OnInit {
 
     request.then(() => {
       this.programForm.reset();
+      this.router.navigateByUrl("/categories/category-listing");
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
+  createTopic() {
+    let data = this.topicForm.value;
+
+    let request = this.api.post(this.config.collections.topics_table, data);
+
+    request.then(() => {
+      this.topicForm.reset();
       this.router.navigateByUrl("/categories/category-listing");
     })
     .catch((error) => {
@@ -77,6 +115,10 @@ export class AddCategoryComponent implements OnInit {
     .catch((error) => {
       alert(error);
     });
+  }
+
+  updateTopic() {
+
   }
 
   categoryReadURL(event: any): void {

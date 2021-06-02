@@ -8,6 +8,7 @@ export class ConfigService {
   collections: any = {
     categories_table: "categories",
     users_table: "users",
+    topics_table: "topics",
   }
 
   constructor() { }

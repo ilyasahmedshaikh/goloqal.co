@@ -44,7 +44,7 @@
         <div class="plain-card">
           <div class="col-12 col-md-12 col-lg-12">
             <div class="heading">
-              <h1>Add A Topic</h1>
+              <h1>{{ isEditTopic ? "Edit" : "Add" }} Topic</h1>
             </div>
           </div>
 
@@ -57,13 +57,21 @@
               </a>
             </div>
 
-            <form>
+            <form [formGroup]="topicForm">
               <div class="form-group pt-4">
-                <input type="text" class="form-control" placeholder="Topic Name">
+                <input type="text" class="form-control" placeholder="Topic Name" formControlName="name">
               </div>
 
               <div class="add-btn">
-                <button class="c-btn pink">Add Topic</button>
+                <button class="c-btn pink mr-3" *ngIf="!isEditTopic" (click)="createTopic()"
+                  [disabled]="topicForm.invalid" [ngClass]="{'disable-opacity': topicForm.invalid}">
+                  Add Topic
+                </button>
+
+                <button class="c-btn green" *ngIf="isEditTopic" (click)="updateTopic()"
+                  [disabled]="topicForm.invalid" [ngClass]="{'disable-opacity': topicForm.invalid}">
+                  Update Topic
+                </button>
               </div>
             </form>
           </div>

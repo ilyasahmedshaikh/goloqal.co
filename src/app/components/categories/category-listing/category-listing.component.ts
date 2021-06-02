@@ -9,7 +9,8 @@ import { ApiService } from '../../../core/http/api/api.service';
 })
 export class CategoryListingComponent implements OnInit {
 
-  data: any = [];
+  category: any = [];
+  topics: any = [];
 
   constructor(
     private router: Router,
@@ -19,14 +20,15 @@ export class CategoryListingComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();
+    this.getTopics();
   }
 
   getCategories() {
-    this.data = this.api.getAll(this.config.collections.categories_table);
+    this.category = this.api.getAll(this.config.collections.categories_table);
   }
 
   edit(item) {
-    this.router.navigate(['/categories/add-category'], { state: item })
+    this.router.navigate(['/categories/add-category'], { state: {category: item} })
   }
 
   deleteCategory(id) {
@@ -35,6 +37,26 @@ export class CategoryListingComponent implements OnInit {
     request.then(() => {
       console.log('deleted successfully');
       this.getCategories();
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
+  getTopics() {
+    this.topics = this.api.getAll(this.config.collections.topics_table);
+  }
+
+  editTopic(item) {
+    this.router.navigate(['/categories/add-category'], { state: {topic: item} })
+  }
+
+  deleteTopic(id) {
+    let request = this.api.delete(this.config.collections.topics_table, id);
+
+    request.then(() => {
+      console.log('deleted successfully');
+      this.getTopics();
     })
     .catch((error) => {
       alert(error);

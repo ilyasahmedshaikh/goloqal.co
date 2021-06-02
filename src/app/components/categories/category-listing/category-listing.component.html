@@ -1,12 +1,11 @@
 <div class="category-listing">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 col-md-6 col-lg-6">
         <div class="heading">
           <h1>Category Listing</h1>
         </div>
-      </div>
-      <div class="col-12">
+
         <table class="table">
           <thead>
             <tr>
@@ -15,11 +14,34 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of data">
+            <tr *ngFor="let item of category">
               <td>{{item.name}}</td>
               <td>
                 <a class="far fa-edit mr-4" (click)="edit(item)"></a>
                 <a class="fas fa-trash-alt" (click)="deleteCategory(item.id)"></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="heading">
+          <h1>Topics Listing</h1>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Topics Name</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of topics">
+              <td>{{item.name}}</td>
+              <td>
+                <a class="far fa-edit mr-4" (click)="editTopic(item)"></a>
+                <a class="fas fa-trash-alt" (click)="deleteTopic(item.id)"></a>
               </td>
             </tr>
           </tbody>
