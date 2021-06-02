@@ -2,50 +2,71 @@
   <div class="container">
     <div class="row justify-content-center">
 
-      <div class="col-12 col-lg-6">
-        <div class="col-12 col-md-12 col-lg-12">
-          <div class="heading">
-            <h1>{{ isEdit ? "Edit" : "Add" }} Category</h1>
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="plain-card">
+          <div class="col-12 col-md-12 col-lg-12">
+            <div class="heading">
+              <h1>{{ isEdit ? "Edit" : "Add" }} Category</h1>
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-12">
-          <form [formGroup]="programForm">
-            <div class="form-group pt-2">
-              <input type="text" class="form-control" placeholder="Category Name" formControlName="categoryName">
+
+          <div class="col-12 col-md-12 col-lg-12">
+            <div class="add-img">
+              <input class="d-none" type="file" accept="image/*" #file (change)="categoryReadURL($event)">
+              <a (click)="file.click()">
+                <img *ngIf="!categoryImageUploaded" src={{categoryPreview}}>
+                <!-- <img *ngIf="categoryImageUploaded" src={{loading}}> -->
+              </a>
             </div>
 
-            <div class="add-btn">
-              <button class="c-btn pink mr-3" *ngIf="!isEdit" (click)="createCategory()"
-                [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
-                Add Category
-              </button>
+            <form [formGroup]="programForm">
+              <div class="form-group pt-4">
+                <input type="text" class="form-control" placeholder="Category Name" formControlName="categoryName">
+              </div>
 
-              <button class="c-btn green" *ngIf="isEdit" (click)="updateCategory()"
-                [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
-                Update Category
-              </button>
-            </div>
-          </form>
+              <div class="add-btn">
+                <button class="c-btn pink mr-3" *ngIf="!isEdit" (click)="createCategory()"
+                  [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
+                  Add Category
+                </button>
+
+                <button class="c-btn green" *ngIf="isEdit" (click)="updateCategory()"
+                  [disabled]="programForm.invalid" [ngClass]="{'disable-opacity': programForm.invalid}">
+                  Update Category
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
-      <div class="col-12 col-lg-6">
-        <div class="col-12 col-md-12 col-lg-12">
-          <div class="head">
-            <h1>Add A Topic</h1>
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="plain-card">
+          <div class="col-12 col-md-12 col-lg-12">
+            <div class="heading">
+              <h1>Add A Topic</h1>
+            </div>
           </div>
-        </div>
 
-        <div class="col-12 col-md-12 col-lg-12">
-          <form>
-            <div class="form-group pt-2">
-              <input type="text" class="form-control" placeholder="Topic Name">
+          <div class="col-12 col-md-12 col-lg-12">
+            <div class="add-img">
+              <input class="d-none" type="file" accept="image/*" #file1 (change)="topicReadURL($event)">
+              <a (click)="file1.click()">
+                <img *ngIf="!topicImageUploaded" src={{topicPreview}}>
+                <!-- <img *ngIf="topicImageUploaded" src={{loading}}> -->
+              </a>
             </div>
 
-            <div class="add-btn">
-              <button class="c-btn pink">Add Topic</button>
-            </div>
-          </form>
+            <form>
+              <div class="form-group pt-4">
+                <input type="text" class="form-control" placeholder="Topic Name">
+              </div>
+
+              <div class="add-btn">
+                <button class="c-btn pink">Add Topic</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
