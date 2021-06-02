@@ -29,17 +29,15 @@ export class CreatePageComponent implements OnInit {
     this.programForm = this.fb.group({
       selectTopic: ['', Validators.required],
       selectCategory: ['', Validators.required],
-      addMainImg: ['', Validators.required],
       title: ['', Validators.required],
       startDateTime: ['', Validators.required],
       endDateTime: ['', Validators.required],
-      categoryType: [false, Validators.required],
+      everyDay: [false, Validators.required],
       extraAvailability: ['', Validators.required],
       description: ['', Validators.required],
       descriptionUrl: ['', Validators.required],
       address1: ['', Validators.required],
       address2: ['', Validators.required],
-      addProductImg: ['', Validators.required],
       name: ['', Validators.required],
       price: ['', Validators.required],
     });

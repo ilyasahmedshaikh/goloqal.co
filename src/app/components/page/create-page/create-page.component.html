@@ -40,7 +40,7 @@
 
           <div class="plain-card">
             <div class="add-img">
-              <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)" formControlName="addMainImg">
+              <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
               <a (click)="file.click()">
                   <img *ngIf="!imageUploaded" src={{preview}}>
                   <!-- <img *ngIf="imageUploaded" src={{loading}}> -->
@@ -208,7 +208,7 @@
               <div class="row">
                 <div class="col-12 col-md-6 col-lg-6">
                   <div class="add-img">
-                    <input class="d-none" type="file" accept="image/*" #file1 (change)="productReadURL($event)" formControlName="addProductImg">
+                    <input class="d-none" type="file" accept="image/*" #file1 (change)="productReadURL($event)">
                     <a (click)="file1.click()">
                         <img *ngIf="!productImageUploaded" src={{productPreview}}>
                         <!-- <img *ngIf="productImageUploaded" src={{loading}}> -->
