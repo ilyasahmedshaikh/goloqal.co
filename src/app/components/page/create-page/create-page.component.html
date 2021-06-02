@@ -10,13 +10,13 @@
 
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-10">
-        <form>
+        <form [formGroup]="programForm">
           <div class="plain-card">
             <div class="row">
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="form-group">
                   <label>Select Topic</label>
-                  <select class="form-control c-dropdown">
+                  <select class="form-control c-dropdown" formControlName="selectTopic">
                     <option selected>Select Topic</option>
                     <option>Topic 1</option>
                     <option>Topic 2</option>
@@ -27,7 +27,7 @@
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="form-group">
                   <label>Select Category</label>
-                  <select class="form-control c-dropdown">
+                  <select class="form-control c-dropdown" formControlName="selectCategory">
                     <option selected>Select Category</option>
                     <option>Category 1</option>
                     <option>Category 2</option>
@@ -40,7 +40,7 @@
 
           <div class="plain-card">
             <div class="add-img">
-              <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
+              <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)" formControlName="addMainImg">
               <a (click)="file.click()">
                   <img *ngIf="!imageUploaded" src={{preview}}>
                   <!-- <img *ngIf="imageUploaded" src={{loading}}> -->
@@ -54,27 +54,27 @@
               <div class="col-12 col-md-12 col-lg-12">
                 <div class="form-group">
                   <label>Title</label>
-                  <input type="text" class="form-control" placeholder="Title">
+                  <input type="text" class="form-control" placeholder="Title" formControlName="title">
                 </div>
               </div>
 
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="form-group">
                   <label>Start Date Time</label>
-                  <input type="datetime-local" class="form-control">
+                  <input type="datetime-local" class="form-control" formControlName="startDateTime">
                 </div>
               </div>
 
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="form-group">
                   <label>End Date Time</label>
-                  <input type="datetime-local" class="form-control">
+                  <input type="datetime-local" class="form-control" formControlName="endDateTime">
                 </div>
               </div>
 
               <div class="col-12 pt-2">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="openEveryDay">
+                  <input class="form-check-input" type="checkbox" value="openEveryDay" formControlName="everyDay">
                   <label class="form-check-label">
                     Open Everyday
                   </label>
@@ -82,7 +82,7 @@
 
                 <div class="form-group pt-3">
                   <label>Extra Availability</label>
-                  <textarea class="form-control" rows="5" placeholder="Type your extra availability"></textarea>
+                  <textarea class="form-control" rows="5" placeholder="Type your extra availability" formControlName="extraAvailability"></textarea>
                 </div>
               </div>
             </div>
@@ -177,27 +177,27 @@
               <div class="col-12">
                 <div class="form-group">
                   <label>Description</label>
-                  <textarea type="text" class="form-control" placeholder="Description" rows="3"></textarea>
+                  <textarea type="text" class="form-control" placeholder="Description" rows="3" formControlName="description"></textarea>
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="form-group">
                   <!-- <label>Description URL</label> -->
-                  <input type="link" class="form-control" placeholder="Description URL">
+                  <input type="link" class="form-control" placeholder="Description URL" formControlName="descriptionUrl">
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="form-group">
                   <label>Location</label>
-                  <input type="text" class="form-control" placeholder="Address 1">
+                  <input type="text" class="form-control" placeholder="Address 1" formControlName="address1">
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Address 2">
+                  <input type="text" class="form-control" placeholder="Address 2" formControlName="address2">
                 </div>
               </div>
             </div>
@@ -208,7 +208,7 @@
               <div class="row">
                 <div class="col-12 col-md-6 col-lg-6">
                   <div class="add-img">
-                    <input class="d-none" type="file" accept="image/*" #file1 (change)="productReadURL($event)">
+                    <input class="d-none" type="file" accept="image/*" #file1 (change)="productReadURL($event)" formControlName="addProductImg">
                     <a (click)="file1.click()">
                         <img *ngIf="!productImageUploaded" src={{productPreview}}>
                         <!-- <img *ngIf="productImageUploaded" src={{loading}}> -->
@@ -216,11 +216,11 @@
                   </div>
                   <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" class="form-control" placeholder="Name" formControlName="name">
                   </div>
                   <div class="form-group">
                     <label>Price</label>
-                    <input type="text" class="form-control" placeholder="Price">
+                    <input type="text" class="form-control" placeholder="Price" formControlName="price">
                   </div>
                   <div class="btns text-center">
                     <a class="c-btn pink mr-3">Add</a>

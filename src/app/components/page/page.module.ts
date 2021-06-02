@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../../shared/shared.module';
 
@@ -16,7 +17,9 @@ import { PageListingComponent } from './page-listing/page-listing.component';
   imports: [
     CommonModule,
     PageRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PageModule { }
