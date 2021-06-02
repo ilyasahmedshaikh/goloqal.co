@@ -33,16 +33,14 @@ export class AddCategoryComponent implements OnInit {
     private config: ConfigService,
     private api: ApiService,
   ) {
-    this.editObj = this.router.getCurrentNavigation().extras.state.category;
-    this.editTopicObj = this.router.getCurrentNavigation().extras.state.topic;
+    this.editObj = this.router.getCurrentNavigation().extras.state?.category;
+    this.editTopicObj = this.router.getCurrentNavigation().extras.state?.topic;
   }
 
   ngOnInit(): void {
     this.formInit();
 
     if(this.editObj) {
-      console.log('editObj');
-
       this.programForm.patchValue({
         categoryName: this.editObj.name
       });
@@ -51,8 +49,6 @@ export class AddCategoryComponent implements OnInit {
     }
 
     if(this.editTopicObj) {
-      console.log('editTopicObj');
-
       this.topicForm.patchValue({
         name: this.editTopicObj.name
       });
@@ -101,7 +97,7 @@ export class AddCategoryComponent implements OnInit {
     });
   }
 
-  updateCategory(id) {
+  updateCategory() {
     let data = {
       name: this.programForm.value.categoryName
     }
@@ -118,7 +114,17 @@ export class AddCategoryComponent implements OnInit {
   }
 
   updateTopic() {
+    let data = this.topicForm.value
 
+    let request = this.api.put(this.config.collections.topics_table, this.editTopicObj.id, data);
+
+    request.then(() => {
+      this.topicForm.reset();
+      this.router.navigateByUrl("/categories/category-listing");
+    })
+    .catch((error) => {
+      alert(error);
+    });
   }
 
   categoryReadURL(event: any): void {
