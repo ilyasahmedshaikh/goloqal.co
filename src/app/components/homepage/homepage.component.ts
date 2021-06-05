@@ -80,6 +80,10 @@ export class HomepageComponent implements OnInit {
     ]
   }
 
+  view(item) {
+    this.router.navigate(['/page/page-details'], { state: {page: item} })
+  }
+
   getPages() {
     this.pages = this.api.getAll(this.config.collections.pages_table);
 

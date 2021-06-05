@@ -13,6 +13,9 @@ export class CreatePageComponent implements OnInit {
   categories: any = [];
   topics: any = [];
 
+  editObj: any = {};
+  isEdit: boolean = false;
+
   // loading: any = "assets/img/loading.gif";
   preview: any = "assets/img/img-upload-icon.png";
   productPreview: any = "assets/img/img-upload-icon.png";
@@ -27,12 +30,23 @@ export class CreatePageComponent implements OnInit {
     private config: ConfigService,
     private api: ApiService,
     private router: Router
-  ) { }
+  ) {
+    this.editObj = this.router.getCurrentNavigation().extras.state?.page;
+  }
 
   ngOnInit(): void {
     this.formInit();
     this.getCategories();
     this.getTopics();
+
+    if(this.editObj) {
+      this.programForm.patchValue({
+        ...this.editObj
+      });
+      this.isEdit = true;
+
+      console.log('create page', this.editObj);
+    }
   }
 
   formInit() {
@@ -43,6 +57,7 @@ export class CreatePageComponent implements OnInit {
       startDateTime: ['', Validators.required],
       endDateTime: ['', Validators.required],
       everyDay: [false, Validators.required],
+      featured: [false, Validators.required],
       extraAvailability: ['', Validators.required],
       description: ['', Validators.required],
       descriptionUrl: ['', Validators.required],

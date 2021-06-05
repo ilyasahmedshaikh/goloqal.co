@@ -81,8 +81,8 @@
             <p>Top experiences around Atlanta</p>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of events" routerLink="/page/page-details">
-          <app-custom-card [data]="item"></app-custom-card>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of events">
+          <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
         </div>
       </div>
     </div>

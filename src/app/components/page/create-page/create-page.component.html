@@ -64,15 +64,29 @@
                 </div>
               </div>
 
-              <div class="col-12 pt-2">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="openEveryDay" formControlName="everyDay">
-                  <label class="form-check-label">
-                    Open Everyday
-                  </label>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="openEveryDay" formControlName="everyDay">
+                      <label class="form-check-label">
+                        Open Everyday
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="featured" formControlName="featured">
+                      <label class="form-check-label">
+                        Featured
+                      </label>
+                    </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="form-group pt-3">
+              <div class="col-12 pt-2">
+                <div class="form-group">
                   <label>Extra Availability</label>
                   <textarea class="form-control" rows="5" placeholder="Type your extra availability" formControlName="extraAvailability"></textarea>
                 </div>
@@ -244,9 +258,10 @@
         </form>
         <div class="btns">
           <a class="c-btn pink mr-3">Cancel</a>
-          <a class="c-btn green mr-3" (click)="createPage()">Create</a>
-          <a class="c-btn pink mr-3" >Preview</a>
-          <a class="c-btn green">Update</a>
+          <a class="c-btn green mr-3" *ngIf="!isEdit" (click)="createPage()">Create</a>
+          <a class="c-btn green mr-3" *ngIf="!isEdit">Preview</a>
+          <a class="c-btn green mr-3" *ngIf="isEdit">Update</a>
+          <a class="c-btn pink" *ngIf="isEdit">Delete</a>
         </div>
       </div>
     </div>
