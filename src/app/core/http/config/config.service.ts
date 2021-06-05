@@ -9,6 +9,7 @@ export class ConfigService {
     categories_table: "categories",
     users_table: "users",
     topics_table: "topics",
+    pages_table: "pages",
   }
 
   constructor() { }

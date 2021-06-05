@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { ConfigService } from '../../../core/http/config/config.service'
+import { ApiService } from '../../../core/http/api/api.service';
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
   styleUrls: ['./create-page.component.scss']
 })
 export class CreatePageComponent implements OnInit {
+
+  categories: any = [];
+  topics: any = [];
 
   // loading: any = "assets/img/loading.gif";
   preview: any = "assets/img/img-upload-icon.png";
@@ -19,16 +23,20 @@ export class CreatePageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private config: ConfigService,
+    private api: ApiService
   ) { }
 
   ngOnInit(): void {
     this.formInit();
+    this.getCategories();
+    this.getTopics();
   }
 
   formInit() {
     this.programForm = this.fb.group({
-      selectTopic: ['', Validators.required],
-      selectCategory: ['', Validators.required],
+      topic_id:  ['', Validators.required],
+      category_id: ['', Validators.required],
       title: ['', Validators.required],
       startDateTime: ['', Validators.required],
       endDateTime: ['', Validators.required],
@@ -40,7 +48,31 @@ export class CreatePageComponent implements OnInit {
       address2: ['', Validators.required],
       name: ['', Validators.required],
       price: ['', Validators.required],
+      button1WebsiteName: ['', Validators.required],
+      button1WebsiteUrl: ['', Validators.required],
+      button2Call: ['', Validators.required],
+      button2TelephoneNumber: ['', Validators.required],
+      button3FacebookInstagram: ['', Validators.required],
+      button3FacebookInstagramUrl: ['', Validators.required],
+      button4Line: ['', Validators.required],
+      button4LineUrl: ['', Validators.required],
+      button5Chat: ['', Validators.required],
+      button5ChatUrl: ['', Validators.required],
+      button6Ticket: ['', Validators.required],
+      button6TicketUrl: ['', Validators.required],
     });
+  }
+
+  getCategories() {
+    this.categories = this.api.getAll(this.config.collections.categories_table);
+  }
+
+  getTopics() {
+    this.topics = this.api.getAll(this.config.collections.topics_table);
+  }
+
+  create() {
+    console.log(this.programForm.value)
   }
 
   readURL(event: any): void {
