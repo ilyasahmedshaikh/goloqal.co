@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
@@ -24,7 +25,8 @@ export class CreatePageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private config: ConfigService,
-    private api: ApiService
+    private api: ApiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -71,8 +73,20 @@ export class CreatePageComponent implements OnInit {
     this.topics = this.api.getAll(this.config.collections.topics_table);
   }
 
-  create() {
-    console.log(this.programForm.value)
+  createPage() {
+    let data = this.programForm.value;
+
+    let request = this.api.post(this.config.collections.pages_table, data);
+
+    request.then(() => {
+      this.programForm.reset();
+      this.router.navigateByUrl("/homepage");
+
+      // console.log(this.createPage)
+    })
+    .catch((error) => {
+      alert(error);
+    });
   }
 
   readURL(event: any): void {

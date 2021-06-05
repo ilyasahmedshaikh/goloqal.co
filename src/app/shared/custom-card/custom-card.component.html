@@ -1,11 +1,11 @@
 <div class="custom-card">
-  <div class="img-section" style="background-image: url('{{data.image}}');">
+  <div class="img-section" style="background-image: url('assets/img/man1.png');">
     <div class="icon-bar">
       <div class="row">
         <div class="col-6">
           <p>
             <i class="fas fa-user"></i>
-            {{data.created_by}}
+            EventBrite
           </p>
         </div>
         <div class="col-6">
@@ -25,11 +25,11 @@
       <div class="row">
         <div class="col-6">
           <span class="icon"><i class="far fa-calendar-alt"></i></span>
-          <span class="text">{{data.start_date}}</span>
+          <span class="text">{{data.startDateTime | date: 'longDate'}}</span>
         </div>
         <div class="col-6">
           <span class="icon"><i class="far fa-clock"></i></span>
-          <span class="text">{{data.start_time}}</span>
+          <span class="text">{{data.startDateTime | date: 'shortTime'}}</span>
         </div>
       </div>
     </div>
