@@ -9,15 +9,10 @@
         </div>
         <div class="col-12 col-md-4 col-lg-4">
           <div class="dropdown">
-            <form>
+            <form [formGroup]="programForm">
               <div class="form-group">
-                <select class="form-control c-dropdown">
-                  <option selected>Select Category</option>
-                  <option>Shops / Product</option>
-                  <option>Events</option>
-                  <option>Services</option>
-                  <option>Things to do / Activities</option>
-                  <option>Places / Communities</option>
+                <select class="form-control c-dropdown" formControlName="category_id">
+                  <option [value]="item.id" *ngFor="let item of categories">{{item.name}}</option>
                 </select>
               </div>
             </form>
