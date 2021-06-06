@@ -266,8 +266,8 @@
           <a class="c-btn pink mr-3">Cancel</a>
           <a class="c-btn green mr-3" *ngIf="!isEdit" (click)="createPage()">Create</a>
           <a class="c-btn green mr-3" *ngIf="!isEdit">Preview</a>
-          <a class="c-btn green mr-3" *ngIf="isEdit">Update</a>
-          <a class="c-btn pink" *ngIf="isEdit">Delete</a>
+          <a class="c-btn green mr-3" *ngIf="isEdit" (click)="updatePage()">Update</a>
+          <a class="c-btn pink" *ngIf="isEdit" (click)="deletePage()">Delete</a>
         </div>
       </div>
     </div>

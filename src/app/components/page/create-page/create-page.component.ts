@@ -105,6 +105,34 @@ export class CreatePageComponent implements OnInit {
     });
   }
 
+  updatePage() {
+    let data = {
+      ...this.programForm.value
+    }
+
+    let request = this.api.put(this.config.collections.pages_table, this.editObj.id, data);
+
+    request.then(() => {
+      this.programForm.reset();
+      this.router.navigateByUrl("/homepage");
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
+  deletePage() {
+    let request = this.api.delete(this.config.collections.pages_table, this.editObj.id);
+
+    request.then(() => {
+      console.log('deleted successfully');
+      this.router.navigateByUrl("/homepage");
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
   readURL(event: any): void {
     if (event.target['files'] && event.target['files'][0]) {
       const file = event.target['files'][0];
