@@ -61,6 +61,7 @@ export class CreatePageComponent implements OnInit {
       extraAvailability: ['', Validators.required],
       description: ['', Validators.required],
       descriptionUrl: ['', Validators.required],
+      locationUrl: ['', Validators.required],
       address1: ['', Validators.required],
       address2: ['', Validators.required],
       name: ['', Validators.required],

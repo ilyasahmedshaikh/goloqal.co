@@ -24,7 +24,7 @@
                 <div class="row justify-content-center">
                   <h6 class="text-center">
                     <i class="fas fa-star"></i>
-                    <span>{{data.title}}</span>
+                    <!-- <span>{{data.title}}</span> -->
                   </h6>
                 </div>
               </div>
@@ -115,13 +115,12 @@
                 <span><i class="fas fa-edit"></i>Description</span>
               </div>
               <div class="col-5">
-                <a class="right">More Info<i class="fas fa-chevron-right"></i></a>
+                <a [href]=data.descriptionUrl class="right">More Info<i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
             <div class="col-12">
               <div class="row">
-                <h6>Chastain Park Spring Arts & Crafts Festival 2021 is happening on Saturday, May 15, 2021 at 10:00AM
-                  EDT at Chastain Park.</h6>
+                <h6>{{data.description}}</h6>
               </div>
             </div>
           </div>
@@ -140,12 +139,12 @@
                 <span class="left"><i class="fas fa-map-marker"></i>Location</span>
               </div>
               <div class="col-6">
-                <a class="right">Directions<i class="fas fa-chevron-right"></i></a>
+                <a [href]=data.locationUrl class="right">Directions<i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
             <div class="col-12">
-              <h4 class="text-center pt-3">Chastain Park</h4>
-              <h6 class="text-center">4469 Stella DriveATLANTA, Georgia, 30327</h6>
+              <h4 class="text-center pt-3">{{data.address1}}</h4>
+              <h6 class="text-center">{{data.address2}}</h6>
             </div>
           </div>
         </div>
