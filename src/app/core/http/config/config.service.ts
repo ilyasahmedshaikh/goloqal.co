@@ -10,6 +10,7 @@ export class ConfigService {
     users_table: "users",
     topics_table: "topics",
     pages_table: "pages",
+    blogs_table: "blogs",
   }
 
   constructor() { }

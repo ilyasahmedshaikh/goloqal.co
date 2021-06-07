@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+import { ConfigService } from '../../../core/http/config/config.service'
+import { ApiService } from '../../../core/http/api/api.service';
 
 @Component({
   selector: 'app-blog-listing',
@@ -9,7 +12,11 @@ export class BlogListingComponent implements OnInit {
 
   data: any = [];
 
-  constructor() { }
+  constructor(
+    private config: ConfigService,
+    private api: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.data =[

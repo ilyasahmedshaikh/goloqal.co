@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
@@ -12,7 +14,9 @@ import { CreateBlogComponent } from './create-blog/create-blog.component';
   declarations: [BlogComponent, BlogDetailsComponent, BlogListingComponent, CreateBlogComponent],
   imports: [
     CommonModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class BlogModule { }
