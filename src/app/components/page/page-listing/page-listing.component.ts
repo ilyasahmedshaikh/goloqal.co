@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
@@ -21,6 +22,7 @@ export class PageListingComponent implements OnInit {
     private fb: FormBuilder,
     private config: ConfigService,
     private api: ApiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,10 @@ export class PageListingComponent implements OnInit {
     this.programForm = this.fb.group({
       category_id: ['', Validators.required]
     });
+  }
+
+  view(item) {
+    this.router.navigate(['/page/page-details'], { state: {page: item} })
   }
 
   getCategories() {
