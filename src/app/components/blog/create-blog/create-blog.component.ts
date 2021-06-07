@@ -66,7 +66,7 @@ export class CreateBlogComponent implements OnInit {
       this.programForm.reset();
       this.router.navigateByUrl("/blogs");
 
-      console.log(this.createBlog)
+      console.log(data)
     })
     .catch((error) => {
       alert(error);

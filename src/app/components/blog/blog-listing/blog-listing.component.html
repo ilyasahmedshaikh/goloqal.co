@@ -9,15 +9,15 @@
       <div class="col-12">
         <div class="cards">
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-6" *ngFor="let item of data" routerLink="/blogs/blog-details">
+            <div class="col-12 col-md-6 col-lg-6" *ngFor="let item of blogs" routerLink="/blogs/blog-details">
               <div class="cards-inner">
                 <img src="assets/img/blog1.jpg">
                 <div class="wrapper">
-                  <h6>{{item.title}}</h6>
+                  <h6>{{item.blogTitle}}</h6>
                   <div class="mt-4">
-                    <a class="c-btn pink">Event Marketing</a>
+                    <a class="c-btn pink">{{searchCategory(item.category_id)}}</a>
                   </div>
-                  <p>{{item.text}}</p>
+                  <p>{{item.description}}</p>
                   <div class="read">
                     <a href="#">Read On <i class="fas fa-chevron-right"></i></a>
                     <p>8 Min Read</p>
@@ -25,11 +25,11 @@
                   <div class="bottoms">
                     <div class="row">
                       <div class="col-2">
-                        <img src="{{item.user.image1}}">
+                        <img src="assets/img/blog1.jpg">
                       </div>
                       <div class="col-10">
-                        <h6>{{item.user.name}}</h6>
-                        <p>{{item.user.date}}</p>
+                        <h6>Allex John</h6>
+                        <p>May 15, 2021 | 04:00 PM</p>
                       </div>
                     </div>
                   </div>
