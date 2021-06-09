@@ -27,9 +27,4 @@ export class BlogDetailsComponent implements OnInit {
     this.router.navigate(['/blogs/create-blog'], { state: {blog: data} })
   }
 
-  searchCategory(id) {
-    let category = this.categories.find(i => i.id == id);
-    return category.name;
-  }
-
 }
