@@ -34,9 +34,14 @@ export class BlogListingComponent implements OnInit {
     console.log(this.blogs)
   }
 
+  view(item) {
+    this.router.navigate(['/blogs/blog-details'], { state: {blog: item} })
+  }
+
   searchCategory(id) {
     let category = this.categories.find(i => i.id == id);
     return category.name;
+    // console.log(category)
   }
 
 }

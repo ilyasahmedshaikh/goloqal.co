@@ -7,7 +7,7 @@
       </div>
 
       <div class="col-12">
-        <h6>Event Marketing</h6>
+        <a>{{searchCategory(data.category_id)}}</a>
         <div class="seprator"></div>
         <h3>{{data.blogTitle}}</h3>
 
@@ -35,14 +35,8 @@
         </div>
 
         <img class="mt-4" src="assets/img/blogdetail1.jpg">
-        <h5>Optimize Your Channels</h5>
-        <p class="pt-2">Before you start reaching out to your community, you need to make sure that your accounts are optimized. Make a great first impression! Think of when you were first opening your doors.
-          Did you invite out patrons to see the new place as soon as the drywall was installed? No! Odds are, you waited until everything was in place, the aesthetics were on point, and you felt proud for people
-          to come see what you had to offer. Your social media presence should be the same! When you begin driving traffic to your channels, make sure that you fully optimize your platforms. The two most popular
-          forms of social media for restaurants right now are Facebook and Instagram. If someone wants to know more about your place, odds are, this is where they will start. About 80 million images are shared on
-          Instagram every day. Around 700,000 pieces of content on Facebook every minute! We want to make sure that your pages can hold their own and don’t get lost in this vast collection of images, videos, etc.
-          The average time spent exploring a page drastically drops off if your page is out of date, images are poor, or if you have very little info about your business. When you are setting up your accounts,make
-          sure you fill out as much information as you possibly can: contact info, address, hours, everything.</p>
+        <h5>{{data.blogTitle}}</h5>
+        <p class="pt-2">{{data.content}}</p>
         <div class="mt-4">
           <a class="c-btn green">Event Marketing</a>
         </div>

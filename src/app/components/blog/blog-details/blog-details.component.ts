@@ -8,6 +8,7 @@ import { Router } from '@angular/router'
 })
 export class BlogDetailsComponent implements OnInit {
 
+  categories: any = [];
   data: any = {};
 
   constructor(
@@ -24,6 +25,11 @@ export class BlogDetailsComponent implements OnInit {
 
   edit(data) {
     this.router.navigate(['/blogs/create-blog'], { state: {blog: data} })
+  }
+
+  searchCategory(id) {
+    let category = this.categories.find(i => i.id == id);
+    return category.name;
   }
 
 }

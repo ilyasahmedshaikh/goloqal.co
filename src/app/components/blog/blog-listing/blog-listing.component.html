@@ -10,7 +10,7 @@
         <div class="cards">
           <div class="row">
             <div class="col-12 col-md-6 col-lg-6" *ngFor="let item of blogs" routerLink="/blogs/blog-details">
-              <div class="cards-inner">
+              <div class="cards-inner" (click)="view(item)">
                 <img src="assets/img/blog1.jpg">
                 <div class="wrapper">
                   <h6>{{item.blogTitle}}</h6>
