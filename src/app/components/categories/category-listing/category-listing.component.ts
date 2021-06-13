@@ -24,7 +24,9 @@ export class CategoryListingComponent implements OnInit {
   }
 
   getCategories() {
-    this.category = this.api.getAll(this.config.collections.categories_table);
+    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
+      this.category = res;
+    });
   }
 
   edit(item) {
@@ -44,7 +46,9 @@ export class CategoryListingComponent implements OnInit {
   }
 
   getTopics() {
-    this.topics = this.api.getAll(this.config.collections.topics_table);
+    this.api.getAll(this.config.collections.topics_table).subscribe(res =>{
+      this.topics = res;
+    });
   }
 
   editTopic(item) {

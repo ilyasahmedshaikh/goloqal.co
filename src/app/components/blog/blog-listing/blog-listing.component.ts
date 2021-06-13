@@ -25,12 +25,16 @@ export class BlogListingComponent implements OnInit {
   }
 
   getCategories() {
-    this.categories = this.api.getAll(this.config.collections.categories_table);
+    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
+      this.categories = res;
+    });
     console.log(this.categories)
   }
 
   getBlogs() {
-    this.blogs = this.api.getAll(this.config.collections.blogs_table);
+    this.api.getAll(this.config.collections.blogs_table).subscribe(res =>{
+      this.blogs = res;
+    });
     console.log(this.blogs)
   }
 

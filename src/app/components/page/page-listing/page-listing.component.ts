@@ -42,11 +42,15 @@ export class PageListingComponent implements OnInit {
   }
 
   getCategories() {
-    this.categories = this.api.getAll(this.config.collections.categories_table);
+    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
+      this.categories = res;
+    });
   }
 
   getPages() {
-    this.pages = this.api.getAll(this.config.collections.pages_table);
+    this.api.getAll(this.config.collections.pages_table).subscribe(res =>{
+      this.pages = res;
+    });
 
     this.placesCommunities = this.pages
   }

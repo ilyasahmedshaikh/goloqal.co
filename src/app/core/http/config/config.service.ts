@@ -11,6 +11,7 @@ export class ConfigService {
     topics_table: "topics",
     pages_table: "pages",
     blogs_table: "blogs",
+    comments_table: "comments",
   }
 
   constructor() { }

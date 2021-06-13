@@ -37,43 +37,42 @@
         <img class="mt-4" src="assets/img/blogdetail1.jpg">
         <h5>{{data.blogTitle}}</h5>
         <p class="pt-2">{{data.content}}</p>
-        <div class="mt-4">
-          <a class="c-btn green">Event Marketing</a>
-        </div>
       </div>
 
       <div class="col-12">
-        <div class="comment">
-          <span>Leave a Reply</span>
-          <form class="pt-3">
-            <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-                  <textarea class="form-control" rows="5" placeholder="Comment"></textarea>
+        <form  [formGroup]="programForm">
+          <div class="comment">
+            <span>Leave a Reply</span>
+            <form class="pt-3">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="Comment" formControlName="comment"></textarea>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" formControlName="name">
+                  </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                  </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Website (optional)" formControlName="website">
+                  </div>
                 </div>
               </div>
-              <div class="col-6 col-lg-4">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Name">
-                </div>
-              </div>
-              <div class="col-6 col-lg-4">
-                <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-              </div>
-              <div class="col-12 col-lg-4">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Website (optional)">
-                </div>
-              </div>
-            </div>
-          </form>
+            </form>
 
-          <div class="mt-3">
-            <a class="c-btn pink">POST COMMENT</a>
+            <div class="mt-3">
+              <a class="c-btn pink" (click)="createComment()">POST COMMENT</a>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
 
     </div>

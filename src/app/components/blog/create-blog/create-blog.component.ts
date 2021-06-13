@@ -54,7 +54,9 @@ export class CreateBlogComponent implements OnInit {
   }
 
   getCategories() {
-    this.categories = this.api.getAll(this.config.collections.categories_table);
+    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
+      this.categories = res;
+    });
   }
 
   createBlog() {

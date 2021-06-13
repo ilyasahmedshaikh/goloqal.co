@@ -85,12 +85,14 @@ export class HomepageComponent implements OnInit {
   }
 
   getPages() {
-    this.pages = this.api.getAll(this.config.collections.pages_table);
+    this.api.getAll(this.config.collections.pages_table).subscribe(res => {
+      this.pages = res;
 
-    this.events = this.pages
-    this.shops = this.pages
-    this.popularServices = this.pages
-    this.thingsActivities = this.pages
-    this.placesCommunities = this.pages
+      this.events = this.pages
+      this.shops = this.pages
+      this.popularServices = this.pages
+      this.thingsActivities = this.pages
+      this.placesCommunities = this.pages
+    })
   }
 }

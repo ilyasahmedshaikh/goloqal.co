@@ -34,7 +34,9 @@ export class ForYouComponent implements OnInit {
   }
 
   getPages() {
-    this.pages = this.api.getAll(this.config.collections.pages_table);
+    this.api.getAll(this.config.collections.pages_table).subscribe(res =>{
+      this.pages = res;
+    });
 
     this.events = this.pages
     this.shops = this.pages

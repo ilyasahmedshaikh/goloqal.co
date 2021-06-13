@@ -82,11 +82,15 @@ export class CreatePageComponent implements OnInit {
   }
 
   getCategories() {
-    this.categories = this.api.getAll(this.config.collections.categories_table);
+    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
+      this.categories = res;
+    });
   }
 
   getTopics() {
-    this.topics = this.api.getAll(this.config.collections.topics_table);
+    this.api.getAll(this.config.collections.topics_table).subscribe(res =>{
+      this.topics = res;
+    });
   }
 
   createPage() {
