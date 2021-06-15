@@ -3,6 +3,8 @@ import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
+import { LoaderService } from '../../../core/services/loader/loader.service';
+import { StoreImageService } from '../../../core/http/store-image/store-image.service';
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
@@ -10,14 +12,18 @@ import { ApiService } from '../../../core/http/api/api.service';
 })
 export class CreatePageComponent implements OnInit {
 
+  isShopHidden: boolean = false;
+
   categories: any = [];
+  allCategories: any = [];
   topics: any = [];
+  products: any = [];
 
   editObj: any = {};
   isEdit: boolean = false;
 
   // loading: any = "assets/img/loading.gif";
-  preview: any = "assets/img/img-upload-icon.png";
+  preview: any = this.imageStore.preview;
   productPreview: any = "assets/img/img-upload-icon.png";
 
   imageUploaded: boolean = false;
@@ -29,7 +35,9 @@ export class CreatePageComponent implements OnInit {
     private fb: FormBuilder,
     private config: ConfigService,
     private api: ApiService,
-    private router: Router
+    private router: Router,
+    private loader: LoaderService,
+    public imageStore: StoreImageService,
   ) {
     this.editObj = this.router.getCurrentNavigation().extras.state?.page;
   }
@@ -64,8 +72,12 @@ export class CreatePageComponent implements OnInit {
       locationUrl: ['', Validators.required],
       address1: ['', Validators.required],
       address2: ['', Validators.required],
-      name: ['', Validators.required],
-      price: ['', Validators.required],
+      // product data
+      product_id: ['', Validators.required],
+      product_name: ['', Validators.required],
+      product_image: ['', Validators.required],
+      product_price: [0, Validators.required],
+      // buttons
       button1WebsiteName: ['', Validators.required],
       button1WebsiteUrl: ['', Validators.required],
       button2Call: ['', Validators.required],
@@ -81,28 +93,86 @@ export class CreatePageComponent implements OnInit {
     });
   }
 
-  getCategories() {
-    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
-      this.categories = res;
-    });
-  }
-
   getTopics() {
     this.api.getAll(this.config.collections.topics_table).subscribe(res =>{
       this.topics = res;
     });
   }
 
+  getCategories() {
+    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
+      this.allCategories = res;
+    });
+  }
+
+  onChangeTopic(event) {
+    let topic_id = event.target.value;
+    this.categories = this.allCategories.filter(c => c.topicId == topic_id);
+
+    // Show/Hide shop section
+    if(topic_id == 'UTRJH4nGSuP9dOfOnwOL') this.isShopHidden = true;
+    else this.isShopHidden = false;
+  }
+
+  onAddProduct() {
+    if (this.programForm.value.product_name && this.programForm.value.product_price) {
+      this.products.push({
+        id: this.products.length + 1,
+        image: '',
+        name: this.programForm.value.product_name,
+        price: this.programForm.value.product_price,
+      });
+
+      this.programForm.patchValue({
+        product_name: '',
+        product_price: 0
+      })
+
+      console.log(this.products);
+    } else {
+      alert('Details Missing!');
+    }
+  }
+
+  editProduct(id) {
+    let product = this.products.find(p => p.id == id);
+
+    this.programForm.patchValue({
+      product_id: product.id,
+      product_name: product.name,
+      product_image: product.image,
+      product_price: product.price
+    })
+  }
+
+  onUpdateProduct() {
+    this.products.map((p, i) => {
+      if (p.id == this.programForm.value.product_id) {
+        this.products[i] = {
+          id: this.programForm.value.product_id,
+          image: this.programForm.value.product_image,
+          name: this.programForm.value.product_name,
+          price: this.programForm.value.product_price,
+        }
+      }
+    });
+  }
+
+  deleteProduct(id) {
+    this.products = this.products.filter(p => p.id != id);
+  }
+
   createPage() {
-    let data = this.programForm.value;
+    let data = {
+      ...this.programForm.value,
+      image: this.imageStore.preview,
+    };
 
     let request = this.api.post(this.config.collections.pages_table, data);
 
     request.then(() => {
       this.programForm.reset();
       this.router.navigateByUrl("/homepage");
-
-      // console.log(this.createPage)
     })
     .catch((error) => {
       alert(error);
@@ -137,15 +207,11 @@ export class CreatePageComponent implements OnInit {
     });
   }
 
-  readURL(event: any): void {
-    if (event.target['files'] && event.target['files'][0]) {
-      const file = event.target['files'][0];
+  readURL(event: any) {
+    this.imageStore.readURL(event);
 
-      const reader = new FileReader();
-      reader.onload = e => this.preview = reader.result;
-
-      reader.readAsDataURL(file);
-    }
+    // store image in DB and get store URL
+    this.imageStore.uploadFile(event);
   }
 
   productReadURL(event: any): void {

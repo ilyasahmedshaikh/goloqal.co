@@ -16,7 +16,7 @@
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="form-group">
                   <label>Select Topic</label>
-                  <select class="form-control c-dropdown" formControlName="topic_id">
+                  <select class="form-control c-dropdown" formControlName="topic_id" (change)="onChangeTopic($event)">
                     <option [value]="item.id" *ngFor="let item of topics">{{item.name}}</option>
                   </select>
                 </div>
@@ -35,8 +35,8 @@
             <div class="add-img">
               <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
               <a (click)="file.click()">
-                  <img *ngIf="!imageUploaded" src={{preview}}>
-                  <!-- <img *ngIf="imageUploaded" src={{loading}}> -->
+                  <img *ngIf="!imageStore.imageUploaded" src={{imageStore.preview}}>
+                  <img *ngIf="imageStore.imageUploaded" src={{loading}}>
               </a>
             </div>
           </div>
@@ -212,7 +212,7 @@
               </div>
             </div>
           </div>
-          <div class="plain-card">
+          <div class="plain-card" *ngIf="isShopHidden">
             <div class="add-product">
               <div class="row">
                 <div class="col-12 col-md-6 col-lg-6">
@@ -225,36 +225,32 @@
                   </div>
                   <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" placeholder="Name" formControlName="name">
+                    <input type="text" class="form-control" placeholder="Name" formControlName="product_name">
                   </div>
                   <div class="form-group">
                     <label>Price</label>
-                    <input type="text" class="form-control" placeholder="Price" formControlName="price">
+                    <input type="number" class="form-control" placeholder="Price" formControlName="product_price">
                   </div>
                   <div class="btns text-center">
-                    <a class="c-btn pink mr-3">Add</a>
-                    <a class="c-btn green">Update</a>
+                    <button class="c-btn pink mr-3" (click)="onAddProduct()">Add</button>
+                    <button class="c-btn green" (click)="onUpdateProduct()">Update</button>
                   </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-6">
-                  <div class="list-group list-group-flush wrapper">
-                    <div class="list-group-item item list-group-item-action align-items-center">
+                  <div class="no-data" *ngIf="products.length == 0">
+                    <img src="assets/img/no-data.png" alt="no-data" />
+                    <p class="text-black-50">No Products Found.</p>
+                  </div>
+                  <div class="list-group list-group-flush wrapper" *ngIf="products.length > 0">
+                    <div class="list-group-item item list-group-item-action align-items-center" *ngFor="let item of products">
                       <img src="assets/img/shop1.jpg">
-                      <p>Pepsi</p>
-                      <p>$5.00</p>
-                      <i class="fas fa-trash"></i>
-                    </div>
-                    <div class="list-group-item item list-group-item-action align-items-center">
-                      <img src="assets/img/shop1.jpg">
-                      <p>Pepsi</p>
-                      <p>$5.00</p>
-                      <i class="fas fa-trash"></i>
-                    </div>
-                    <div class="list-group-item item list-group-item-action align-items-center">
-                      <img src="assets/img/shop1.jpg">
-                      <p>Pepsi</p>
-                      <p>$5.00</p>
-                      <i class="fas fa-trash"></i>
+                      <p>{{item.name}}</p>
+                      <p>${{item.price}}</p>
+
+                      <div>
+                        <a (click)="editProduct(item.id)" class="mr-2"><i class="fas fa-edit text-primary"></i></a>
+                        <a (click)="deleteProduct(item.id)"><i class="fas fa-trash text-danger"></i></a>
+                      </div>
                     </div>
                   </div>
                 </div>

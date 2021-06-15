@@ -27,6 +27,8 @@ export class AddCategoryComponent implements OnInit {
   editTopicObj: any = {};
   isEditTopic: boolean = false;
 
+  topics: any = [];
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -39,6 +41,7 @@ export class AddCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.formInit();
+    this.getTopics();
 
     if(this.editObj) {
       this.programForm.patchValue({
@@ -60,6 +63,7 @@ export class AddCategoryComponent implements OnInit {
   formInit() {
     this.programForm = this.fb.group({
       categoryName: ['', Validators.required],
+      topicId: ['', Validators.required],
     });
 
     this.topicForm = this.fb.group({
@@ -67,9 +71,16 @@ export class AddCategoryComponent implements OnInit {
     });
   }
 
+  getTopics() {
+    this.api.getAll(this.config.collections.topics_table).subscribe(res =>{
+      this.topics = res;
+    });
+  }
+
   createCategory() {
     let data = {
-      name: this.programForm.value.categoryName
+      name: this.programForm.value.categoryName,
+      topicId: this.programForm.value.topicId
     }
 
     let request = this.api.post(this.config.collections.categories_table, data);
