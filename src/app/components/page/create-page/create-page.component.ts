@@ -22,11 +22,10 @@ export class CreatePageComponent implements OnInit {
   editObj: any = {};
   isEdit: boolean = false;
 
-  // loading: any = "assets/img/loading.gif";
-  preview: any = this.imageStore.preview;
-  productPreview: any = "assets/img/img-upload-icon.png";
-
+  preview: string = '';
   imageUploaded: boolean = false;
+
+  productPreview: string = '';
   productImageUploaded: boolean = false;
 
   programForm: any = FormGroup;
@@ -94,13 +93,13 @@ export class CreatePageComponent implements OnInit {
   }
 
   getTopics() {
-    this.api.getAll(this.config.collections.topics_table).subscribe(res =>{
+    this.api.getAll(this.config.collections.topics_table).subscribe(res => {
       this.topics = res;
     });
   }
 
   getCategories() {
-    this.api.getAll(this.config.collections.categories_table).subscribe(res =>{
+    this.api.getAll(this.config.collections.categories_table).subscribe(res => {
       this.allCategories = res;
     });
   }
@@ -118,12 +117,13 @@ export class CreatePageComponent implements OnInit {
     if (this.programForm.value.product_name && this.programForm.value.product_price) {
       this.products.push({
         id: this.products.length + 1,
-        image: '',
+        image: this.productPreview,
         name: this.programForm.value.product_name,
         price: this.programForm.value.product_price,
       });
 
       this.programForm.patchValue({
+        product_image: '',
         product_name: '',
         product_price: 0
       })
@@ -150,7 +150,7 @@ export class CreatePageComponent implements OnInit {
       if (p.id == this.programForm.value.product_id) {
         this.products[i] = {
           id: this.programForm.value.product_id,
-          image: this.programForm.value.product_image,
+          image: this.productPreview,
           name: this.programForm.value.product_name,
           price: this.programForm.value.product_price,
         }
@@ -207,22 +207,14 @@ export class CreatePageComponent implements OnInit {
     });
   }
 
-  readURL(event: any) {
-    this.imageStore.readURL(event);
-
-    // store image in DB and get store URL
-    this.imageStore.uploadFile(event);
+  onImagePreview(event) {
+    this.preview = event.preview;
+    this.imageUploaded = event.imageUploaded;
   }
 
-  productReadURL(event: any): void {
-    if (event.target['files'] && event.target['files'][0]) {
-      const file = event.target['files'][0];
-
-      const reader = new FileReader();
-      reader.onload = e => this.productPreview = reader.result;
-
-      reader.readAsDataURL(file);
-    }
+  onProductImagePreview(event) {
+    this.productPreview = event.preview;
+    this.productImageUploaded = event.imageUploaded;
   }
 
 }

@@ -32,13 +32,7 @@
             </div>
           </div>
           <div class="plain-card">
-            <div class="add-img">
-              <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
-              <a (click)="file.click()">
-                  <img *ngIf="!imageStore.imageUploaded" src={{imageStore.preview}}>
-                  <img *ngIf="imageStore.imageUploaded" src={{loading}}>
-              </a>
-            </div>
+            <app-image-uploader (previewImage)="onImagePreview($event)"></app-image-uploader>
           </div>
           <div class="plain-card">
             <h2>Details</h2>
@@ -216,13 +210,7 @@
             <div class="add-product">
               <div class="row">
                 <div class="col-12 col-md-6 col-lg-6">
-                  <div class="add-img">
-                    <input class="d-none" type="file" accept="image/*" #file1 (change)="productReadURL($event)">
-                    <a (click)="file1.click()">
-                        <img *ngIf="!productImageUploaded" src={{productPreview}}>
-                        <!-- <img *ngIf="productImageUploaded" src={{loading}}> -->
-                    </a>
-                  </div>
+                  <app-image-uploader (previewImage)="onProductImagePreview($event)"></app-image-uploader>
                   <div class="form-group">
                     <label>Name</label>
                     <input type="text" class="form-control" placeholder="Name" formControlName="product_name">
@@ -243,7 +231,7 @@
                   </div>
                   <div class="list-group list-group-flush wrapper" *ngIf="products.length > 0">
                     <div class="list-group-item item list-group-item-action align-items-center" *ngFor="let item of products">
-                      <img src="assets/img/shop1.jpg">
+                      <img src="{{item.image}}">
                       <p>{{item.name}}</p>
                       <p>${{item.price}}</p>
 
