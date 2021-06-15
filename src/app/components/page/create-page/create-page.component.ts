@@ -77,17 +77,17 @@ export class CreatePageComponent implements OnInit {
       product_image: ['', Validators.required],
       product_price: [0, Validators.required],
       // buttons
-      button1WebsiteName: ['', Validators.required],
+      button1WebsiteName: ['Website', Validators.required],
       button1WebsiteUrl: ['', Validators.required],
-      button2Call: ['', Validators.required],
+      button2Call: ['Call', Validators.required],
       button2TelephoneNumber: ['', Validators.required],
-      button3FacebookInstagram: ['', Validators.required],
+      button3FacebookInstagram: ['Facebook/Instagram', Validators.required],
       button3FacebookInstagramUrl: ['', Validators.required],
-      button4Line: ['', Validators.required],
+      button4Line: ['Line', Validators.required],
       button4LineUrl: ['', Validators.required],
-      button5Chat: ['', Validators.required],
+      button5Chat: ['Chat', Validators.required],
       button5ChatUrl: ['', Validators.required],
-      button6Ticket: ['', Validators.required],
+      button6Ticket: ['Get Ticket', Validators.required],
       button6TicketUrl: ['', Validators.required],
     });
   }
@@ -165,7 +165,8 @@ export class CreatePageComponent implements OnInit {
   createPage() {
     let data = {
       ...this.programForm.value,
-      image: this.imageStore.preview,
+      image: this.preview,
+      products: this.products
     };
 
     let request = this.api.post(this.config.collections.pages_table, data);
