@@ -89,21 +89,6 @@
         object-position: center;
     }
   }
-  .fade-area {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255,255,255,.85);
-    opacity: 0.5;
-    transition: 0.5s;
-    z-index: 1;
-    &.show{
-        display: block;
-    }
-  }
   .back-btn a {
     color: $white;
     position: absolute;
@@ -113,6 +98,22 @@
     color: $white;
     position: absolute;
     right: 5%;
+  }
+}
+
+.fade-area {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.85);
+  opacity: 0.5;
+  transition: 0.5s;
+  z-index: 1;
+  &.show{
+    display: block;
   }
 }
 
@@ -150,9 +151,7 @@
       list-style: none;
       margin-bottom: 0;
       padding-left: 0;
-      padding: 4% 0 0 5%;
-      // height: 85vh;
-      // max-height: 85vh;
+      padding: 75px 0 0 15px;
       overflow-y: auto;
       @include respond(tablet) {
         padding: 3% 0 0 5%;
@@ -188,7 +187,7 @@
     right: -50%;
     top: 0;
     bottom: 0;
-    z-index: 16;
+    z-index: 2;
     transition: 0.8s;
     box-shadow: 5px 0px 35px 15px #f2f3f5;
     &.show{
