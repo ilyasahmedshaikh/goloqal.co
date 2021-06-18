@@ -14,5 +14,28 @@ export class ConfigService {
     comments_table: "comments",
   }
 
+  topics: any = [
+    {
+      id: "GEeFk8iRB23o21O2y0e9",
+      name: "Local Services"
+    },
+    {
+      id: "LYQtSQwmgYt5xwjdq5T5",
+      name: "Things to do"
+    },
+    {
+      id: "N8IuQxwiztgkHNuMFyNy",
+      name: "My Events"
+    },
+    {
+      id: "UTRJH4nGSuP9dOfOnwOL",
+      name: "My Shops"
+    },
+    {
+      id: "lIwMUNKPmZuUKJIm8sPm",
+      name: "My Places"
+    }
+  ]
+
   constructor() { }
 }

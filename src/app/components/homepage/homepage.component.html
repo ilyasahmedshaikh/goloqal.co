@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    <div class="page-section">
+    <!-- <div class="page-section">
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
           <div class="heading">
@@ -136,6 +136,26 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of placesCommunities" routerLink="/page/page-details">
           <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="page-section" *ngFor="let pageSec of topicWiseData">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="heading">
+            <h1>{{pageSec.name}}</h1>
+            <p>Nearest {{pageSec.name}}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of pageSec.data" routerLink="/page/page-details">
+          <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
+        </div>
+
+        <div class="col-12 col-md-12" *ngIf="pageSec.data.length == 0">
+          <div class="no-data">
+            <img src="assets/img/no-data.png" alt="no-data">
+          </div>
         </div>
       </div>
     </div>

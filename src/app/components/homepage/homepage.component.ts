@@ -11,13 +11,8 @@ import { ApiService } from '../../core/http/api/api.service';
 export class HomepageComponent implements OnInit {
 
   data: any = [];
-  pages: any = [];
-  events: any = []
-  shops: any = []
-
-  popularServices: any = []
-  thingsActivities: any = []
-  placesCommunities: any = []
+  topics: any = [];
+  topicWiseData: any = [];
 
   constructor(
     private config: ConfigService,
@@ -26,7 +21,7 @@ export class HomepageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getPages();
+    this.getData();
 
     this.data =[
       {
@@ -84,15 +79,16 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['/page/page-details'], { state: {page: item} })
   }
 
-  getPages() {
-    this.api.getAll(this.config.collections.pages_table).subscribe(res => {
-      this.pages = res;
+  getData() {
+    let topics = this.config.topics;
 
-      this.events = this.pages
-      this.shops = this.pages
-      this.popularServices = this.pages
-      this.thingsActivities = this.pages
-      this.placesCommunities = this.pages
-    })
+    topics.forEach(t => {
+      this.api.getWithQuery(this.config.collections.pages_table, "topic_id", "==", t.id).subscribe(response => {
+        this.topicWiseData.push({
+          ...t,
+          data: response
+        });
+      });
+    });
   }
 }
