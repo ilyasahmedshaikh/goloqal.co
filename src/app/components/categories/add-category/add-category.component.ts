@@ -10,13 +10,11 @@ import { ApiService } from '../../../core/http/api/api.service';
   styleUrls: ['./add-category.component.scss']
 })
 export class AddCategoryComponent implements OnInit {
-
-  categoryPreview: any = "assets/img/img-upload-icon.png";
-  categoryImageUploaded: boolean = false;
-
-  topicPreview: any = "assets/img/img-upload-icon.png";
+  topicPreview: string = "";
   topicImageUploaded: boolean = false;
-  // loading: any = "assets/img/loading.gif";
+
+  categoryPreview: string = "";
+  categoryImageUploaded: boolean = false;
 
   programForm: any = FormGroup;
   topicForm: any = FormGroup;
@@ -80,7 +78,8 @@ export class AddCategoryComponent implements OnInit {
   createCategory() {
     let data = {
       name: this.programForm.value.categoryName,
-      topicId: this.programForm.value.topicId
+      image: this.categoryPreview,
+      topicId: this.programForm.value.topicId,
     }
 
     let request = this.api.post(this.config.collections.categories_table, data);
@@ -95,7 +94,10 @@ export class AddCategoryComponent implements OnInit {
   }
 
   createTopic() {
-    let data = this.topicForm.value;
+    let data = {
+      ...this.topicForm.value,
+      image: this.topicPreview
+    }
 
     let request = this.api.post(this.config.collections.topics_table, data);
 
@@ -110,7 +112,9 @@ export class AddCategoryComponent implements OnInit {
 
   updateCategory() {
     let data = {
-      name: this.programForm.value.categoryName
+      name: this.programForm.value.categoryName,
+      image: this.categoryPreview,
+      topicId: this.programForm.value.topicId,
     }
 
     let request = this.api.put(this.config.collections.categories_table, this.editObj.id, data);
@@ -125,7 +129,10 @@ export class AddCategoryComponent implements OnInit {
   }
 
   updateTopic() {
-    let data = this.topicForm.value
+    let data = {
+      ...this.topicForm.value,
+      image: this.topicPreview
+    }
 
     let request = this.api.put(this.config.collections.topics_table, this.editTopicObj.id, data);
 
@@ -138,26 +145,14 @@ export class AddCategoryComponent implements OnInit {
     });
   }
 
-  categoryReadURL(event: any): void {
-    if (event.target['files'] && event.target['files'][0]) {
-      const file = event.target['files'][0];
-
-      const reader = new FileReader();
-      reader.onload = e => this.categoryPreview = reader.result;
-
-      reader.readAsDataURL(file);
-    }
+  onTopicImagePreview(event) {
+    this.topicPreview = event.preview;
+    this.topicImageUploaded = event.imageUploaded;
   }
 
-  topicReadURL(event: any): void {
-    if (event.target['files'] && event.target['files'][0]) {
-      const file = event.target['files'][0];
-
-      const reader = new FileReader();
-      reader.onload = e => this.topicPreview = reader.result;
-
-      reader.readAsDataURL(file);
-    }
+  onCategoryImagePreview(event) {
+    this.categoryPreview = event.preview;
+    this.categoryImageUploaded = event.imageUploaded;
   }
 
 }

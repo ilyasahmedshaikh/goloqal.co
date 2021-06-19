@@ -11,13 +11,7 @@
           </div>
 
           <div class="col-12 col-md-12 col-lg-12">
-            <div class="add-img">
-              <input class="d-none" type="file" accept="image/*" #file (change)="categoryReadURL($event)">
-              <a (click)="file.click()">
-                <img *ngIf="!categoryImageUploaded" src={{categoryPreview}}>
-                <!-- <img *ngIf="categoryImageUploaded" src={{loading}}> -->
-              </a>
-            </div>
+            <app-image-uploader (previewImage)="onCategoryImagePreview($event)"></app-image-uploader>
 
             <form [formGroup]="programForm">
               <div class="form-group pt-4">
@@ -54,13 +48,7 @@
           </div>
 
           <div class="col-12 col-md-12 col-lg-12">
-            <div class="add-img">
-              <input class="d-none" type="file" accept="image/*" #file1 (change)="topicReadURL($event)">
-              <a (click)="file1.click()">
-                <img *ngIf="!topicImageUploaded" src={{topicPreview}}>
-                <!-- <img *ngIf="topicImageUploaded" src={{loading}}> -->
-              </a>
-            </div>
+            <app-image-uploader (previewImage)="onTopicImagePreview($event)"></app-image-uploader>
 
             <form [formGroup]="topicForm">
               <div class="form-group pt-4">
