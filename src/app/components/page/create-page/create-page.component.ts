@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
 import { LoaderService } from '../../../core/services/loader/loader.service';
-import { StoreImageService } from '../../../core/http/store-image/store-image.service';
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
@@ -36,7 +35,6 @@ export class CreatePageComponent implements OnInit {
     private api: ApiService,
     private router: Router,
     private loader: LoaderService,
-    public imageStore: StoreImageService,
   ) {
     this.editObj = this.router.getCurrentNavigation().extras.state?.page;
   }

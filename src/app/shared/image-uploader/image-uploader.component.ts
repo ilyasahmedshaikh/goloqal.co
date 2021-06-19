@@ -69,8 +69,14 @@ export class ImageUploaderComponent implements OnInit {
       reader.onload = e => this.preview = reader.result;
       reader.readAsDataURL(file);
 
-      // store image in DB and get store URL
-      this.uploadFile(event);
+      // check image size should be <= 100KB and store image in DB and get store URL
+      let imageSizeInKbs = file.size/1024;
+
+      if(imageSizeInKbs <= 100){
+        this.uploadFile(event);
+      } else {
+        alert('Image should be less than 100KB');
+      }
     }
   }
 

@@ -17,12 +17,12 @@
               <div class="col-7 col-lg-8">
                 <div class="row">
                   <div class="col-2 col-md-2 col-lg-1 pl-0">
-                    <img src="assets/img/girl1.jpg">
+                    <img src="{{data.user.image}}">
                   </div>
                   <div class="col-10 col-md-10 col-lg-11">
                     <div class="smalls">
-                      <h6>Allex John</h6>
-                      <p>May 15, 2021 | 04:00 PM</p>
+                      <h6>{{data.user.name}}</h6>
+                      <p>{{data.createdAt | date: 'medium'}}</p>
                     </div>
                   </div>
                 </div>
@@ -34,8 +34,9 @@
           </div>
         </div>
 
-        <img class="mt-4" src="assets/img/blogdetail1.jpg">
+        <img class="mt-4" src="{{data.image}}">
         <h5>{{data.blogTitle}}</h5>
+        <p class="pt-2">{{data.description}}</p>
         <p class="pt-2">{{data.content}}</p>
       </div>
 
@@ -74,7 +75,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

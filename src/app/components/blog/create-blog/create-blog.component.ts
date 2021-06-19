@@ -15,11 +15,12 @@ export class CreateBlogComponent implements OnInit {
   editObj: any = {};
   isEdit: boolean = false;
 
-  preview: any = "assets/img/img-upload-icon.png";
-  loading: any = "assets/img/loading.gif";
-
+  preview: string = '';
   imageUploaded: boolean = false;
+
   programForm: any = FormGroup;
+
+  today: number = Date.now();
 
   constructor(
     private fb: FormBuilder,
@@ -39,8 +40,6 @@ export class CreateBlogComponent implements OnInit {
         ...this.editObj
       });
       this.isEdit = true;
-
-      console.log('create blog', this.editObj);
     }
   }
 
@@ -49,7 +48,8 @@ export class CreateBlogComponent implements OnInit {
       blogTitle:  ['', Validators.required],
       category_id: ['', Validators.required],
       description: ['', Validators.required],
-      content: ['', Validators.required]
+      content: ['', Validators.required],
+      createdAt: [this.today]
     });
   }
 
@@ -60,15 +60,21 @@ export class CreateBlogComponent implements OnInit {
   }
 
   createBlog() {
-    let data = this.programForm.value;
+    let data = {
+      ...this.programForm.value,
+      image: this.preview,
+      user: {
+        image: "assets/img/blog1.jpg",
+        name: "Daniel Mark",
+      }
+    }
+
 
     let request = this.api.post(this.config.collections.blogs_table, data);
 
     request.then(() => {
       this.programForm.reset();
       this.router.navigateByUrl("/blogs");
-
-      console.log(data)
     })
     .catch((error) => {
       alert(error);
@@ -77,7 +83,12 @@ export class CreateBlogComponent implements OnInit {
 
   updateBlog() {
     let data = {
-      ...this.programForm.value
+      ...this.programForm.value,
+      image: this.preview,
+      user: {
+        image: "assets/img/blog1.jpg",
+        name: "Daniel Mark",
+      }
     }
 
     let request = this.api.put(this.config.collections.blogs_table, this.editObj.id, data);
@@ -95,7 +106,6 @@ export class CreateBlogComponent implements OnInit {
     let request = this.api.delete(this.config.collections.blogs_table, this.editObj.id);
 
     request.then(() => {
-      console.log('deleted successfully');
       this.router.navigateByUrl("/blogs");
     })
     .catch((error) => {
@@ -103,15 +113,9 @@ export class CreateBlogComponent implements OnInit {
     });
   }
 
-  readURL(event: any): void {
-    if (event.target['files'] && event.target['files'][0]) {
-      const file = event.target['files'][0];
-
-      const reader = new FileReader();
-      reader.onload = e => this.preview = reader.result;
-
-      reader.readAsDataURL(file);
-    }
+  onImagePreview(event) {
+    this.preview = event.preview;
+    this.imageUploaded = event.imageUploaded;
   }
 
 }

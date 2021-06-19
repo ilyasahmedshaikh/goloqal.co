@@ -11,7 +11,7 @@
           <div class="row">
             <div class="col-12 col-md-6 col-lg-6" *ngFor="let item of blogs" routerLink="/blogs/blog-details">
               <div class="cards-inner" (click)="view(item)">
-                <img src="assets/img/blog1.jpg">
+                <img src="{{item.image}}">
                 <div class="wrapper">
                   <h6>{{item.blogTitle}}</h6>
                   <div class="mt-4">
@@ -28,8 +28,8 @@
                         <img src="assets/img/blog1.jpg">
                       </div>
                       <div class="col-10">
-                        <h6>Allex John</h6>
-                        <p>May 15, 2021 | 04:00 PM</p>
+                        <h6>{{item.user.name}}</h6>
+                        <p>{{item.createdAt | date: 'medium'}}</p>
                       </div>
                     </div>
                   </div>
