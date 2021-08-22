@@ -13,6 +13,7 @@ export class HomepageComponent implements OnInit {
   data: any = [];
   topics: any = [];
   topicWiseData: any = [];
+  selectedCountry: any = '';
 
   constructor(
     private config: ConfigService,
@@ -90,5 +91,11 @@ export class HomepageComponent implements OnInit {
         });
       });
     });
+  }
+  
+  getSelectedCountry(event) {
+    this.selectedCountry = event;
+    console.log(event);
+    
   }
 }

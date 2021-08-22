@@ -11,14 +11,12 @@
       <div class="custom-dropdown">
         <p (click)="showOptionsToggle()">
           <i class="fas fa-map-marker-alt text-pinkgradient"></i>
-          <span class="ml-4">{{selectedOption}}</span>
+          <span class="ml-4">{{selectedOption.name}}</span>
           <i class="fas arrow" [ngClass]="{'fa-chevron-up': showOptions, 'fa-chevron-down': !showOptions}"></i>
         </p>
         <div class="options mt-2" [ngClass]="{'show': showOptions}">
           <ul>
-            <li (click)="showOptionsToggle($event)">Atlanta, GA</li>
-            <li (click)="showOptionsToggle($event)">Austin, TX</li>
-            <li (click)="showOptionsToggle($event)">Dallas, TX</li>
+            <li (click)="showOptionsToggle(country)" *ngFor="let country of countries">{{country.name}}</li>
           </ul>
         </div>
       </div>
