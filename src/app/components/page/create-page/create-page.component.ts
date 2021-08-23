@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
 import { LoaderService } from '../../../core/services/loader/loader.service';
+import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
+import { Address } from 'ngx-google-places-autocomplete/objects/address';
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
@@ -11,9 +13,19 @@ import { LoaderService } from '../../../core/services/loader/loader.service';
 })
 export class CreatePageComponent implements OnInit {
 
+  // ngx-google-places-autocomplete
+  @ViewChild("placesRef", {static: false}) placesRef : GooglePlaceDirective;
+
+  // agm-maps 
   location: any = {
     lat: 51.678418,
     lng: 7.809007
+  }
+
+  // ngx-google-places-autocomplete - restrictions for tanzania
+  options = {
+    types: [],
+    componentRestrictions: { country: 'TH' }
   }
 
   isShopHidden: boolean = false;
@@ -114,6 +126,15 @@ export class CreatePageComponent implements OnInit {
     // Show/Hide shop section
     if(topic_id == 'UTRJH4nGSuP9dOfOnwOL') this.isShopHidden = true;
     else this.isShopHidden = false;
+  }
+
+  // ngx-google-places-autocomplete - addressChange
+  public pickupChange(address: Address) {
+    this.location = {
+      lng: address.geometry.location.lng(),
+      lat: address.geometry.location.lat()
+    }
+    console.log(this.location);
   }
 
   onAddProduct() {

@@ -196,13 +196,13 @@
 
               <div class="col-12 pt-4">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Address 1" formControlName="address1">
+                  <input class="form-control" formControlName="address1" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="pickupChange($event)" placeholder="Address 1"/>
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Address 2" formControlName="address2">
+                  <input type="text" class="form-control" placeholder="Address 2 (Optional)" formControlName="address2">
                 </div>
               </div>
 

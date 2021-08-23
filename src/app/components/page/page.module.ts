@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { SharedModule } from '../../shared/shared.module';
 import { AgmCoreModule } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 import { PageRoutingModule } from './page-routing.module';
 import { PageComponent } from './page.component';
@@ -25,7 +27,9 @@ import { PageListingComponent } from './page-listing/page-listing.component';
     AgmCoreModule.forRoot({
       apiKey: environment.google_maps_api,
       libraries: ["places"]
-    })
+    }),
+    AgmJsMarkerClustererModule,
+    GooglePlaceModule
   ]
 })
 export class PageModule { }
