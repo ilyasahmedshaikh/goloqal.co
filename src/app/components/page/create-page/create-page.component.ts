@@ -11,6 +11,11 @@ import { LoaderService } from '../../../core/services/loader/loader.service';
 })
 export class CreatePageComponent implements OnInit {
 
+  location: any = {
+    lat: 51.678418,
+    lng: 7.809007
+  }
+
   isShopHidden: boolean = false;
 
   categories: any = [];

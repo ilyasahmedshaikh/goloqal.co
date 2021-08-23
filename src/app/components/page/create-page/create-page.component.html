@@ -187,8 +187,15 @@
               </div>
 
               <div class="col-12">
+                <label>Location</label>
+
+                <agm-map [latitude]="location.lat" [longitude]="location.lng">
+                  <agm-marker [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
+                </agm-map>
+              </div>
+
+              <div class="col-12 pt-4">
                 <div class="form-group">
-                  <label>Location</label>
                   <input type="text" class="form-control" placeholder="Address 1" formControlName="address1">
                 </div>
               </div>
