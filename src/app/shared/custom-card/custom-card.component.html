@@ -17,7 +17,7 @@
   <div class="content-section">
     <div class="title">
       <p class="text-truncate">
-        <i class="fas fa-star"></i>
+        <i *ngIf="data.featured" class="fas fa-star"></i>
         {{data.title}}
       </p>
     </div>
