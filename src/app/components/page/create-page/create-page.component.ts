@@ -18,8 +18,8 @@ export class CreatePageComponent implements OnInit {
 
   // agm-maps 
   location: any = {
-    lat: 51.678418,
-    lng: 7.809007
+    lat: 7.878978,
+    lng: 98.398392
   }
 
   // ngx-google-places-autocomplete - restrictions for tanzania
@@ -124,17 +124,18 @@ export class CreatePageComponent implements OnInit {
     this.categories = this.allCategories.filter(c => c.topicId == topic_id);
 
     // Show/Hide shop section
-    if(topic_id == 'UTRJH4nGSuP9dOfOnwOL') this.isShopHidden = true;
+    if(topic_id == this.config.myShopsTopicId) this.isShopHidden = true;
     else this.isShopHidden = false;
   }
 
   // ngx-google-places-autocomplete - addressChange
-  public pickupChange(address: Address) {
+  public locationChange(address: Address) {
     this.location = {
       lng: address.geometry.location.lng(),
       lat: address.geometry.location.lat()
     }
-    console.log(this.location);
+
+    this.programForm.patchValue({address1: address.formatted_address});
   }
 
   onAddProduct() {
@@ -190,7 +191,8 @@ export class CreatePageComponent implements OnInit {
     let data = {
       ...this.programForm.value,
       image: this.preview,
-      products: this.products
+      products: this.products,
+      location: this.location
     };
 
     let request = this.api.post(this.config.collections.pages_table, data);

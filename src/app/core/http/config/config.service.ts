@@ -16,26 +16,28 @@ export class ConfigService {
 
   topics: any = [
     {
-      id: "GEeFk8iRB23o21O2y0e9",
+      id: "W5LhETk0EIkNN8xuPw8J",
       name: "Local Services"
     },
     {
-      id: "LYQtSQwmgYt5xwjdq5T5",
+      id: "TaqWu5ZOFT90NEvUuR1G",
       name: "Things to do"
     },
     {
-      id: "N8IuQxwiztgkHNuMFyNy",
+      id: "k1MZpTKlPFn2SDaoMidV",
       name: "My Events"
     },
     {
-      id: "UTRJH4nGSuP9dOfOnwOL",
+      id: "HVkgQssasz84n8g3cfeU",
       name: "My Shops"
     },
     {
-      id: "lIwMUNKPmZuUKJIm8sPm",
+      id: "bcDkmcOoIx3ehue4XdGl",
       name: "My Places"
     }
   ]
+
+  myShopsTopicId: any = 'HVkgQssasz84n8g3cfeU';
 
   constructor() { }
 }

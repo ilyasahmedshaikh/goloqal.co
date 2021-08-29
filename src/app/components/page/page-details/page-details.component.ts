@@ -11,6 +11,12 @@ export class PageDetailsComponent implements OnInit {
   data: any = {};
   days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
+  // agm-maps 
+  location: any = {
+    lat: 7.878978,
+    lng: 98.398392
+  }
+
   constructor(
     private router: Router
   ){
@@ -19,6 +25,7 @@ export class PageDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.data) {
+      this.location = this.data?.location;
       console.log('page-details', this.data);
     } else {
       this.router.navigateByUrl('/homepage');

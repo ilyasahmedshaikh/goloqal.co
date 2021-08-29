@@ -136,6 +136,11 @@
                 <a [href]=data.locationUrl class="right">Directions<i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
+            <div class="col-12 pt-3">
+              <agm-map [latitude]="location.lat" [longitude]="location.lng">
+                <agm-marker [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
+              </agm-map>
+            </div>
             <div class="col-12">
               <h4 class="text-center pt-3">{{data.address1}}</h4>
               <h6 class="text-center">{{data.address2}}</h6>

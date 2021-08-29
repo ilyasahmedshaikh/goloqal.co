@@ -43,7 +43,7 @@
       <app-search-bar (onSelectedCountry)="getSelectedCountry($event)"></app-search-bar>
     </div>
 
-    <div class="explore">
+    <div class="explore" *ngIf="categories?.length > 0">
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
           <div class="heading">
