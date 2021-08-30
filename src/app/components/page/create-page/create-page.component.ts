@@ -6,6 +6,7 @@ import { ApiService } from '../../../core/http/api/api.service';
 import { LoaderService } from '../../../core/services/loader/loader.service';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
+
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
@@ -187,23 +188,34 @@ export class CreatePageComponent implements OnInit {
     this.products = this.products.filter(p => p.id != id);
   }
 
-  createPage() {
+  // createPage() {
+  //   let data = {
+  //     ...this.programForm.value,
+  //     image: this.preview,
+  //     products: this.products,
+  //     location: this.location
+  //   };
+
+  //   let request = this.api.post(this.config.collections.pages_table, data);
+
+  //   request.then(() => {
+  //     this.programForm.reset();
+  //     this.router.navigateByUrl("/homepage");
+  //   })
+  //   .catch((error) => {
+  //     alert(error);
+  //   });
+  // }
+
+  previewPage() {
     let data = {
       ...this.programForm.value,
       image: this.preview,
       products: this.products,
       location: this.location
     };
-
-    let request = this.api.post(this.config.collections.pages_table, data);
-
-    request.then(() => {
-      this.programForm.reset();
-      this.router.navigateByUrl("/homepage");
-    })
-    .catch((error) => {
-      alert(error);
-    });
+    
+    this.router.navigate(['/page/page-details'], { state: {page: data, newPage: true} })
   }
 
   updatePage() {

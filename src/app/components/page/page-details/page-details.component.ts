@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { ConfigService } from '../../../core/http/config/config.service'
+import { ApiService } from '../../../core/http/api/api.service';
 
 @Component({
   selector: 'app-page-details',
@@ -9,6 +11,7 @@ import { Router } from '@angular/router'
 export class PageDetailsComponent implements OnInit {
 
   data: any = {};
+  newPage: boolean = false;
   days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   // agm-maps 
@@ -18,9 +21,12 @@ export class PageDetailsComponent implements OnInit {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private config: ConfigService,
+    private api: ApiService,
   ){
     this.data = this.router.getCurrentNavigation().extras.state?.page;
+    this.newPage = this.router.getCurrentNavigation().extras.state?.newPage
   }
 
   ngOnInit(): void {
@@ -38,6 +44,17 @@ export class PageDetailsComponent implements OnInit {
 
   getDayFromDate(date) {
     return this.days[new Date(date).getDay()];
+  }
+
+  createPage() {
+    let request = this.api.post(this.config.collections.pages_table, this.data);
+
+    request.then(() => {
+      this.router.navigateByUrl("/homepage");
+    })
+    .catch((error) => {
+      alert(error);
+    });
   }
 
 }

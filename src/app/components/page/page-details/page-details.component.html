@@ -179,6 +179,10 @@
           </div>
         </div>
 
+        <div class="col-12 mt-5" *ngIf="newPage">
+          <a class="c-btn pink mr-3" routerLink="/homepage">Cancel</a>
+          <a class="c-btn green mr-3" (click)="createPage()">Create Page</a>
+        </div>
       </div>
     </div>
   </div>
