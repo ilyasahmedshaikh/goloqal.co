@@ -90,8 +90,15 @@
               </div>
 
               <div class="buttons">
-                <a class="c-btn pink mr-3">Website</a>
-                <a class="c-btn green"><i class="fas fa-bolt"></i>Oder now</a>
+                <a class="c-btn pink mr-3" href="{{data.button1WebsiteUrl}}" *ngIf="data.button1WebsiteUrl">
+                  <i class="fas fa-globe-asia"></i> Website
+                </a>
+                <a class="c-btn green" href="{{data.button4LineUrl}}" *ngIf="data.button4LineUrl && !data.button2TelephoneNumber">
+                  <i class="fab fa-line"></i> Line
+                </a>
+                <a class="c-btn green" href="{{data.button2TelephoneNumber}}" *ngIf="data.button2TelephoneNumber && !data.button4LineUrl">
+                  <i class="fas fa-phone-alt"></i> Telephone
+                </a>
               </div>
             </div>
           </div>
