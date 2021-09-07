@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { GoogleMapsService } from 'src/app/core/services/google-maps/google-maps.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -12,17 +13,20 @@ export class SearchBarComponent implements OnInit {
   showOptions: boolean = false;
   selectedOption: any = '';
 
-  countries: any = [
-    {id: 1, name: 'Thailand'},
-    {id: 2, name: 'China'},
-    {id: 3, name: 'Unites States'},
+  cities: any = [
+    {name: 'Bangkok'},
   ];
 
-  constructor() { }
+  constructor(
+    private googleMaps: GoogleMapsService
+  ) { }
 
   ngOnInit(): void {
-    this.selectedOption = this.countries[0];
+    this.selectedOption = this.cities[0];
     this.onSelectedCountry.emit(this.selectedOption);
+
+    this.googleMaps.getLocation();
+    this.getLocation();
   }
 
   showOptionsToggle(country?) {
@@ -33,6 +37,16 @@ export class SearchBarComponent implements OnInit {
       this.selectedOption = selected;
       this.onSelectedCountry.emit(this.selectedOption);
     }
+  }
+
+  getLocation() {
+    this.googleMaps.location.subscribe(res => {
+      console.log(res);
+
+      let city = res.city;
+      this.cities.unshift({ name: city });
+      this.selectedOption = this.cities[0];
+    })
   }
 
 }

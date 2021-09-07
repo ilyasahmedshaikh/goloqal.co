@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
 
 // for token interceptor
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptorService } from './core/interceptors/loader-interceptor/loader-interceptor.service';
 
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
@@ -26,6 +26,7 @@ import { FooterComponent } from './layout/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
