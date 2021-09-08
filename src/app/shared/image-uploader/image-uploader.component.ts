@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
@@ -11,6 +11,7 @@ import { LoaderService } from '../../core/services/loader/loader.service'
 })
 export class ImageUploaderComponent implements OnInit {
 
+  @Input('isReset') isReset: boolean = false;
   @Output() previewImage = new EventEmitter<any>();
 
   preview: any = "assets/img/img-upload-icon.png";
@@ -25,6 +26,16 @@ export class ImageUploaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges() {
+    if (this.isReset) {
+      this.resetPreview();
+    }
+  }
+
+  resetPreview(): void {
+    this.preview = "assets/img/img-upload-icon.png";
   }
 
   uploadFile(event) {
@@ -67,10 +78,10 @@ export class ImageUploaderComponent implements OnInit {
       const file = event.target['files'][0];
       const reader = new FileReader();
 
-      // check image size should be <= 100KB
+      // check image size should be <= 1000KB
       let imageSizeInKbs = file.size/1024;
 
-      if(imageSizeInKbs <= 100){
+      if(imageSizeInKbs <= 1000){
         // render image preview in image viewer area
         reader.onload = e => this.preview = reader.result;
         reader.readAsDataURL(file);
@@ -78,7 +89,7 @@ export class ImageUploaderComponent implements OnInit {
         // store image in DB and get store URL
         this.uploadFile(event);
       } else {
-        alert('Image should be less than 100KB, reduce your image size using https://tinypng.com/');
+        alert('Image should be less than 1000KB, reduce your image size using https://tinypng.com/');
       }
     }
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from '../../../core/http/config/config.service'
+import { ApiService } from '../../../core/http/api/api.service';
 
 @Component({
   selector: 'app-add-edit-slider',
@@ -7,24 +9,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditSliderComponent implements OnInit {
 
-  preview: any = "../../../../assets/img/img-upload-icon.png";
+  preview: any = "";
   imageUploaded: boolean = false;
-  // loading: any = "../../../../assets/img/loading.gif";
+  isReset: boolean = false;
 
-  constructor() { }
+  sliders: any = [];
+  sliderName: string = "";
+  slider: any = {};
+
+  constructor(
+    private config: ConfigService,
+    private api: ApiService,
+  ) { }
 
   ngOnInit(): void {
+    this.getSliders();
   }
 
-  readURL(event: any): void {
-    if (event.target['files'] && event.target['files'][0]) {
-      const file = event.target['files'][0];
+  onImagePreview(event) {
+    this.preview = event.preview;
+    this.imageUploaded = event.imageUploaded;
+  }
 
-      const reader = new FileReader();
-      reader.onload = e => this.preview = reader.result;
-
-      reader.readAsDataURL(file);
+  addSlider() {
+    this.slider = {
+      name: this.sliderName,
+      image: this.preview
     }
+
+    this.uploadSlider();
+  }
+
+  uploadSlider() {
+    let request = this.api.post(this.config.collections.sliders_table, this.slider);
+
+    request.then(() => {
+      this.getSliders();
+      
+      // reseting the image add form
+      this.sliderName = "";
+      this.isReset = true;
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
+  getSliders() {
+    this.api.getAll(this.config.collections.sliders_table).subscribe(res =>{
+      this.sliders = res;
+    });
   }
 
 }

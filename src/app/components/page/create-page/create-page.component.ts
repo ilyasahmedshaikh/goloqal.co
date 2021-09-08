@@ -188,25 +188,6 @@ export class CreatePageComponent implements OnInit {
     this.products = this.products.filter(p => p.id != id);
   }
 
-  // createPage() {
-  //   let data = {
-  //     ...this.programForm.value,
-  //     image: this.preview,
-  //     products: this.products,
-  //     location: this.location
-  //   };
-
-  //   let request = this.api.post(this.config.collections.pages_table, data);
-
-  //   request.then(() => {
-  //     this.programForm.reset();
-  //     this.router.navigateByUrl("/homepage");
-  //   })
-  //   .catch((error) => {
-  //     alert(error);
-  //   });
-  // }
-
   previewPage() {
     let data = {
       ...this.programForm.value,
