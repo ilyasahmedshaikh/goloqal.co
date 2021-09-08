@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   selectedOption: any = '';
 
   cities: any = [
-    {name: 'Bangkok'},
+    // {name: 'Bangkok'},
   ];
 
   constructor(
