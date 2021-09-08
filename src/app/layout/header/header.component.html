@@ -35,15 +35,12 @@
 </div>
 
 <div class="sidebar side" [ngClass]="{'show': sidebar}">
-  <!-- <div class="bar">
-    <a>Things To Do/Activites</a>
-    <a>My Event</a>
-    <a>My Place/Community</a>
-    <a>Local Services</a>
-    <a>My Shop/Product</a>
-  </div> -->
-
   <ul>
+    <li>
+      <a (click)="toggleMenu()" routerLink="/admin">
+        Admin Controls
+      </a>
+    </li>
     <li>
       <a (click)="toggleMenu()" routerLink="/page/create-page">
         Create Page
