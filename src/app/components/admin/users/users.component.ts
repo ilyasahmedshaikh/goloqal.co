@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+import { ConfigService } from '../../../core/http/config/config.service'
+import { ApiService } from '../../../core/http/api/api.service';
 
 @Component({
   selector: 'app-users',
@@ -9,16 +12,22 @@ export class UsersComponent implements OnInit {
 
   data: any = [
     { id: 1,  name: "John", email: "john12@email.com", userType: "User"},
-    { id: 2,  name: "Michael", email: "michael02@email.com", userType: "User"},
-    { id: 3,  name: "Daniel", email: "daniel96@email.com", userType: "User"},
-    { id: 4,  name: "Kevin", email: "kevin52@email.com", userType: "User"},
-    { id: 5,  name: "Anthony", email: "anthony@email.com", userType: "User"},
-    { id: 6,  name: "Jason", email: "jason963@email.com", userType: "User"}
   ];
 
-  constructor() { }
+  constructor(
+    private config: ConfigService,
+    private api: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers() {
+    this.api.getAll(this.config.collections.users_table).subscribe(res => {
+      this.data = res;
+    })
   }
 
 }

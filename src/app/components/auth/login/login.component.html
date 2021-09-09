@@ -28,7 +28,11 @@
             </div>
 
             <div class="login-btn">
-              <a class="c-btn pink d-block mt-3">Sign In</a>
+              <button class="c-btn pink d-block mt-3" (click)="login()"
+                [disabled]="programForm.invalid" 
+                [ngClass]="{'disable-opacity': programForm.invalid}">
+                Sign In
+              </button>
             </div>
         </form>
 

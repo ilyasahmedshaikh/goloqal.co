@@ -41,8 +41,6 @@ export class SearchBarComponent implements OnInit {
 
   getLocation() {
     this.googleMaps.location.subscribe(res => {
-      console.log(res);
-
       let city = res.city;
       this.cities.unshift({ name: city });
       this.selectedOption = this.cities[0];
