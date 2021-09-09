@@ -8,13 +8,16 @@
 
       <div class="col-12">
         <div class="inner row">
-          <div class="col-12  col-lg-5">
+          <div class="col-12 col-lg-5">
             <div class="image">
               <img src="{{data.image}}">
               <div class="icon">
                 <a><i class="fas fa-external-link-alt"></i></a>
                 <a class="mr-5"><i class="fas fa-heart"></i></a>
               </div>
+            </div>
+            <div class="gallery-images mt-3">
+              <img src="{{item}}" alt="gallery image" *ngFor="let item of data.galleryImages">
             </div>
           </div>
 

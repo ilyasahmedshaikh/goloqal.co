@@ -39,9 +39,16 @@ export class CreatePageComponent implements OnInit {
   editObj: any = {};
   isEdit: boolean = false;
 
+  // main page image 
   preview: string = '';
   imageUploaded: boolean = false;
 
+  // gallery images
+  imageGalleryUploaded: boolean = false;
+
+  galleryImages: any = [];
+
+  // product images 
   productPreview: string = '';
   productImageUploaded: boolean = false;
 
@@ -192,6 +199,7 @@ export class CreatePageComponent implements OnInit {
     let data = {
       ...this.programForm.value,
       image: this.preview,
+      galleryImages: this.galleryImages,
       products: this.products,
       location: this.location
     };
@@ -230,6 +238,11 @@ export class CreatePageComponent implements OnInit {
   onImagePreview(event) {
     this.preview = event.preview;
     this.imageUploaded = event.imageUploaded;
+  }
+
+  onGalleryImagePreview(event, index) {
+    this.imageGalleryUploaded = event.imageUploaded;
+    this.galleryImages[index] = event.preview;
   }
 
   onProductImagePreview(event) {

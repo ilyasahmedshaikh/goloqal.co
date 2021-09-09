@@ -32,7 +32,23 @@
             </div>
           </div>
           <div class="plain-card">
-            <app-image-uploader (previewImage)="onImagePreview($event)"></app-image-uploader>
+            <div class="row">
+              <div class="col-12 mb-5">
+                <app-image-uploader (previewImage)="onImagePreview($event)"></app-image-uploader>
+              </div>
+              <div class="col-3">
+                <app-image-uploader (previewImage)="onGalleryImagePreview($event, 0)"></app-image-uploader>
+              </div>
+              <div class="col-3">
+                <app-image-uploader (previewImage)="onGalleryImagePreview($event, 1)"></app-image-uploader>
+              </div>
+              <div class="col-3">
+                <app-image-uploader (previewImage)="onGalleryImagePreview($event, 2)"></app-image-uploader>
+              </div>
+              <div class="col-3">
+                <app-image-uploader (previewImage)="onGalleryImagePreview($event, 3)"></app-image-uploader>
+              </div>
+            </div>
           </div>
           <div class="plain-card">
             <h2>Details</h2>

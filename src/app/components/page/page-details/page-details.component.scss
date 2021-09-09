@@ -177,3 +177,16 @@ agm-map {
     }
   }
 }
+
+.gallery-images {
+  display: flex;
+  overflow: auto;
+  img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    margin: 5px;
+    border-radius: 5px;
+  }
+}
