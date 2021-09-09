@@ -1,43 +1,81 @@
 <div class="social">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-10">
+      <div class="col-12">
         <div class="heading">
           <h1>Social Links</h1>
         </div>
       </div>
-      <div class="col-12 col-md-10 col-lg-10">
-        <form>
-          <div class="plain-card">
-            <div class="form-group">
-              <label>Facebook Link</label>
-              <input type="text" class="form-control" placeholder="Facebook">
-            </div>
-            <div class="form-group">
-              <label>Twitter Link</label>
-              <input type="text" class="form-control" placeholder="Twitter">
-            </div>
-            <div class="form-group">
-              <label>Instagram Link</label>
-              <input type="text" class="form-control" placeholder="Instagram">
-            </div>
-            <div class="form-group">
-              <label>Pinterest Link</label>
-              <input type="text" class="form-control" placeholder="Pinterest">
-            </div>
-            <div class="form-group">
-              <label>LINE@ Link</label>
-              <input type="text" class="form-control" placeholder="LINE@">
-            </div>
+      <div class="col-12">
+        <div class="pt-4 d-flex justify-content-between">
+          <div class="card p-3">
+            <h5>Facebook</h5>
+            <p>{{socials[0].facebook}}</p>
+          </div>
+          <div class="card p-3">
+            <h5>Twitter</h5>
+            <p>{{socials[0].twitter}}</p>
+          </div>
+          <div class="card p-3">
+            <h5>Instagram</h5>
+            <p>{{socials[0].instagram}}</p>
+          </div>
+          <div class="card p-3">
+            <h5>Pinterest</h5>
+            <p>{{socials[0].pinterest}}</p>
+          </div>
+          <div class="card p-3">
+            <h5>Line</h5>
+            <p>{{socials[0].line}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="pt-4 col-12">
+        <a class="c-btn green" (click)="editSocials()" data-toggle="modal" data-target="#editSocials"><i class="far fa-edit"></i> Edit</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="col-12">
-              <div class="btns pt-4 text-center">
-                <a class="c-btn pink mr-4">Save</a>
-                <a class="c-btn green">Update</a>
-              </div>
-            </div>
+<!-- Modal -->
+<div class="modal fade" id="editSocials" tabindex="-1" role="dialog" aria-labelledby="editSocialsLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editSocialsLabel">Edit Socials</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" #socialModalClose>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="programForm">
+          <div class="form-group">
+            <label>Facebook Link</label>
+            <input type="text" class="form-control" placeholder="Facebook" formControlName="facebook">
+          </div>
+          <div class="form-group">
+            <label>Twitter Link</label>
+            <input type="text" class="form-control" placeholder="Twitter" formControlName="twitter">
+          </div>
+          <div class="form-group">
+            <label>Instagram Link</label>
+            <input type="text" class="form-control" placeholder="Instagram" formControlName="instagram">
+          </div>
+          <div class="form-group">
+            <label>Pinterest Link</label>
+            <input type="text" class="form-control" placeholder="Pinterest" formControlName="pinterest">
+          </div>
+          <div class="form-group">
+            <label>LINE@ Link</label>
+            <input type="text" class="form-control" placeholder="LINE@" formControlName="line">
           </div>
 
+          <div class="col-12">
+            <div class="btns pt-4 text-center">
+              <a class="c-btn pink mr-4" (click)="saveSocials()" *ngIf="socials?.length == 0">Save</a>
+              <a class="c-btn green" (click)="updateSocials()" *ngIf="socials?.length > 0">Update</a>
+            </div>
+          </div>
         </form>
       </div>
     </div>

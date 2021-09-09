@@ -47,13 +47,6 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="programForm">
-          <div class="add-img">
-            <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
-            <a (click)="file.click()">
-              <img *ngIf="!imageUploaded" src={{preview}}>
-              <!-- <img *ngIf="imageUploaded" src={{loading}}> -->
-            </a>
-          </div>
           <div class="form-group">
             <label>Full Name</label>
             <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName">

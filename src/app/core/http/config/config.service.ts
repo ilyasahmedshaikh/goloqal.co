@@ -13,6 +13,7 @@ export class ConfigService {
     blogs_table: "blogs",
     comments_table: "comments",
     sliders_table: "sliders",
+    socials_table: "socials",
   }
 
   topics: any = [
