@@ -68,4 +68,15 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  deleteUser(user) {
+    let request = this.api.delete(this.config.collections.users_table, user.id);
+    request.then(() => {
+      alert('User Info Deleted');
+      this.getUsers();
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
 }

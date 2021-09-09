@@ -25,7 +25,7 @@
               <td>{{item.user_type}}</td>
               <td>
                 <a class="far fa-edit mr-4" (click)="editUser(item)" data-toggle="modal" data-target="#editUser"></a>
-                <a class="fas fa-trash-alt"></a>
+                <a class="fas fa-trash-alt" (click)="deleteUser(item)"></a>
               </td>
             </tr>
           </tbody>
