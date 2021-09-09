@@ -10,6 +10,7 @@ import { ApiService } from '../../core/http/api/api.service';
 })
 export class HomepageComponent implements OnInit {
 
+  sliders: any = [];
   topics: any = [];
   categories: any = [];
   topicWiseData: any = [];
@@ -24,6 +25,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.getCategories();
     this.getData();
+    this.getsliders();
   }
 
   view(item) {
@@ -50,6 +52,12 @@ export class HomepageComponent implements OnInit {
   getCategories() {
     this.api.getAll(this.config.collections.categories_table).subscribe(categ => {
       this.categories = categ;
+    })
+  }
+
+  getsliders() {
+    this.api.getAll(this.config.collections.sliders_table).subscribe(res => {
+      this.sliders = res;
     })
   }
 }
