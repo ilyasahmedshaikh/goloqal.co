@@ -30,7 +30,7 @@
                   <div class="list-group-item item list-group-item-action align-items-center" *ngFor="let item of sliders">
                     <img src="{{item.image}}">
                     <p>{{item.name}}</p>
-                    <a href="#"><i class="fas fa-trash"></i></a>
+                    <a (click)="deleteSlider(item)"><i class="fas fa-trash"></i></a>
                   </div>
                 </div>
               </div>

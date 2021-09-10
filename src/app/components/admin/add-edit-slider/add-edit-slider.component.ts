@@ -61,4 +61,16 @@ export class AddEditSliderComponent implements OnInit {
     });
   }
 
+  deleteSlider(item) {
+    let request = this.api.delete(this.config.collections.sliders_table, item.id);
+
+    request.then(() => {
+      alert('Slider Deleted');
+      this.getSliders();
+    })
+    .catch((error) => {
+      alert(error);
+    });
+  }
+
 }
