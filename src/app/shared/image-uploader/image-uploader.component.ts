@@ -12,6 +12,8 @@ import { LoaderService } from '../../core/services/loader/loader.service'
 export class ImageUploaderComponent implements OnInit {
 
   @Input('isReset') isReset: boolean = false;
+  @Input('ifPreviewAvailable') ifPreviewAvailable: any = "";
+  
   @Output() previewImage = new EventEmitter<any>();
 
   preview: any = "assets/img/img-upload-icon.png";
@@ -26,12 +28,15 @@ export class ImageUploaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (this.ifPreviewAvailable && this.ifPreviewAvailable != "0") this.preview = this.ifPreviewAvailable;
   }
 
   ngOnChanges() {
     if (this.isReset) {
       this.resetPreview();
     }
+
+    if (this.ifPreviewAvailable && this.ifPreviewAvailable != "0") this.preview = this.ifPreviewAvailable;
   }
 
   resetPreview(): void {

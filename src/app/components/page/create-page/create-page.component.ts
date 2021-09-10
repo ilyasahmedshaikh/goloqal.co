@@ -46,7 +46,7 @@ export class CreatePageComponent implements OnInit {
   // gallery images
   imageGalleryUploaded: boolean = false;
 
-  galleryImages: any = [];
+  galleryImages: any = ["0", "0", "0", "0"];
 
   // product images 
   productPreview: string = '';
