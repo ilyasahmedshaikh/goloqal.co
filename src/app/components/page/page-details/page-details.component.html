@@ -100,17 +100,40 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="row pt-4" *ngIf="data.everyDay">
+                  <div class="col-12">
+                    <h5 class="text-center">
+                      <i class="fas fa-business-time pr-2 text-black-50"></i> {{data.extraAvailability}}
+                    </h5>
+                  </div>
+                </div>
               </div>
 
               <div class="buttons">
-                <a class="c-btn pink mr-3" href="{{data.button1WebsiteUrl}}" *ngIf="data.button1WebsiteUrl">
+                <a class="c-btn pink mr-3" href="{{data.button1WebsiteUrl}}" 
+                  *ngIf="data.button1WebsiteUrl">
                   <i class="fas fa-globe-asia"></i> Website
                 </a>
-                <a class="c-btn green" href="{{data.button4LineUrl}}" *ngIf="data.button4LineUrl && !data.button2TelephoneNumber">
+                <a class="c-btn green" href="{{data.button4LineUrl}}" 
+                  *ngIf="data.button4LineUrl && !data.button2TelephoneNumber">
                   <i class="fab fa-line"></i> Line
                 </a>
-                <a class="c-btn green" href="{{data.button2TelephoneNumber}}" *ngIf="data.button2TelephoneNumber && !data.button4LineUrl">
+                <a class="c-btn green" href="tel:{{data.button2TelephoneNumber}}" 
+                  *ngIf="data.button2TelephoneNumber && !data.button4LineUrl">
                   <i class="fas fa-phone-alt"></i> Telephone
+                </a>
+                <a class="c-btn pink mr-3" href="{{data.button3FacebookInstagramUrl}}" 
+                  *ngIf="data.button3FacebookInstagramUrl">
+                  <i class="fas fa-thumbs-up"></i> Socials
+                </a>
+                <a class="c-btn green mr-3" href="{{data.button5ChatUrl}}" 
+                  *ngIf="data.button5ChatUrl">
+                  <i class="fas fa-comments"></i> Chat
+                </a>
+                <a class="c-btn pink mr-3" href="{{data.button6TicketUrl}}" 
+                  *ngIf="data.button6TicketUrl">
+                  <i class="fas fa-ticket-alt"></i> Ticket
                 </a>
               </div>
             </div>

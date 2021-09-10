@@ -104,13 +104,13 @@ export class CreatePageComponent implements OnInit {
       button1WebsiteUrl: ['', Validators.required],
       button2Call: ['Call', Validators.required],
       button2TelephoneNumber: ['', Validators.required],
-      button3FacebookInstagram: ['Facebook/Instagram', Validators.required],
+      button3FacebookInstagram: ['Socials', Validators.required],
       button3FacebookInstagramUrl: ['', Validators.required],
       button4Line: ['Line', Validators.required],
       button4LineUrl: ['', Validators.required],
       button5Chat: ['Chat', Validators.required],
       button5ChatUrl: ['', Validators.required],
-      button6Ticket: ['Get Ticket', Validators.required],
+      button6Ticket: ['Ticket', Validators.required],
       button6TicketUrl: ['', Validators.required],
     });
   }

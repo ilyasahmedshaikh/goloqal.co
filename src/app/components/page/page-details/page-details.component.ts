@@ -36,6 +36,8 @@ export class PageDetailsComponent implements OnInit {
     } else {
       this.router.navigateByUrl('/homepage');
     }
+
+    window.scroll(0, 0);
   }
 
   edit(data) {
