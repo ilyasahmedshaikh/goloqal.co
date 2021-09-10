@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/core/services/login/login.service';
 
 @Component({
   selector: 'app-header',
@@ -11,9 +13,15 @@ export class HeaderComponent implements OnInit {
   sidebar: boolean = false;
   fadeSection: boolean = false;
 
-  constructor() { }
+  user: any = {};
+
+  constructor(
+    private loginSrv: LoginService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.getUserData();
   }
 
   toggleMenu() {
@@ -25,6 +33,22 @@ export class HeaderComponent implements OnInit {
 
     // enabling fade section
     this.fadeSection = !this.fadeSection;
+
+    console.log(this.sidebar);
+    
+  }
+
+  getUserData() {
+    this.user = this.loginSrv.getUserData();
+  }
+
+  logout() {
+    this.loginSrv.logout();
+    this.router.navigateByUrl('/homepage');
+
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 
 }

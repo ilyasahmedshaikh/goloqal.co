@@ -118,6 +118,7 @@
 }
 
 .sidebar{
+  padding: 75px 0 0 15px;
   .bar{
     overflow-x: scroll;
     white-space: nowrap;
@@ -151,7 +152,6 @@
       list-style: none;
       margin-bottom: 0;
       padding-left: 0;
-      padding: 75px 0 0 15px;
       overflow-y: auto;
       @include respond(tablet) {
         padding: 3% 0 0 5%;

@@ -16,15 +16,15 @@
         <div class="col-10">
           <div class="nav">
             <ul>
-              <li><a class="text-uppercase" routerLink="/page/page-listing">My Page</a></li>
-              <!-- <li><a class="text-uppercase" routerLink="/page/nearby-page">Nearby Shops / Products</a></li> -->
-              <li><a class="text-uppercase" routerLink="/for-you">For You</a></li>
-              <li><a class="text-uppercase" routerLink="page/create-page">Create Page</a></li>
-              <li><a class="text-uppercase" routerLink="/auth/login">SIGN IN</a></li>
-              <li><a class="text-uppercase" routerLink="/auth/signup">JOIN</a></li>
-              <li>
+              <li *ngIf="user?.id"><a class="text-uppercase" routerLink="/page/page-listing">My Page</a></li>
+              <li *ngIf="user?.id"><a class="text-uppercase" routerLink="/for-you">For You</a></li>
+              <li *ngIf="user?.id"><a class="text-uppercase" routerLink="page/create-page">Create Page</a></li>
+
+              <li *ngIf="!user?.id"><a class="text-uppercase" routerLink="/auth/login">SIGN IN</a></li>
+              <li *ngIf="!user?.id"><a class="text-uppercase" routerLink="/auth/signup">JOIN</a></li>
+              <li *ngIf="user?.id">
                 <div class="user-img" routerLink="/auth/edit-profile">
-                  <img src="assets/img/shop4.jpg">
+                  <img src="{{user.avatar}}">
                 </div>
               </li>
             </ul>
@@ -35,8 +35,8 @@
 </div>
 
 <div class="sidebar side" [ngClass]="{'show': sidebar}">
-  <ul>
-    <li>
+  <ul *ngIf="user?.id">
+    <li *ngIf="user.user_type == 'admin'">
       <a (click)="toggleMenu()" routerLink="/admin">
         Admin Controls
       </a>
@@ -66,21 +66,12 @@
         Profile
       </a>
     </li>
-    <li>
-      <a (click)="toggleMenu()" routerLink="/auth/login">
-        Sign In
-      </a>
-    </li>
-    <li>
-      <a (click)="toggleMenu()" routerLink="/auth/signup">
-          Join
-      </a>
-    </li>
   </ul>
 
   <div class="press text-center mt-5">
-    <a class="c-btn pink mr-2">Sign In</a>
-    <a class="c-btn green">Register</a>
+    <a class="c-btn pink mr-2" *ngIf="!user?.id" (click)="toggleMenu()" routerLink="/auth/login">Sign In</a>
+    <a class="c-btn green" *ngIf="!user?.id" (click)="toggleMenu()" routerLink="/auth/signup">Register</a>
+    <a class="c-btn pink" *ngIf="user?.id" (click)="logout()">Logout</a>
   </div>
 </div>
 
