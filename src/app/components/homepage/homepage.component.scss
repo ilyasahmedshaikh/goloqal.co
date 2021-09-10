@@ -132,5 +132,13 @@
   .categories {
     height: 280px;
     overflow-y: auto;
+    padding-bottom: 100px;
+    .innerdiv1 {
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0) 100%);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+    }
   }
 }
