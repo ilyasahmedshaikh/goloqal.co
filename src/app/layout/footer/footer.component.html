@@ -11,11 +11,11 @@
             </div>
             <div class="col-12 col-md-4 col-lg-4">
                 <h6 class="text-pinkgradient">Follow Us</h6>
-                <a href="https://www.facebook.com">Facebook</a>
-                <a href="https://twitter.com">Twitter</a>
-                <a href="https://www.instagram.com">Instagram</a>
-                <a href="https://www.pinterest.com/">Pinterest</a>
-                <a href="https://line.me/en/">LINE@</a>
+                <a *ngIf="socials[0].facebook" href="{{socials[0].facebook}}">Facebook</a>
+                <a *ngIf="socials[0].twitter" href="{{socials[0].twitter}}">Twitter</a>
+                <a *ngIf="socials[0].instagram" href="{{socials[0].instagram}}">Instagram</a>
+                <a *ngIf="socials[0].pinterest" href="{{socials[0].pinterest}}">Pinterest</a>
+                <a *ngIf="socials[0].line" href="{{socials[0].line}}">LINE@</a>
             </div>
             <div class="col-12 col-md-4 col-lg-4">
                 <h6 class="text-pinkgradient">Content</h6>
