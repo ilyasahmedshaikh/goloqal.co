@@ -17,6 +17,7 @@
                 <div class="form-group">
                   <label>Select Topic</label>
                   <select class="form-control c-dropdown" formControlName="topic_id" (change)="onChangeTopic($event)">
+                    <option [value]="0">Select Topic</option>
                     <option [value]="item.id" *ngFor="let item of topics">{{item.name}}</option>
                   </select>
                 </div>
@@ -25,6 +26,7 @@
                 <div class="form-group">
                   <label>Select Category</label>
                   <select class="form-control c-dropdown" formControlName="category_id">
+                    <option [value]="0">Select Category</option>
                     <option [value]="item.id" *ngFor="let item of categories">{{item.name}}</option>
                   </select>
                 </div>

@@ -81,8 +81,8 @@ export class CreatePageComponent implements OnInit {
 
   formInit() {
     this.programForm = this.fb.group({
-      topic_id:  ['', Validators.required],
-      category_id: ['', Validators.required],
+      topic_id:  ['0', Validators.required],
+      category_id: ['0', Validators.required],
       title: ['', Validators.required],
       startDateTime: ['', Validators.required],
       endDateTime: ['', Validators.required],
