@@ -41,7 +41,7 @@
                   </div>
                   <div class="col-12 col-md-9 col-lg-8">
                     <div class="plain-card">
-                      <div class="row">
+                      <div class="row" *ngIf="!data.everyDay">
                         <div class="col-8 col-lg-8">
                           <h6>
                             <span class="day">{{getDayFromDate(data.startDateTime)}}</span>
@@ -58,6 +58,11 @@
                           </div>
                         </div>
                       </div>
+                      <div class="row" *ngIf="data.everyDay">
+                        <div class="col-12">
+                          <p>Open Everyday</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -70,7 +75,7 @@
                   </div>
                   <div class="col-12 col-md-9 col-lg-8">
                     <div class="plain-card">
-                      <div class="row">
+                      <div class="row" *ngIf="!data.everyDay">
                         <div class="col-8 col-lg-8">
                           <h6>
                             <span class="day">{{getDayFromDate(data.endDateTime)}}</span>
@@ -85,6 +90,11 @@
                               {{data.endDateTime | date: 'shortTime'}}
                             </h6>
                           </div>
+                        </div>
+                      </div>
+                      <div class="row" *ngIf="data.everyDay">
+                        <div class="col-12">
+                          <p>Open Everyday</p>
                         </div>
                       </div>
                     </div>
