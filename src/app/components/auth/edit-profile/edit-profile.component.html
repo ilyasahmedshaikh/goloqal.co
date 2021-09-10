@@ -3,14 +3,9 @@
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-4">
         <form [formGroup]="programForm">
-          <div class="add-img">
-            <input class="d-none" type="file" accept="image/*" #file (change)="readURL($event)">
-            <a (click)="file.click()">
-                <img *ngIf="!imageUploaded" src={{preview}}>
-                <!-- <img *ngIf="imageUploaded" src={{loading}}> -->
-            </a>
-          </div>
-          <div class="form-group">
+          <app-image-uploader [ifPreviewAvailable]="user.avatar" (previewImage)="onImagePreview($event)"></app-image-uploader>
+
+          <div class="form-group pt-5">
             <label>Full Name</label>
             <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName">
           </div>
@@ -22,20 +17,10 @@
             <label>Mobile (optional)</label>
             <input type="number" class="form-control" placeholder="Mobile" formControlName="mobile">
           </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="email" class="form-control" placeholder="Password" formControlName="password">
-          </div>
-          <div class="extras">
-            <div class="list-group list-group-flush">
-              <a class="list-group-item list-group-item-action"><span>2</span>Followings</a>
-              <a class="list-group-item list-group-item-action" routerLink="/shops/shop-listing"><span>2</span>Shops</a>
-              <a class="list-group-item list-group-item-action" routerLink="/events/event-listing"><span>2</span>Events</a>
-              <a class="list-group-item list-group-item-action"><span>10</span>Favourites</a>
-            </div>
-          </div>
+          
           <div class="update-btn">
-            <a class="c-btn pink d-block mt-4">Update</a>
+            <a class="c-btn pink d-block mt-4" (click)="update()">Update</a>
+            <a class="c-btn green d-block mt-2" routerLink="/auth/reset-password">Change Password</a>
           </div>
         </form>
       </div>

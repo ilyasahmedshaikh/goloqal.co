@@ -41,6 +41,8 @@ export class SignupComponent implements OnInit {
       .then(value => {
         // adding detailer to firestore for user_type and other profile biodata
         let data = {
+          avatar: "https://i.ibb.co/2MH630J/user.png",
+          mobile: "0",
           ...this.programForm.value,
           user_type: 'user'
         };

@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  usersCollection: string = "craftmans";
-
   public status = new BehaviorSubject(false);
 
-  constructor(
-    private fireStore: AngularFirestore,
-  ) {
+  constructor() {
     let data = localStorage.getItem('user');
     if (data) {
       this.status.next(true);

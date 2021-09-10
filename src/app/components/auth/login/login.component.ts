@@ -44,15 +44,8 @@ export class LoginComponent implements OnInit {
 
     this.auth.signInWithEmailAndPassword(email, password)
     .then(value => {
-      this.api.getAll(this.config.collections.users_table).subscribe(res => {
-        // method to format firebase data in pretty form
-        this.Users = res;
-
-        this.Users.length>0 && this.Users.forEach(user => {
-          if (user.email == email) {
-            this.checkLogin.setLoginData(user);
-          }
-        });
+      this.api.getWithQuery(this.config.collections.users_table, 'email', '==', email).subscribe(user => {
+        this.checkLogin.setLoginData(user[0]);
       })
 
       this.checkLogin.setLoginStatus(true);
