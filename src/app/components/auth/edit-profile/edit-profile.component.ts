@@ -26,8 +26,6 @@ export class EditProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.preview = this.user.avatar;
-
     this.formInit();
     this.getUserData();
   }
@@ -48,6 +46,8 @@ export class EditProfileComponent implements OnInit {
   getUserData() {
     this.user = this.loginSrv.getUserData();
     console.log(this.user);
+
+    this.preview = this.user?.avatar;
 
     this.programForm.patchValue({
       fullName: this.user.fullName,

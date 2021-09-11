@@ -36,19 +36,19 @@
           <div class="plain-card">
             <div class="row">
               <div class="col-12 mb-5">
-                <app-image-uploader [ifPreviewAvailable]="editObj.image" (previewImage)="onImagePreview($event)"></app-image-uploader>
+                <app-image-uploader [ifPreviewAvailable]="editObj?.image" (previewImage)="onImagePreview($event)"></app-image-uploader>
               </div>
               <div class="col-3">
-                <app-image-uploader [ifPreviewAvailable]="editObj.galleryImages[0]" (previewImage)="onGalleryImagePreview($event, 0)"></app-image-uploader>
+                <app-image-uploader [ifPreviewAvailable]="editObj?.galleryImages[0]" (previewImage)="onGalleryImagePreview($event, 0)"></app-image-uploader>
               </div>
               <div class="col-3">
-                <app-image-uploader [ifPreviewAvailable]="editObj.galleryImages[1]" (previewImage)="onGalleryImagePreview($event, 1)"></app-image-uploader>
+                <app-image-uploader [ifPreviewAvailable]="editObj?.galleryImages[1]" (previewImage)="onGalleryImagePreview($event, 1)"></app-image-uploader>
               </div>
               <div class="col-3">
-                <app-image-uploader [ifPreviewAvailable]="editObj.galleryImages[2]" (previewImage)="onGalleryImagePreview($event, 2)"></app-image-uploader>
+                <app-image-uploader [ifPreviewAvailable]="editObj?.galleryImages[2]" (previewImage)="onGalleryImagePreview($event, 2)"></app-image-uploader>
               </div>
               <div class="col-3">
-                <app-image-uploader [ifPreviewAvailable]="editObj.galleryImages[3]" (previewImage)="onGalleryImagePreview($event, 3)"></app-image-uploader>
+                <app-image-uploader [ifPreviewAvailable]="editObj?.galleryImages[3]" (previewImage)="onGalleryImagePreview($event, 3)"></app-image-uploader>
               </div>
             </div>
           </div>
