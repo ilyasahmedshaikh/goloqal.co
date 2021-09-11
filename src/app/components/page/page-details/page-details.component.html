@@ -216,9 +216,9 @@
             <span class="left"><i class="fas fa-user"></i>Page Creator</span>
             <div class="col-12">
               <div class="text-center pt-3">
-                <img src="{{user?.avatar}}">
+                <img src="{{data?.created_by?.avatar}}">
                 <p class="mini py-2">created by</p>
-                <p>{{user?.fullName}}</p>
+                <p>{{data?.created_by?.fullName}}</p>
               </div>
             </div>
           </div>
@@ -226,7 +226,8 @@
 
         <div class="col-12 mt-5" *ngIf="newPage">
           <a class="c-btn pink mr-3" routerLink="/homepage">Cancel</a>
-          <a class="c-btn green mr-3" (click)="createPage()">Create Page</a>
+          <a class="c-btn green mr-3" (click)="createPage()" *ngIf="!data.isEdit">Create Page</a>
+          <a class="c-btn green mr-3" (click)="updatePage()" *ngIf="data.isEdit">Update Page</a>
         </div>
       </div>
     </div>

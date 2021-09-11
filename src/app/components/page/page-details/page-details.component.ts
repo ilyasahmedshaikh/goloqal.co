@@ -35,8 +35,8 @@ export class PageDetailsComponent implements OnInit {
     if(this.data) {
       this.location = this.data?.location;
 
-      // get user details 
-      this.getUserDetails(this.data?.created_by);
+      console.log('page details', this.data);
+      
     } else {
       this.router.navigateByUrl('/homepage');
     }
@@ -63,9 +63,14 @@ export class PageDetailsComponent implements OnInit {
     });
   }
 
-  getUserDetails(email) {
-    this.api.getWithQuery(this.config.collections.users_table, "email", "==", email).subscribe(response => {
-      this.user = response[0];
+  updatePage() {
+    let request = this.api.put(this.config.collections.pages_table, this.data.id, this.data);
+
+    request.then(() => {
+      this.router.navigateByUrl("/homepage");
+    })
+    .catch((error) => {
+      alert(error);
     });
   }
 

@@ -199,31 +199,21 @@ export class CreatePageComponent implements OnInit {
 
   previewPage() {
     let data = {
+      isEdit: this.isEdit,
+      id: this.editObj.id,
       ...this.programForm.value,
-      image: this.preview,
-      galleryImages: this.galleryImages,
+      image: this.isEdit ? this.editObj.image : this.preview,
+      galleryImages: this.isEdit ? this.editObj.galleryImages : this.galleryImages,
       products: this.products,
       location: this.location,
-      created_by: this.loginSrv.getUserData()?.email
+      created_by: {
+        avatar: this.loginSrv.getUserData()?.avatar,
+        fullName: this.loginSrv.getUserData()?.fullName,
+        email: this.loginSrv.getUserData()?.email
+      }
     };
     
     this.router.navigate(['/page/page-details'], { state: {page: data, newPage: true} })
-  }
-
-  updatePage() {
-    let data = {
-      ...this.programForm.value
-    }
-
-    let request = this.api.put(this.config.collections.pages_table, this.editObj.id, data);
-
-    request.then(() => {
-      this.programForm.reset();
-      this.router.navigateByUrl("/homepage");
-    })
-    .catch((error) => {
-      alert(error);
-    });
   }
 
   deletePage() {
