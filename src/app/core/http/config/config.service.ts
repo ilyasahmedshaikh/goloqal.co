@@ -15,7 +15,12 @@ export class ConfigService {
     sliders_table: "sliders",
     socials_table: "socials",
     contentPages: {
-      about: "about"
+      about: "about",
+      privacyPolicy: "privacy-policy",
+      termsConditions: "terms-conditions",
+      faq: "faq",
+      partnerWithUs: "partner-with-us",
+      subscribeForNews: "subscribe-for-news"
     }
   }
 

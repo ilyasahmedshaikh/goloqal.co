@@ -13,7 +13,7 @@
                 <a class="c-btn pink" (click)="onCancel()">Cancel</a>
             </div>
 
-            <div class="col-12" *ngIf="isEdit">
+            <div class="col-12" *ngIf="isEdit || !data[0]?.content">
                 <div class="pt-4">
                     <textarea class="w-100 form-control" rows="10" [(ngModel)]="content"
                         placeholder="Add content here"></textarea>
