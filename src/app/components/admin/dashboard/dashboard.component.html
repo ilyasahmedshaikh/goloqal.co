@@ -61,4 +61,27 @@
       </div>
     </div>
   </div>
+
+  <div class="admin-controls pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-bar">
+            <h1>Content Pages</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-12 mt-3" *ngFor="let item of contentPages" routerLink="{{item.path}}">
+          <div class="card">
+            <div class="card-body p-3 d-flex justify-content-between">
+              <p>{{item.name}}</p>
+              <i class="{{item.icon}}"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

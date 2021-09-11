@@ -14,6 +14,9 @@ export class ConfigService {
     comments_table: "comments",
     sliders_table: "sliders",
     socials_table: "socials",
+    contentPages: {
+      about: "about"
+    }
   }
 
   topics: any = [
