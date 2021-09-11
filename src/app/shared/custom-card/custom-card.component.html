@@ -23,11 +23,13 @@
     </div>
     <div class="day-time">
       <div class="row">
-        <div class="col-6">
+        <div class="col-6" [ngClass]="{'col-12': data.everyDay}">
           <span class="icon"><i class="far fa-calendar-alt"></i></span>
-          <span class="text">{{data.startDateTime | date: 'longDate'}}</span>
+          <span class="text" *ngIf="!data.everyDay">{{data.startDateTime | date: 'longDate'}}</span>
+          <span class="text" *ngIf="data.everyDay && data.extraAvailability">{{data.extraAvailability}}</span>
+          <span *ngIf="data.everyDay && !data.extraAvailability">Not Specified</span>
         </div>
-        <div class="col-6">
+        <div class="col-6" *ngIf="!data.everyDay">
           <span class="icon"><i class="far fa-clock"></i></span>
           <span class="text">{{data.startDateTime | date: 'shortTime'}}</span>
         </div>
