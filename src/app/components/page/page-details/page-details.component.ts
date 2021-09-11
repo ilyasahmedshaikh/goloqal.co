@@ -20,6 +20,8 @@ export class PageDetailsComponent implements OnInit {
     lng: 98.398392
   }
 
+  user: any = {};
+
   constructor(
     private router: Router,
     private config: ConfigService,
@@ -32,7 +34,9 @@ export class PageDetailsComponent implements OnInit {
   ngOnInit(): void {
     if(this.data) {
       this.location = this.data?.location;
-      console.log('page-details', this.data);
+
+      // get user details 
+      this.getUserDetails(this.data?.created_by);
     } else {
       this.router.navigateByUrl('/homepage');
     }
@@ -56,6 +60,12 @@ export class PageDetailsComponent implements OnInit {
     })
     .catch((error) => {
       alert(error);
+    });
+  }
+
+  getUserDetails(email) {
+    this.api.getWithQuery(this.config.collections.users_table, "email", "==", email).subscribe(response => {
+      this.user = response[0];
     });
   }
 

@@ -1,4 +1,4 @@
-<div class="shop">
+<div class="shop" *ngIf="data">
   <div class="container">
     <div class="row">
 
@@ -17,7 +17,9 @@
               </div>
             </div>
             <div class="gallery-images mt-3">
-              <img src="{{item}}" alt="gallery image" *ngFor="let item of data.galleryImages">
+              <div class="g-img" *ngFor="let item of data.galleryImages">
+                <img src="{{item}}" alt="gallery image" *ngIf="item != '0'">
+              </div>
             </div>
           </div>
 
@@ -101,7 +103,7 @@
                   </div>
                 </div>
 
-                <div class="row pt-4" *ngIf="data.everyDay">
+                <div class="row pt-4" *ngIf="data.everyDay && data.extraAvailability">
                   <div class="col-12">
                     <h5 class="text-center">
                       <i class="fas fa-business-time pr-2 text-black-50"></i> {{data.extraAvailability}}
@@ -209,14 +211,14 @@
           </div>
         </div>
 
-        <div class="col-12">
+        <div class="col-12" *ngIf="user">
           <div class="plain-card">
-            <span class="left"><i class="fas fa-user"></i>Shop Creator</span>
+            <span class="left"><i class="fas fa-user"></i>Page Creator</span>
             <div class="col-12">
               <div class="text-center pt-3">
-                <img src="assets/img/img.g.jpg">
+                <img src="{{user?.avatar}}">
                 <p class="mini py-2">created by</p>
-                <p>Eventbrite</p>
+                <p>{{user?.fullName}}</p>
               </div>
             </div>
           </div>

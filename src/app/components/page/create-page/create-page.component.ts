@@ -6,6 +6,7 @@ import { ApiService } from '../../../core/http/api/api.service';
 import { LoaderService } from '../../../core/services/loader/loader.service';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
+import { LoginService } from 'src/app/core/services/login/login.service';
 
 @Component({
   selector: 'app-create-page',
@@ -60,6 +61,7 @@ export class CreatePageComponent implements OnInit {
     private api: ApiService,
     private router: Router,
     private loader: LoaderService,
+    private loginSrv: LoginService
   ) {
     this.editObj = this.router.getCurrentNavigation().extras.state?.page;
   }
@@ -201,7 +203,8 @@ export class CreatePageComponent implements OnInit {
       image: this.preview,
       galleryImages: this.galleryImages,
       products: this.products,
-      location: this.location
+      location: this.location,
+      created_by: this.loginSrv.getUserData()?.email
     };
     
     this.router.navigate(['/page/page-details'], { state: {page: data, newPage: true} })
