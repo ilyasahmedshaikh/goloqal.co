@@ -22,7 +22,7 @@ export class PartnerWithUsComponent implements OnInit {
   }
 
   getContent() {
-    this.api.getAll(this.config.collections.contentPages.about).subscribe(res => {
+    this.api.getAll(this.config.collections.contentPages.partnerWithUs).subscribe(res => {
       this.data = res;
     });
   }
