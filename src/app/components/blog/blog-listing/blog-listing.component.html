@@ -20,15 +20,15 @@
                   <p>{{item.description}}</p>
                   <div class="read">
                     <a href="#">Read On <i class="fas fa-chevron-right"></i></a>
-                    <p>8 Min Read</p>
+                    <p>{{readingTime(item.description, item.content)}} mins Read</p>
                   </div>
                   <div class="bottoms">
                     <div class="row">
                       <div class="col-2">
-                        <img src="assets/img/blog1.jpg">
+                        <img src="{{item.user.avatar}}">
                       </div>
                       <div class="col-10">
-                        <h6>{{item.user.name}}</h6>
+                        <h6>{{item.user.fullName}}</h6>
                         <p>{{item.createdAt | date: 'medium'}}</p>
                       </div>
                     </div>

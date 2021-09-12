@@ -85,9 +85,16 @@
     font-size: 12px;
   }
   .comment{
-    padding-top: 7%;
+    padding-top: 30px;
     .c-btn{
       font-size: 15px;
+    }
+  }
+  .comments {
+    .delete {
+      position: absolute;
+      top: 10px;
+      right: 10px;
     }
   }
 }

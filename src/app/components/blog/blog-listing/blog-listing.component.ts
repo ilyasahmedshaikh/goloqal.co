@@ -47,4 +47,13 @@ export class BlogListingComponent implements OnInit {
     return category.name;
   }
 
+  readingTime(desc, content) {
+    const wpm = 225;
+    const wordsDesc = desc.trim().split(/\s+/).length;
+    const wordsContent = content.trim().split(/\s+/).length;
+    const time = Math.ceil((wordsDesc+wordsContent) / wpm);
+
+    return time;
+  }
+
 }

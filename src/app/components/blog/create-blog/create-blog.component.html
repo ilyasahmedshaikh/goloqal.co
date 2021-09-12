@@ -46,7 +46,7 @@
               <div class="col-12">
                 <div class="mt-3 text-center">
                   <a class="c-btn pink mr-3">Cancel</a>
-                  <a class="c-btn green mr-3" *ngIf="!isEdit">Preview</a>
+                  <!-- <a class="c-btn green mr-3" *ngIf="!isEdit">Preview</a> -->
                   <a class="c-btn green mr-3" *ngIf="!isEdit" (click)="createBlog()">Create Blog</a>
                   <a class="c-btn green mr-3" *ngIf="isEdit" (click)="updateBlog()">Update</a>
                   <a class="c-btn pink" *ngIf="isEdit" (click)="deleteBlog()">Delete</a>
