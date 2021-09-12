@@ -1,1 +1,41 @@
-<p>faq works!</p>
+<div class="faq">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="heading">
+                    <h1>FAQ Page Content</h1>
+                </div>
+            </div>
+            <div class="col-12" *ngIf="!isEdit && data[0]?.content">
+                <div class="data-content mb-5" *ngFor="let item of data[0]?.content">
+                    <div class="mt-4">
+                        <h5 class="mb-2">{{item.question}}</h5>
+                        <p>{{item.answer}}</p>
+                    </div>
+                </div>
+
+                <a class="c-btn green mr-2" (click)="onEdit()">Edit</a>
+                <a class="c-btn pink" (click)="onCancel()">Cancel</a>
+            </div>
+
+            <div class="col-12" *ngIf="isEdit || !data[0]?.content">
+                <div class="pt-4" *ngFor="let item of content; let i = index">
+                    <label><strong>Question {{i+1}}</strong></label>
+                    <input type="text" class="form-control mb-2" placeholder="Question"[(ngModel)]="item.question">
+                    <textarea class="w-100 form-control" rows="5" [(ngModel)]="item.answer"
+                        placeholder="Answer"></textarea>
+                </div>
+
+                <div class="pt-4">
+                    <button class="c-btn pink d-block" (click)="updateContent()" *ngIf="data[0]?.id">
+                        Update Content
+                    </button>
+
+                    <button class="c-btn green d-block" (click)="addContent()" *ngIf="!data[0]?.id">
+                        Add Content
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
