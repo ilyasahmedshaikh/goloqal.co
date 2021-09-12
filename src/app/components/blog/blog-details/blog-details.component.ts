@@ -81,8 +81,16 @@ export class BlogDetailsComponent implements OnInit {
     })
   }
 
-  onEdit(item) {
-    this.programForm.patchValue(item);
+  onDelete(item) {
+    let request = this.api.delete(this.config.collections.comments_table, item.id);
+
+    request.then(() => {
+      alert('Comment Deleted');
+      this.getComments();
+    })
+    .catch((error) => {
+      alert(error);
+    });
   }
 
 }
