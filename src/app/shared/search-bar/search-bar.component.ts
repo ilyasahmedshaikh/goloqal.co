@@ -44,6 +44,9 @@ export class SearchBarComponent implements OnInit {
       let city = res.city;
       this.cities.unshift({ name: city });
       this.selectedOption = this.cities[0];
+
+      // sending data to parent
+      this.onSelectedCountry.emit(this.selectedOption);
     })
   }
 
