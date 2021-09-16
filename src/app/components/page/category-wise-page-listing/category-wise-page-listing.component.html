@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="heading">
+                    <h1>{{data.name}}</h1>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 my-4" *ngFor="let item of pages" routerLink="/page/page-details">
+                <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
+            </div>
+    
+            <div class="col-12 col-md-12 my-4" *ngIf="pages.length == 0">
+                <div class="no-data">
+                    <img src="assets/img/no-data.png" alt="no-data">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

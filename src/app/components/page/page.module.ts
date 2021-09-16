@@ -14,10 +14,11 @@ import { CreatePageComponent } from './create-page/create-page.component';
 import { NearByPageComponent } from './near-by-page/near-by-page.component';
 import { PageDetailsComponent } from './page-details/page-details.component';
 import { PageListingComponent } from './page-listing/page-listing.component';
+import { CategoryWisePageListingComponent } from './category-wise-page-listing/category-wise-page-listing.component';
 
 
 @NgModule({
-  declarations: [PageComponent, CreatePageComponent, NearByPageComponent, PageDetailsComponent, PageListingComponent],
+  declarations: [PageComponent, CreatePageComponent, NearByPageComponent, PageDetailsComponent, PageListingComponent, CategoryWisePageListingComponent],
   imports: [
     CommonModule,
     PageRoutingModule,

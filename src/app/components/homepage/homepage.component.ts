@@ -60,4 +60,8 @@ export class HomepageComponent implements OnInit {
       this.sliders = res;
     })
   }
+
+  onCategoryClick(item) {
+    this.router.navigate(['/page/category-wise-page-listing'], { state: {data: item} })
+  }
 }

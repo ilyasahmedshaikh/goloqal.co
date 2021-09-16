@@ -1,0 +1,30 @@
+@import '../../../../styles.scss';
+
+.page-section {
+    padding-top: 5%;
+    @include respond(mobile) {
+      padding-top: 12%;
+    }
+    .heading {
+      h1 {
+        font-weight: 600;
+        font-size: 40px;
+        letter-spacing: .1px;
+        color: $black;
+        @include respond(mobile) {
+          font-size: 26px;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 22px;
+        color: $lightBlack;
+        letter-spacing: .1px;
+        padding-top: 10px;
+        @include respond(mobile) {
+          font-size: 18px;
+          padding-top: 6px;
+        }
+      }
+    }
+  }
