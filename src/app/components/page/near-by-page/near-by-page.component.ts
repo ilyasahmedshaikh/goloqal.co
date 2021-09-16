@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-near-by-page',
@@ -37,9 +38,15 @@ export class NearByPageComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  view(item) {
+    this.router.navigate(['/page/page-details/', item.id], { state: {page: item} })
   }
 
 }

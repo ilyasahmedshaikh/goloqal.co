@@ -71,7 +71,7 @@
             <p>Nearest {{pageSec.name}}</p>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of pageSec.data" routerLink="/page/page-details">
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of pageSec.data">
           <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
         </div>
 

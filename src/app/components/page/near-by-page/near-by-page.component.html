@@ -7,8 +7,8 @@
             <h1>NearBy Shops / Products</h1>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of shops" routerLink="/page/page-details">
-          <app-custom-card [data]="item"></app-custom-card>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of shops">
+          <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
         </div>
       </div>
     </div>

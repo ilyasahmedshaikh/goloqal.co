@@ -30,7 +30,7 @@
       </div>
     </div>
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of placesCommunities" routerLink="/page/page-details">
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of placesCommunities">
           <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
         </div>
       </div>

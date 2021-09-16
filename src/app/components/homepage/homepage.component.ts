@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 import { ConfigService } from '../../core/http/config/config.service'
 import { ApiService } from '../../core/http/api/api.service';
 
@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private api: ApiService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class HomepageComponent implements OnInit {
   }
 
   view(item) {
-    this.router.navigate(['/page/page-details'], { state: {page: item} })
+    this.router.navigate(['/page/page-details/', item.id], { state: {page: item} })
   }
 
   getData() {

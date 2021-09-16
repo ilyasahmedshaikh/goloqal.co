@@ -6,7 +6,7 @@
                     <h1>{{data.name}}</h1>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 my-4" *ngFor="let item of pages" routerLink="/page/page-details">
+            <div class="col-12 col-md-6 col-lg-4 my-4" *ngFor="let item of pages">
                 <app-custom-card [data]="item" (click)="view(item)"></app-custom-card>
             </div>
     

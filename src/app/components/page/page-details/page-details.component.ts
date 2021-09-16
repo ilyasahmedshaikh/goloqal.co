@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
 
@@ -10,6 +11,7 @@ import { ApiService } from '../../../core/http/api/api.service';
 })
 export class PageDetailsComponent implements OnInit {
 
+  id: any = '';
   data: any = {};
   newPage: boolean = false;
   days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -26,17 +28,23 @@ export class PageDetailsComponent implements OnInit {
     private router: Router,
     private config: ConfigService,
     private api: ApiService,
+    private activatedRoute: ActivatedRoute
   ){
+    // getting id from route
+    this.activatedRoute.paramMap.subscribe(params => {
+      if (params.get('id')) {
+        this.id = params.get('id');
+      }
+    });
+
     this.data = this.router.getCurrentNavigation().extras.state?.page;
-    this.newPage = this.router.getCurrentNavigation().extras.state?.newPage
+    this.newPage = this.router.getCurrentNavigation().extras.state?.newPage;
   }
 
   ngOnInit(): void {
     if(this.data) {
       this.location = this.data?.location;
-
       console.log('page details', this.data);
-      
     } else {
       this.router.navigateByUrl('/homepage');
     }
@@ -64,7 +72,7 @@ export class PageDetailsComponent implements OnInit {
   }
 
   updatePage() {
-    let request = this.api.put(this.config.collections.pages_table, this.data.id, this.data);
+    let request = this.api.put(this.config.collections.pages_table, this.id, this.data);
 
     request.then(() => {
       this.router.navigateByUrl("/homepage");

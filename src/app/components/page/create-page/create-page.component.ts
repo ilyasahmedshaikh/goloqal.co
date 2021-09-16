@@ -200,7 +200,7 @@ export class CreatePageComponent implements OnInit {
   previewPage() {
     let data = {
       isEdit: this.isEdit,
-      id: this.editObj.id,
+      id: this.isEdit ? this.editObj.id : 0,
       ...this.programForm.value,
       image: this.isEdit ? this.editObj.image : this.preview,
       galleryImages: this.isEdit ? this.editObj.galleryImages : this.galleryImages,
@@ -213,7 +213,7 @@ export class CreatePageComponent implements OnInit {
       }
     };
     
-    this.router.navigate(['/page/page-details'], { state: {page: data, newPage: true} })
+    this.router.navigate(['/page/page-details/', 0], { state: {page: data, newPage: true} })
   }
 
   deletePage() {
