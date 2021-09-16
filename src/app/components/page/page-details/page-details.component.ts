@@ -30,18 +30,18 @@ export class PageDetailsComponent implements OnInit {
     private api: ApiService,
     private activatedRoute: ActivatedRoute
   ){
+    this.data = this.router.getCurrentNavigation().extras.state?.page;
+    this.newPage = this.router.getCurrentNavigation().extras.state?.newPage;
+  }
+
+  ngOnInit(): void {
     // getting id from route
     this.activatedRoute.paramMap.subscribe(params => {
       if (params.get('id')) {
         this.id = params.get('id');
       }
     });
-
-    this.data = this.router.getCurrentNavigation().extras.state?.page;
-    this.newPage = this.router.getCurrentNavigation().extras.state?.newPage;
-  }
-
-  ngOnInit(): void {
+    
     if(this.data) {
       this.location = this.data?.location;
       console.log('page details', this.data);

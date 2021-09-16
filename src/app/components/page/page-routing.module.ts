@@ -34,7 +34,7 @@ const routes: Routes = [
         component: NearByPageComponent
       },
       {
-        path: 'category-wise-page-listing',
+        path: 'category-wise-page-listing/:id',
         component: CategoryWisePageListingComponent
       }
     ]

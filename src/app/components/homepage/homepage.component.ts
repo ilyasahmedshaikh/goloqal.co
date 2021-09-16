@@ -62,6 +62,6 @@ export class HomepageComponent implements OnInit {
   }
 
   onCategoryClick(item) {
-    this.router.navigate(['/page/category-wise-page-listing'], { state: {data: item} })
+    this.router.navigate(['/page/category-wise-page-listing', item.id], { state: {data: item} })
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
 
@@ -10,6 +11,7 @@ import { ApiService } from '../../../core/http/api/api.service';
 })
 export class CategoryWisePageListingComponent implements OnInit {
 
+  id: any = '';
   data: any = {};
   pages: any = [];
 
@@ -17,11 +19,19 @@ export class CategoryWisePageListingComponent implements OnInit {
     private router: Router,
     private config: ConfigService,
     private api: ApiService,
+    private activatedRoute: ActivatedRoute
   ){
     this.data = this.router.getCurrentNavigation().extras.state?.data;
   }
 
   ngOnInit(): void {
+    // getting id from route
+    this.activatedRoute.paramMap.subscribe(params => {
+      if (params.get('id')) {
+        this.id = params.get('id');
+      }
+    });
+
     console.log(this.data);
 
     if (this.data == undefined) {
