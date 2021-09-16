@@ -18,3 +18,6 @@ ipconfig
 https://efficientuser.com/2021/03/04/how-to-deploy-angular-app-on-github-pages-for-free/
 
 > ng deploy --base-href=REPO_NAME
+
+# deploy firebase
+https://medium.com/@treviergits/how-to-deploy-an-angular-7-app-on-firebase-hosting-30341f3bcb22
