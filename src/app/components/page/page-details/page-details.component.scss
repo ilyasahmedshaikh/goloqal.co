@@ -67,6 +67,10 @@ agm-map {
         text-align: center;
         @include respond(mobile) {
           margin-top: 13%;
+          .c-btn {
+            display: block;
+            margin-top: 10px;
+          }
         }
       }
     }
