@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   selectedOption: any = '';
 
   cities: any = [
-    // {name: 'Bangkok'},
+    { name: 'Live Location' },
   ];
 
   constructor(
@@ -42,7 +42,7 @@ export class SearchBarComponent implements OnInit {
   getLocation() {
     this.googleMaps.location.subscribe(res => {
       let city = res.city;
-      this.cities.unshift({ name: city });
+      this.cities.push({ name: city });
       this.selectedOption = this.cities[0];
 
       // sending data to parent
