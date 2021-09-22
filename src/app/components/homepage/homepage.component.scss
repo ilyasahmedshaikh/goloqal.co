@@ -139,6 +139,10 @@
       bottom: 0;
       width: 100%;
       height: 100px;
+      @include respond(mobile) {
+        background: white;
+        opacity: 0.8;
+      }
     }
   }
 }
