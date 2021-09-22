@@ -49,7 +49,8 @@ export class CategoryWisePageListingComponent implements OnInit {
   }
 
   view(item) {
-    this.router.navigate(['/page/page-details/', item.id], { state: {page: item} })
+    let replaceSpaceToDash = item.title.split(' ').join('-');
+    this.router.navigate(['/page/page-details/', replaceSpaceToDash], { state: {page: item} })
   }
 
 }

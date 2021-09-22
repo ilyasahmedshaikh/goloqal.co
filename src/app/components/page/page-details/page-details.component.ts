@@ -37,8 +37,10 @@ export class PageDetailsComponent implements OnInit {
   ngOnInit(): void {
     // getting id from route
     this.activatedRoute.paramMap.subscribe(params => {
-      if (params.get('id')) {
-        this.id = params.get('id');
+      if (params.get('title')) {
+        this.id = params.get('title').split(' ').join('-');
+        console.log(this.id);
+        
       }
     });
     
