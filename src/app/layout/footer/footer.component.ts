@@ -10,6 +10,8 @@ import { ApiService } from '../../core/http/api/api.service';
 export class FooterComponent implements OnInit {
 
   socials: any = [];
+  today: any = new Date();
+  year: any = '';
 
   constructor(
     private config: ConfigService,
@@ -18,6 +20,9 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSocials();
+
+    // get current year 
+    this.year = new Date(this.today).getFullYear();
   }
 
   getSocials() {
