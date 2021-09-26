@@ -9,6 +9,8 @@ import { LoginService } from 'src/app/core/services/login/login.service';
 })
 export class HeaderComponent implements OnInit {
 
+  logo: string = "";
+
   toggleButton: boolean = false;
   sidebar: boolean = false;
   fadeSection: boolean = false;

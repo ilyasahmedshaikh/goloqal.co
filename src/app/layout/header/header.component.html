@@ -1,4 +1,4 @@
-<div class="header py-3">
+<div class="header py-2">
   <div class="container">
       <div class="toggleContainer" (click)="toggleMenu()" [ngClass]="{'change': toggleButton}">
           <div class="bar1"></div>
@@ -6,14 +6,14 @@
           <div class="bar3"></div>
       </div>
 
-      <div class="row">
-        <div class="col-2">
+      <div class="row align-items-center">
+        <div class="col-md-2 col-6">
           <div class="logo">
-            <a class="text-pinkgradient" routerLink="/homepage">GOLOQAL</a>
+            <img src="../../../assets/img/logo-goloqal.png" alt="Logo">
           </div>
         </div>
 
-        <div class="col-10">
+        <div class="col-md-10 col-6">
           <div class="nav">
             <ul>
               <li *ngIf="user?.id"><a class="text-uppercase" routerLink="/page/page-listing">My Page</a></li>

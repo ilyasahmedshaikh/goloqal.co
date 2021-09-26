@@ -2,16 +2,20 @@
 
 .header{
   background: white;
-  height: 55px;
+  height: 70px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 3;
   box-shadow: 0 5px 15px 0 rgb(0 0 0 / 5%);
   .logo{
-    a{
-      font-weight: bold;
-      font-size: 20px;
+    img {
+      width: 100%;
+      height: 55px;
+      object-fit: cover;
+      @include respond(tablet){
+        width: 70%;
+      }
     }
   }
   .nav{
@@ -52,7 +56,7 @@
   .toggleContainer {
     cursor: pointer;
     position: fixed;
-    top: 10px;
+    top: 18px;
     right: 30px;
     z-index: 3;
   }
