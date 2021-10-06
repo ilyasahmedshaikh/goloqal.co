@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
+import { LoginService } from '../../../core/services/login/login.service';
 
 @Component({
   selector: 'app-page-details',
@@ -23,12 +24,14 @@ export class PageDetailsComponent implements OnInit {
   }
 
   user: any = {};
+  isShowEdit: boolean = false;
 
   constructor(
     private router: Router,
     private config: ConfigService,
     private api: ApiService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private loginService: LoginService
   ){
     this.data = this.router.getCurrentNavigation().extras.state?.page;
     this.newPage = this.router.getCurrentNavigation().extras.state?.newPage;
@@ -44,12 +47,13 @@ export class PageDetailsComponent implements OnInit {
       }
     });
     
-    if(this.data) {
-      this.location = this.data?.location;
-      console.log('page details', this.data);
-    } else {
-      this.router.navigateByUrl('/homepage');
-    }
+    if(this.data) this.location = this.data?.location;
+    else this.router.navigateByUrl('/homepage');
+
+    this.user = this.loginService.getUserData();
+
+    if(this.data?.created_by.email == this.user.email) this.isShowEdit = true;
+    else this.isShowEdit = false;
 
     window.scroll(0, 0);
   }
