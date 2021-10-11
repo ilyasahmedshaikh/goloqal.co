@@ -1,0 +1,13 @@
+<div class="social-share">
+    <div class="icon">
+        <a (click)="onToggleSocials()">
+            <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+    <div class="share-actions" [ngClass]="{'active': openSocials, 'right': position == 'right', 'left': position == 'left'}">
+        <a (click)="onShare('fb')">Facebook</a>
+        <a (click)="onShare('tw')">Twitter</a>
+        <a (click)="onShare('in')">Linkedin</a>
+        <a (click)="onShare('pn')">Pinterest</a>
+    </div>
+</div>

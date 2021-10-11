@@ -1,0 +1,45 @@
+@import '/src/styles.scss';
+
+.social-share {
+    position: relative;
+    .icon {
+        a {
+            font-size: 20px;
+            cursor: pointer;
+            color: $lightBlack;
+            &:hover {
+                color: $orange;
+                transition: 0.5s;
+                opacity: 0.5s;
+            }
+        }
+    }
+    .share-actions {
+        padding: 5px;
+        box-shadow: 0 0 10px $boxShadow;
+        border-radius: 7px;
+        margin-top: 10px;
+        position: absolute;
+        width: 300px;
+        display: none;
+        background: white;
+        &.active {
+            display: block;
+        }
+        a {
+            display: block;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover {
+                background: $boxShadow;
+            }
+        }
+        &.right {
+            right: 0;
+        }
+        &.left {
+            left: 0;
+        }
+    }
+}

@@ -5,13 +5,15 @@ import { CustomCardComponent } from './custom-card/custom-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { SocialShareComponent } from './social-share/social-share.component';
 
 @NgModule({
   declarations: [
     CustomCardComponent,
     SearchBarComponent,
     LoaderComponent,
-    ImageUploaderComponent
+    ImageUploaderComponent,
+    SocialShareComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
     CustomCardComponent,
     SearchBarComponent,
     LoaderComponent,
-    ImageUploaderComponent
+    ImageUploaderComponent,
+    SocialShareComponent
   ]
 })
 export class SharedModule { }

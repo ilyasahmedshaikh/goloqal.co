@@ -26,6 +26,8 @@ export class PageDetailsComponent implements OnInit {
   user: any = {};
   isShowEdit: boolean = false;
 
+  pageUrl: any = '';
+
   constructor(
     private router: Router,
     private config: ConfigService,
@@ -38,6 +40,11 @@ export class PageDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // getting current page URL 
+    // this.pageUrl = this.filterUrl(window.location.href);
+    this.pageUrl = window.location.href;
+    console.log(this.pageUrl);
+
     // getting id from route
     this.activatedRoute.paramMap.subscribe(params => {
       if (params.get('title')) {
@@ -52,7 +59,7 @@ export class PageDetailsComponent implements OnInit {
 
     this.user = this.loginService.getUserData();
 
-    if(this.data?.created_by.email == this.user.email) this.isShowEdit = true;
+    if(this.data?.created_by?.email == this.user?.email) this.isShowEdit = true;
     else this.isShowEdit = false;
 
     window.scroll(0, 0);
@@ -86,6 +93,10 @@ export class PageDetailsComponent implements OnInit {
     .catch((error) => {
       alert(error);
     });
+  }
+
+  filterUrl(url) {
+    return url.replaceAll('#', '%23');
   }
 
 }
