@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-social-share',
@@ -12,11 +12,21 @@ export class SocialShareComponent implements OnInit {
 
   openSocials: boolean = false;
 
-  constructor() { }
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    if(this.eRef.nativeElement.contains(event.target)) {
+      // clicked inside - do nothing
+    }
+    else {
+      this.onToggleSocials();
+    }
+  }
+
+  constructor(
+    private eRef: ElementRef
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.position);
-    
   }
 
   onShare(socialShare: any) {
@@ -36,6 +46,8 @@ export class SocialShareComponent implements OnInit {
       default:
         break;
     }
+
+    this.onToggleSocials();
   }
 
   onToggleSocials() {
