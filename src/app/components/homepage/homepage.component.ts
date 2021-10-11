@@ -30,7 +30,9 @@ export class HomepageComponent implements OnInit {
 
   view(item) {
     let replaceSpaceToDash = item.title.split(' ').join('-');
-    this.router.navigate(['/page/page-details/', replaceSpaceToDash], { state: {page: item} })
+    this.router.navigate([`/page/page-details/${item.id}/${replaceSpaceToDash}`], { state: {page: item} })
+
+    console.log(item);
   }
 
   getData() {

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ConfigService } from '../../../core/http/config/config.service'
 import { ApiService } from '../../../core/http/api/api.service';
 import { LoginService } from '../../../core/services/login/login.service';
+import { LoaderService } from 'src/app/core/services/loader/loader.service';
 
 @Component({
   selector: 'app-page-details',
@@ -32,7 +33,7 @@ export class PageDetailsComponent implements OnInit {
     private router: Router,
     private config: ConfigService,
     private api: ApiService,
-    private activatedRoute: ActivatedRoute,
+    private loader: LoaderService,
     private loginService: LoginService
   ){
     this.data = this.router.getCurrentNavigation().extras.state?.page;
@@ -43,19 +44,12 @@ export class PageDetailsComponent implements OnInit {
     // getting current page URL 
     // this.pageUrl = this.filterUrl(window.location.href);
     this.pageUrl = window.location.href;
-    console.log(this.pageUrl);
 
-    // getting id from route
-    this.activatedRoute.paramMap.subscribe(params => {
-      if (params.get('title')) {
-        this.id = params.get('title').split(' ').join('-');
-        console.log(this.id);
-        
-      }
-    });
+    // getting page data from API
+    this.getPageDetails();
     
     if(this.data) this.location = this.data?.location;
-    else this.router.navigateByUrl('/homepage');
+    else this.getPageDetails();
 
     this.user = this.loginService.getUserData();
 
@@ -97,6 +91,21 @@ export class PageDetailsComponent implements OnInit {
 
   filterUrl(url) {
     return url.replaceAll('#', '%23');
+  }
+
+  async getPageDetails() {
+    this.loader.isLoading.next(true);
+    this.id = await this.pageUrl.split('/').at(-2);
+
+    if (this.id) {
+      this.api.getWithQuery(this.config.collections.pages_table, 'id', '==', this.id).subscribe(res => {
+        this.data = res[0];
+        this.loader.isLoading.next(false);
+      })
+    } else {
+      this.router.navigateByUrl("/homepage");
+      this.loader.isLoading.next(false);
+    }
   }
 
 }

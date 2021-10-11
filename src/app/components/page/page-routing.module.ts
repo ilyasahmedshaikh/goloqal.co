@@ -22,7 +22,7 @@ const routes: Routes = [
         component: PageListingComponent
       },
       {
-        path: 'page-details/:id',
+        path: 'page-details/:id/:name',
         component: PageDetailsComponent
       },
       {
