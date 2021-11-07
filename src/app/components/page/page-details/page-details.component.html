@@ -223,8 +223,8 @@
 
         <div class="col-12 mt-5" *ngIf="newPage">
           <a class="c-btn pink mr-3" routerLink="/homepage">Cancel</a>
-          <a class="c-btn green mr-3" (click)="createPage()" *ngIf="!data.isEdit">Create Page</a>
-          <a class="c-btn green mr-3" (click)="updatePage()" *ngIf="data.isEdit">Update Page</a>
+          <a class="c-btn green mr-3" (click)="createPage()" *ngIf="!data.isEdit || newPage">Create Page</a>
+          <a class="c-btn green mr-3" (click)="updatePage()" *ngIf="data.isEdit && !newPage">Update Page</a>
         </div>
       </div>
     </div>

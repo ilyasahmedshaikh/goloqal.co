@@ -213,7 +213,7 @@ export class CreatePageComponent implements OnInit {
       }
     };
     
-    this.router.navigate(['/page/page-details/', 0], { state: {page: data, newPage: true} })
+    this.router.navigate(['/page/page-details/', 0, 'new'], { state: {page: data, newPage: true} })
   }
 
   deletePage() {

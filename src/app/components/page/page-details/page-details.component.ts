@@ -46,7 +46,7 @@ export class PageDetailsComponent implements OnInit {
     this.pageUrl = window.location.href;
 
     // getting page data from API
-    this.getPageDetails();
+    if(!this.newPage) this.getPageDetails();
     
     if(this.data) this.location = this.data?.location;
     else this.getPageDetails();
