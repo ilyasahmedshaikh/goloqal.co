@@ -142,6 +142,7 @@
       @include respond(mobile) {
         background: white;
         opacity: 0.8;
+        height: 50px;
       }
     }
   }
